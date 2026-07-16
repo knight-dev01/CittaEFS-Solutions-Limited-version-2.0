@@ -69,6 +69,26 @@ export default function TestimonialsCarousel() {
       logoClass: "h-8 w-20 object-contain",
       text: "Running high-velocity retail sales meant we struggled to align automated point-of-sale invoices with regulatory rules. CSL configured the drag-and-drop Excel Bulk Uploader along with live VAT calculations, making our monthly accounting cycles stress-free.",
       rating: 5
+    },
+    {
+      id: "west-metro",
+      name: "Adewale Thompson",
+      role: "Chief Infrastructure Officer",
+      company: "West Metro Transit",
+      logo: "https://westmetro.ng/assets/images/logo-dark.png",
+      logoClass: "h-8 w-20 object-contain",
+      text: "West Metro relies on CSL's CittaMatrix to synchronize smart ticket terminals with municipal transport routers. Having live telemetry feedback while maintaining 100% tax clearance compliance has dramatically enhanced our operational reliability.",
+      rating: 5
+    },
+    {
+      id: "redeemers-school",
+      name: "Mrs. O. O. Adejuwon",
+      role: "Administrator & Academic Coordinator",
+      company: "Redeemers High School",
+      logo: "https://redeemershighschool.com/Images/RHS%20Logo.png",
+      logoClass: "h-8 w-8 object-contain rounded-full bg-white p-0.5",
+      text: "Managing academic rosters, multi-campus staff schedules, and compliance audits manually was a major hurdle. With CSL's CittaPlannerX and structured database systems, our administrative efficiency surged, saving us hours of manual data synchronization weekly.",
+      rating: 5
     }
   ];
 

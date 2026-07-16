@@ -30,12 +30,9 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
   const navItems = [
     { id: 'home', label: 'Home', target: 'home' },
     { id: 'about', label: 'Who We Are', target: 'about' },
-    { id: 'challenges', label: 'Challenges', target: 'challenges' },
     { id: 'products', label: 'Solutions', target: 'products' },
-    { id: 'industries', label: 'Industries', target: 'industries' },
-    { id: 'why-choose-csl', label: 'Why CSL', target: 'why-choose-csl' },
-    { id: 'approach', label: 'Approach', target: 'approach' },
-    { id: 'vision', label: 'Vision', target: 'vision' },
+    { id: 'testimonials', label: 'Clients', target: 'testimonials-carousel' },
+    { id: 'faq', label: 'FAQ', target: 'faq' },
     { id: 'contact', label: 'Contact', target: 'contact' },
   ] as const;
 
@@ -79,17 +76,24 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
           </div>
 
           {/* Desktop Nav Items */}
-          <div className="hidden lg:flex items-center space-x-4 lg:space-x-5 relative">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                id={`nav-item-${item.id}`}
-                onClick={() => handleNavClick(item.target)}
-                className="text-xs lg:text-sm font-semibold text-slate-600 hover:text-[#2582ff] transition-colors cursor-pointer py-1.5"
-              >
-                {item.label}
-              </button>
-            ))}
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 relative">
+            {navItems.map((item) => {
+              const isActive = currentPage === item.id;
+              return (
+                <button
+                  key={item.id}
+                  id={`nav-item-${item.id}`}
+                  onClick={() => handleNavClick(item.target)}
+                  className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer py-1 px-0.5 border-b-2 ${
+                    isActive 
+                      ? 'text-[#2582ff] font-extrabold border-[#2582ff]/80' 
+                      : 'text-slate-600 border-transparent hover:text-[#2582ff] hover:border-slate-200'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
 
           {/* Contact Sales / Request Demo CTA & Search */}
@@ -134,15 +138,22 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1.5 shadow-lg max-h-[85vh] overflow-y-auto">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavClick(item.target)}
-              className="w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:text-[#2582ff] hover:bg-slate-50 transition-all cursor-pointer block"
-            >
-              {item.label}
-            </button>
-          ))}
+          {navItems.map((item) => {
+            const isActive = currentPage === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item.target)}
+                className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer block ${
+                  isActive 
+                    ? 'text-[#2582ff] bg-[#2582ff]/5 font-bold' 
+                    : 'text-slate-600 hover:text-[#2582ff] hover:bg-slate-50'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
 
           <div className="pt-4 px-4">
             <button

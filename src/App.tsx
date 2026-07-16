@@ -44,12 +44,14 @@ export default function App() {
       const sections: { id: string; pageId: PageId }[] = [
         { id: 'home', pageId: 'home' },
         { id: 'about', pageId: 'about' },
-        { id: 'challenges', pageId: 'challenges' },
+        { id: 'testimonials-carousel', pageId: 'testimonials' },
+        { id: 'challenges', pageId: 'products' },
         { id: 'products', pageId: 'products' },
-        { id: 'industries', pageId: 'industries' },
-        { id: 'why-choose-csl', pageId: 'why-choose-csl' },
-        { id: 'approach', pageId: 'approach' },
-        { id: 'vision', pageId: 'vision' },
+        { id: 'industries', pageId: 'products' },
+        { id: 'why-choose-csl', pageId: 'about' },
+        { id: 'approach', pageId: 'about' },
+        { id: 'vision', pageId: 'about' },
+        { id: 'faq', pageId: 'faq' },
         { id: 'contact', pageId: 'contact' },
       ];
 
