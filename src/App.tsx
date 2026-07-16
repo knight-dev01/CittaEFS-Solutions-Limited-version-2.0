@@ -153,21 +153,7 @@ export default function App() {
         </div>
 
         {/* SECTION 9: Contact */}
-        <div id="contact" className="bg-slate-50 border-t border-slate-100">
-          <section className="pt-20 pb-6 text-center">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
-                Enterprise Staging & Contact
-              </span>
-              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#051A3B]">
-                Partner with CSL
-              </h1>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Connect with our solutions architects to modernise operations, schedule a systems staging preview, or learn more about our secure middleware family.
-              </p>
-            </div>
-          </section>
-          
+        <div id="contact">
           <ContactForm />
         </div>
 

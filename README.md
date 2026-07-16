@@ -1,126 +1,149 @@
-# CittaEFS (Electronic Fiscal System) Middleware Platform
+# CSL (CittaERP Solutions Limited) - Enterprise Software Ecosystem
 
 [![Regulatory Status](https://img.shields.io/badge/Regulatory-NRS%20Ready-emerald?style=flat-square)](#compliance-standards)
 [![License Sec Seal](https://img.shields.io/badge/NDPA%202023-Audited-blue?style=flat-square)](#security--data-privacy)
 [![Build Status](https://img.shields.io/badge/Build-Passed-success?style=flat-square)](#)
 
-> Stay NRS Compliant Without Replacing Your ERP. A secure, enterprise-grade middleware platform built for modern B2B tax synchronization and automated pre-clearance.
+> **CittaERP Solutions Limited (CSL)** is a premier enterprise software architect. CSL unifies specialized digital solutions, advanced resource leveling, and statutory tax compliance under an enterprise-shielded secure architecture.
 
-CittaEFS is an intelligent Electronic Fiscal System (EFS) and compliant middleware platform designed and developed by **CittaERP Solutions Limited (CSL)**. It bridges the gap between sophisticated legacy ERP systems (such as SAP, Oracle, Microsoft Dynamics, Odoo, or custom databases) and federal tax authorities like the **National Revenue Service (NRS)** via accredited Access Point partners.
-
----
-
-## 🏛️ Executive Summary
-
-National Revenue Services globally are transitioning to real-time pre-clearance electronic invoicing mandates. For large enterprises, modifying core ERP ledgers directly to comply with complex, fast-changing local schemas is costly, risky, and prone to system failures.
-
-**CittaEFS** acts as an intelligent, secure routing and translation buffer:
-1. **Intercepts** transactional billing files and REST payloads from existing ERP systems.
-2. **Validates** tax mathematics, rounding decimals, and mandatory parameters against the latest National Tax Administration Act guidelines.
-3. **Applies** secure cryptographic digital signatures (SHA-256) under local guidelines.
-4. **Acquires** a unique Invoice Reference Number (IRN) and generates a regulation-compliant high-density QR code.
-5. **Transfers** verified payloads directly to the National Revenue Service (NRS).
+This repository hosts the official corporate presentation platform and interactive middleware sandbox of CSL. It showcases our specialized software family, industry vertical solutions, and an interactive Electronic Fiscal System (EFS) simulator.
 
 ---
 
-## ✨ Features & Capabilities
+## 🏛️ Executive Summary & Mission
 
-### 🔌 Intelligent ERP Connectors
-* **Enterprise ERP Adapters:** Plug-and-play integrations for SAP ERP, Oracle Financials, Microsoft Dynamics 365, Odoo, and raw SQL databases.
-* **REST/JSON APIs:** Sub-second micro-transaction validation interfaces for fast, high-volume checkout counters and e-commerce baskets.
-* **Bulk File Processor:** Queue and process large batches of invoices (Excel, CSV, custom XML) using asynchronous background pipelines with zero database lockups.
+CSL unifies complex business workflows into a highly secure, reliable, and integrated software ecosystem. Standardized operating models demand that modern enterprises navigate intricate statutory taxation, hospitality guest experience cycles, deep supply chain schedules, and legacy accounting systems. 
 
-### 🛡️ Compliance & Core Safeguards
-* **NRS pre-clearance Handshake:** Built on standard Merchant-Buyer Solution protocols.
-* **SHA-256 Cryptographic Seals:** Encrypts and stamps every transactional record with non-repudiable digital certificates.
-* **Auto-Rounding Shield:** Prevents math and decimal rounding errors that trigger regulatory API rejections.
-* **7-Year Compliance Vault:** Holds fully indexed transactional audits and telemetry histories in high-availability immutable archives.
-
-### 📊 Modern Interactive Interfaces
-* **Real-time Live Dashboard:** Advanced monitoring UI for financial executives and ERP administrators, displaying IRNs, validation signals, status codes, and QR stamps.
-* **Live Validation Sandbox:** Interactive developer sandbox where you can paste invoice JSON payloads to watch the middleware clean, validate, sign, and render compliant outputs instantly.
+Our mission is to dissolve technical debt, eliminate structural fragmentation, and secure full compliance without disrupting active business operations.
 
 ---
 
-## 🧱 System Architecture
+## 🧱 The CSL Software Ecosystem & Core Products
+
+Our core suite consists of highly integrated, enterprise-grade software products designed for frictionless scalability:
+
+### ⚡ CittaEFS (Compliance & Electronic Fiscal System)
+* **Pre-clearance Handshake:** Bridges legacy ERPs (SAP, Oracle, MS Dynamics, Odoo) with federal tax authorities like the **National Revenue Service (NRS)**.
+* **Cryptographic Signing:** Digitally signs (SHA-256) transaction payloads in real-time under local regulation standards.
+* **Error Prevention Shield:** Prevents math and decimal rounding errors that trigger regulatory API rejections.
+* **7-Year Compliance Vault:** Retains fully indexed transactional history in high-availability immutable ledger archives.
+
+### ⚙️ CittaMatrix (Core ERP & Advanced Ledger)
+* **Financial Core:** Professional multi-currency accounting, comprehensive journal entries, and automated financial reporting.
+* **Supply Chain Suite:** Live warehousing, stock movement tracking, automated procurement, and vendor portals.
+* **API First:** Natively integrates with modern cloud systems and webhooks.
+
+### 🏨 CittaHospitalityX (PMS & Guest Orchestration)
+* **PMS Core:** Next-generation property management software for luxury hotels, resorts, and vacation properties.
+* **Guest Flow:** Frictionless booking, self-service check-in kiosks, guest profiles, and digital room key orchestration.
+* **Housekeeping Engines:** Algorithmic room status tracking and maintenance dispatching.
+
+### 📅 CittaPlannerX (Interactive Scheduler & Resource Leveling)
+* **Timeline Canvas:** Dynamic, interactive scheduler with drag-and-drop mechanics.
+* **Resource Optimization:** Automated workload balancing, critical path analysis, and equipment leveling.
+* **Operational Sync:** Integrates directly with core manufacturing, PMS, and project accounting modules.
+
+### 🔗 CittaNexus (API & Webhook Router)
+* **Routing Gateway:** Central communication hub managing all secure webhooks and microservice integrations.
+* **High Availability:** Sub-millisecond latency routing with automatic circuit-breakers and retry policies.
+
+---
+
+## 🛠️ System Architecture
 
 ```
-┌──────────────────┐      🚀 REST API / Bulk Files       ┌──────────────────────┐
-│  Enterprise ERP  │ ─────────────────────────────────>  │  CittaEFS Middleware │
-│  (SAP, Oracle,   │ <─────────────────────────────────  │  • Verification      │
-│  Dynamics, etc.) │        IRN & QR Code Return         │  • SHA-256 Sign      │
-└──────────────────┘                                     │  • Error Shield      │
-                                                         └──────────────────────┘
-                                                                    │
-                                                                    │ Secure TLS 1.3
-                                                                    ▼
-┌──────────────────┐      🏛️ Federal Verification       ┌──────────────────────┐
-│ National Revenue │ <─────────────────────────────────  │  Accredited Access   │
-│  Service (NRS)   │ ─────────────────────────────────>  │    Point Partner     │
-└──────────────────┘             IRN & QR                └──────────────────────┘
+                       ┌────────────────────────────────────────┐
+                       │      CSL Unified Parent Framework      │
+                       └───────────────────┬────────────────────┘
+                                           │
+         ┌───────────────────┬─────────────┼─────────────┬───────────────────┐
+         ▼                   ▼             ▼             ▼                   ▼
+   ┌───────────┐       ┌───────────┐ ┌───────────┐ ┌───────────┐       ┌───────────┐
+   │ CittaEFS  │       │CittaMatrix│ │Hospitality│ │ PlannerX  │       │CittaNexus │
+   │Compliance │       │ Core ERP  │ │    PMS    │ │ Scheduler │       │ API Route │
+   └─────┬─────┘       └───────────┘ └───────────┘ └───────────┘       └───────────┘
+         │
+         │ Secure REST API / TLS 1.3
+         ▼
+   ┌────────────────────────────────────────┐
+   │    Accredited Access Point Partner     │
+   └───────────────────┬────────────────────┘
+                       │
+                       ▼
+   ┌────────────────────────────────────────┐
+   │     National Revenue Service (NRS)     │
+   └────────────────────────────────────────┘
 ```
 
 ---
 
-## 💻 Tech Stack & Engineering Standards
+## 💻 Tech Stack & Design Standards
 
-The corporate website is designed and optimized with high-performance modern web practices:
+The CSL corporate platform is engineered using modern, high-performance web practices:
 
-* **Framework:** React 18+ (TypeScript)
-* **Build System:** Vite
-* **Styling Engine:** Tailwind CSS
-* **Animations:** Framer Motion (`motion/react`)
-* **Component Library / Icons:** Lucide Icons
-* **Hosting Ingress:** Cloud Run containers mapped on secure endpoints.
+* **Framework:** React 18+ with strict TypeScript
+* **Build Engine:** Vite
+* **Styling Paradigm:** Tailwind CSS utility class system
+* **Animations:** Fluid, declarative transitions powered by Framer Motion (`motion/react`)
+* **Icons:** Standardized SVG imports from `lucide-react`
+* **Accessibility:** Generous typographic hierarchy and deep contrast values adhering to WCAG standards.
 
 ---
 
-## 🛠️ Developer Setup & Deployment
+## 🚀 Developer Setup & Command Line Interface
 
 ### Prerequisites
 * **Node.js** v18 or newer
 * **npm** or **yarn** package managers
 
 ### Installation
-Clone or navigate to the directory and install dependencies:
+Clone or download the project files and run dependency installation:
 ```bash
 npm install
 ```
 
-### Development Server
-Spin up the local development web server:
+### Local Development Server
+Boot the HMR-configured development server locally:
 ```bash
 npm run dev
 ```
-The application will be accessible locally on port `3000` (or the default system-assigned routing address).
+The server binds to port `3000` (mapped via nginx proxy) and will be accessible at http://localhost:3000.
 
-### Quality Verification
-Run the TypeScript compiler and linter checks to guarantee strict type safety and code standards:
-```bash
-npm run lint
-```
-
-### Production Bundling
-Compile the application into optimized static assets ready for secure Cloud CDN deployment:
+### Static Production Build
+Compile the application into highly compressed, optimized static assets under `/dist`:
 ```bash
 npm run build
 ```
 
+### Static Build Execution
+To run the production bundle locally:
+```bash
+npm run start
+```
+
+### Quality Assurance & Linting
+Validate type safety, syntax consistency, and formatting standards:
+```bash
+npm run lint
+```
+
 ---
 
-## 🔒 Security & Data Privacy
+## 🔒 Security & Regulatory Foundations
 
-* **TLS 1.3 Encryption:** All transmission vectors are secured using industry-standard TLS 1.3 protocol.
-* **NDPA 2023 Compliant:** Patient, customer, and sensitive personal identifier fields are automatically anonymized or masked prior to regulatory handshakes to adhere to the Nigerian Data Protection Act (NDPA) 2023 guidelines.
-* **SAML / OIDC Single Sign-On:** Fully compatible with enterprise identity providers (Azure AD, Okta, Active Directory) for restricted Role-Based Access Control (RBAC).
+* **TLS 1.3 Architecture:** All internal and external routing vectors are protected by transport-layer security protocols.
+* **NDPA 2023 Audited:** All sensitive transactional databases, employee records, and client databases conform to the guidelines of the **Nigerian Data Protection Act (NDPA) 2023**.
+* **ISO 27001 Prepared:** Systems are structured around strict information security management system (ISMS) controls.
+* **NTAA Section 23 Compliant:** Financial ledgers are immutable and automatically mirror statutory records in complete alignment with regional tax laws.
 
 ---
 
-## 🏢 Corporate Profile
+## 🏢 Corporate Profile & Contact Info
 
-**CittaEFS** is a registered proprietary system built, maintained, and backed by:
+**CittaERP Solutions Limited (CSL)** is a registered, licensed corporate technology firm.
 
-* **Company:** CittaERP Solutions Limited (CSL)
-* **HQ Location:** Plot 24, Lekki Phase 1, Lagos, Nigeria
-* **Support Email:** info@cittaefs.com
-* **Corporate Website:** [https://cittaefs.com](https://cittaefs.com)
+* **HQ Location:** Victoria Island Corporate District, Lagos State, Nigeria.
+* **Web:** [www.cittanuvola.com](http://www.cittanuvola.com)
+* **Inquiries & Support:** [info@cittanuvola.com](mailto:info@cittanuvola.com) | [info1@cittanuvola.com](mailto:info1@cittanuvola.com)
+* **Corporate Telephone:** +234 (1) 888-EFS9 (+234 1 888 3379)
+* **SLA Target:** 99.99% system availability with 24/7 designated solutions architect support.

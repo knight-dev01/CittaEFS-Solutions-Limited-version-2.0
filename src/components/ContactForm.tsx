@@ -37,27 +37,29 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-white text-slate-800 border-t border-slate-100">
+    <section className="py-20 sm:py-28 bg-slate-50 text-slate-800 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Centered Title Block matching consistency of other sections */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24 gap-4">
+          <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
+            Section 09. Corporate Staging & Contact
+          </span>
+          <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-none">
+            Partner with CSL
+          </h2>
+          <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
+            Connect with our solutions architects to modernise operations, schedule a systems staging preview, or learn more about our secure middleware family.
+          </p>
+        </div>
+
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Office details & Trust */}
           <div className="lg:col-span-5 space-y-6 sm:space-y-8 text-left">
-            <div className="flex flex-col items-start gap-4 sm:gap-6">
-              <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
-                Section 09. Contact Us
-              </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-                Get in Touch with CSL
-              </h2>
-              <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
-                Connect with the central team at <strong>CittaERP Solutions Limited (CSL)</strong> to discuss your enterprise requirements, integrate specialized software, or establish staging configurations.
-              </p>
-            </div>
-
+            
             {/* Corporate Location Details - Direct from PDF slide 9 */}
-            <div className="space-y-5 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
+            <div className="space-y-5 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm">
               <h4 className="font-display font-bold text-slate-900 text-base mb-2">
                 CittaERP Solutions Limited HQ
               </h4>
@@ -109,7 +111,7 @@ export default function ContactForm() {
           {/* Right Column: Dynamic Form Container */}
           <div className="lg:col-span-7">
             
-            <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-lg relative overflow-hidden">
+            <div className="bg-white border border-slate-200/60 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
               {/* Background gradient blur */}
               <div className="absolute top-0 right-0 h-24 w-24 bg-[#2582ff]/5 rounded-full blur-2xl" />
 
