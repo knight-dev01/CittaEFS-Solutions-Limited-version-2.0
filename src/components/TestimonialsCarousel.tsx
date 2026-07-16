@@ -26,7 +26,7 @@ export default function TestimonialsCarousel() {
       role: "Director of Infrastructure & Planning",
       company: "Adron Homes & Properties",
       logo: "https://i0.wp.com/gmposts.com/wp-content/uploads/2016/07/adron.jpg?fit=225%2C225&ssl=1",
-      logoClass: "h-9 w-9 rounded-lg object-contain",
+      logoClass: "h-11 w-11 rounded-lg object-contain",
       text: "CSL's dual deployment of CittaMatrix and CittaPlannerX transformed our housing planning logistics. We synchronized multi-site land rosters and leveled material allocation on our critical paths. Operational bottlenecks fell by 40% in our first quarter of implementation.",
       rating: 5
     },
@@ -36,7 +36,7 @@ export default function TestimonialsCarousel() {
       role: "Accredited Access Point Systems Auditor",
       company: "NRS Tax Compliance Council",
       logo: "https://tse1.mm.bing.net/th/id/OIP.b7065cgfTM6OrK5-h6t_QwHaDg?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-      logoClass: "h-7 w-16 object-contain",
+      logoClass: "h-9 w-24 object-contain",
       text: "CittaEFS has proven itself to be the most resilient fiscal middleware on the market. Its pre-clearance validation buffer catches rounding errors and incorrect TIN records at the source. This ensures flawless transaction clearing speeds and absolute non-repudiation.",
       rating: 5
     },
@@ -46,7 +46,7 @@ export default function TestimonialsCarousel() {
       role: "Chief Operating Officer",
       company: "Coswals Structures Limited",
       logo: "https://coswal.com.ng/wp-content/uploads/2026/04/logo.svg",
-      logoClass: "h-8 w-20 object-contain",
+      logoClass: "h-9 w-24 object-contain",
       text: "For a heavy logistics and construction company, managing cross-entity material ledgers was a major structural pain point. CSL's custom database triggers and Odoo tax connector integrated seamlessly into our architecture, enabling live pipeline tracking.",
       rating: 5
     },
@@ -56,7 +56,7 @@ export default function TestimonialsCarousel() {
       role: "Principal Infrastructure Architect",
       company: "Sety.io",
       logo: "https://www.sety.io/assets/img/logo.svg",
-      logoClass: "h-8 w-16 object-contain bg-slate-900 p-1 rounded",
+      logoClass: "h-8 w-20 object-contain brightness-0 opacity-90",
       text: "Our emergency safety protocols rely on sub-millisecond response rates. CSL deployed CittaNexus to route webhooks across our service meshes with high-availability circuit breakers. The telemetry tracking and error-handling routines have been rock solid.",
       rating: 5
     },
@@ -66,7 +66,7 @@ export default function TestimonialsCarousel() {
       role: "Head of Inventory & E-commerce Logistics",
       company: "Scarlet and Snow Retail Group",
       logo: "https://scarletandsnow.com/wp-content/uploads/2024/10/Sands-Main-BK.png",
-      logoClass: "h-8 w-20 object-contain",
+      logoClass: "h-9 w-24 object-contain",
       text: "Running high-velocity retail sales meant we struggled to align automated point-of-sale invoices with regulatory rules. CSL configured the drag-and-drop Excel Bulk Uploader along with live VAT calculations, making our monthly accounting cycles stress-free.",
       rating: 5
     },
@@ -76,7 +76,7 @@ export default function TestimonialsCarousel() {
       role: "Chief Infrastructure Officer",
       company: "West Metro Transit",
       logo: "https://westmetro.ng/assets/images/logo-dark.png",
-      logoClass: "h-8 w-20 object-contain",
+      logoClass: "h-9 w-24 object-contain",
       text: "West Metro relies on CSL's CittaMatrix to synchronize smart ticket terminals with municipal transport routers. Having live telemetry feedback while maintaining 100% tax clearance compliance has dramatically enhanced our operational reliability.",
       rating: 5
     },
@@ -86,7 +86,7 @@ export default function TestimonialsCarousel() {
       role: "Administrator & Academic Coordinator",
       company: "Redeemers High School",
       logo: "https://redeemershighschool.com/Images/RHS%20Logo.png",
-      logoClass: "h-8 w-8 object-contain rounded-full bg-white p-0.5",
+      logoClass: "h-11 w-11 object-contain",
       text: "Managing academic rosters, multi-campus staff schedules, and compliance audits manually was a major hurdle. With CSL's CittaPlannerX and structured database systems, our administrative efficiency surged, saving us hours of manual data synchronization weekly.",
       rating: 5
     }
@@ -229,7 +229,7 @@ export default function TestimonialsCarousel() {
 
               {/* Client Branding Block */}
               <div className="md:col-span-4 flex flex-col items-center md:items-end justify-center h-full border-t md:border-t-0 md:border-l border-slate-800 pt-6 md:pt-0 md:pl-8 gap-4">
-                <div className="p-3 bg-slate-900 border border-slate-800 rounded-2xl flex items-center justify-center shadow-lg w-32 h-16">
+                <div className="p-3 bg-white border border-slate-200 rounded-2xl flex items-center justify-center shadow-lg w-36 h-20 transition-all duration-300">
                   <img 
                     src={current.logo} 
                     alt={`${current.company} Logo`}
