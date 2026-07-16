@@ -27,57 +27,64 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Product",
     description: "Our flagship intelligent electronic fiscal system middleware bridging ERP systems to NRS compliance. Handles high-velocity clearance.",
     keywords: ["cittaefs", "middleware", "engine", "compliance", "nrs", "electronic fiscal", "tax stamp", "clearing", "high availability", "firs compliance"],
-    pageId: "cittaefs"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "Validation Shield Gateway",
     category: "Product",
     description: "Secures real-time compliance transactions by validating fields, tax calculations, and TIN inputs before forwarding to revenue servers.",
     keywords: ["validation shield", "gateway", "tin check", "tax check", "security", "cryptography", "tin verification", "validation shield", "pre-clearance"],
-    pageId: "cittaefs"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "Excel Bulk Uploader Gateway",
     category: "Product",
     description: "A drag-and-drop gateway built for SMEs to bulk upload Excel spreadsheets or CSV template billing sheets for automated fiscal clearing.",
     keywords: ["excel", "bulk", "uploader", "csv", "spreadsheet", "drag", "drop", "sme", "excel uploader", "manual selection", "drag-and-drop"],
-    pageId: "cittaefs"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "Live Validation Sandbox",
     category: "Product",
     description: "An interactive, client-authoritative simulator to inspect compliance handshakes, review raw JSON structures, and measure clearance speed.",
     keywords: ["live", "validation", "sandbox", "simulator", "rules", "rest api", "json payload", "firs simulator", "api payload"],
-    pageId: "cittaefs"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "Audit Ledger Vault",
     category: "Product",
     description: "Ensures compliance history and cleared ledger lists remain secured with AES-256 and secure TLS standards. Implements absolute non-repudiation.",
     keywords: ["audit ledger", "vault", "history", "aes-256", "ledger list", "tls", "security", "non-repudiation", "secure log"],
-    pageId: "cittaefs"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "The CittaEFS Digital Compliance Bridge",
     category: "Product",
     description: "Step-by-step physical-to-digital compliance journey mapping source generations, pre-clearance validation buffers, and cryptographic stamps.",
     keywords: ["digital compliance bridge", "compliance journey", "source generation", "validation buffer", "cryptographic seal", "nrs portal handshake", "sha-256 stamped signature", "sub-5ms sandbox check", "legacy output", "firs gateway"],
-    pageId: "home",
-    scrollId: "compliance-journey-section"
+    pageId: "about",
+    scrollId: "about"
   },
   {
     title: "Interactive Clearance Speed Chart",
     category: "Product",
     description: "Examine system validation latency, packet clearance logs, and millisecond routing speeds under simulated enterprise transaction load.",
     keywords: ["clearing speed chart", "validation latency", "packet clearance logs", "routing speed", "high load", "clearing rate", "response time", "graph", "chart"],
-    pageId: "cittaefs"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "CittaMatrix Core ERP",
     category: "Product",
     description: "Consolidate multi-entity operations, supply chain stock, asset depreciation, and double-entry general ledgers with AI forecasting.",
     keywords: ["cittamatrix", "matrix", "erp", "ledger", "general ledger", "accounting", "operations", "supply chain", "depreciation", "forecast"],
-    pageId: "cittamatrix",
+    pageId: "products",
+    scrollId: "products",
     url: "https://cittamatrix.com/"
   },
   {
@@ -85,7 +92,8 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Product",
     description: "Next-generation hotel PMS, room allocations timeline, housekeeping rosters, guest mobile portals, and unified folio billing.",
     keywords: ["cittahospitalityx", "hospitalityx", "pms", "hotel", "resort", "booking", "folio", "room allocation", "housekeeping", "reservation"],
-    pageId: "cittahospitalityx",
+    pageId: "products",
+    scrollId: "products",
     url: "https://cittahospitalityx.com/"
   },
   {
@@ -93,7 +101,8 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Product",
     description: "Surgical scheduling software featuring interactive Gantt charts, milestone paths, teammate allocation, and resource leveling.",
     keywords: ["cittaplannerx", "plannerx", "scheduler", "gantt", "critical path", "milestone", "resource leveling", "scheduling", "timeline"],
-    pageId: "cittaplannerx",
+    pageId: "products",
+    scrollId: "products",
     url: "https://cittaplannerx.com/"
   },
   {
@@ -101,7 +110,8 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Product",
     description: "Central encryption integration hub supporting webhook routers, REST / SOAP protocols, secure TLS tunnels, and live traffic telemetry.",
     keywords: ["cittanexus", "nexus", "api gateway", "webhooks", "integration", "tls tunnel", "router", "telemetry", "protocols"],
-    pageId: "cittanexus",
+    pageId: "products",
+    scrollId: "products",
     url: "https://cittanexus.com/"
   },
 
@@ -111,28 +121,32 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Solutions",
     description: "Direct API triggers or scheduled exports linking SAP ERP modules to official tax clearing nodes. Compatible with SAP ECC6 and S/4HANA.",
     keywords: ["sap", "erp", "integration", "compatibility", "modules", "database triggers", "sap integration", "s4hana", "ecc6"],
-    pageId: "solutions"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "Oracle ERP Compliance Integration",
     category: "Solutions",
     description: "Sub-300ms SLA database gateway designed for Oracle Financials, high-volume billing, and direct enterprise ledger synchronization.",
     keywords: ["oracle", "erp", "integration", "compatibility", "high-volume", "financials", "oracle financials", "database trigger"],
-    pageId: "solutions"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "Microsoft Dynamics Integration",
     category: "Solutions",
     description: "Tailored mappings to link Microsoft Dynamics AX, NAV, or 365 natively with compliance servers using zero-downtime micro-connectors.",
     keywords: ["microsoft", "dynamics", "ax", "nav", "365", "integration", "tailored", "dynamics 365", "connectors"],
-    pageId: "solutions"
+    pageId: "products",
+    scrollId: "products"
   },
   {
     title: "Odoo & QuickBooks SME Gateway",
     category: "Solutions",
     description: "Quick-deploy configurations and middleware plugins for Odoo, QuickBooks, and lightweight accounting modules to bypass manual FIRS entry.",
     keywords: ["odoo", "quickbooks", "sme", "gateway", "accounting", "plugins", "automated clearing", "quickbooks plugins"],
-    pageId: "solutions"
+    pageId: "products",
+    scrollId: "products"
   },
 
   // Industries
@@ -141,28 +155,32 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Industries",
     description: "Advanced VAT calculation engine, multi-site factory inventory invoice clearing systems, and automated warehouse ledger reporting.",
     keywords: ["manufacturing", "factory", "vat", "inventory", "multi-site", "industry", "warehouse ledger", "supply chain"],
-    pageId: "industries"
+    pageId: "industries",
+    scrollId: "industries"
   },
   {
     title: "Conglomerates & Distribution",
     category: "Industries",
     description: "Handles massive scale, multi-currency invoicing, cross-border custom codes, and high-volume automated logistics ledger systems.",
     keywords: ["conglomerates", "distribution", "logistics", "multi-currency", "massive scale", "cross-border", "subsidiaries"],
-    pageId: "industries"
+    pageId: "industries",
+    scrollId: "industries"
   },
   {
     title: "Oil & Gas Energy Sector",
     category: "Industries",
     description: "B2B clearing with customizable regulatory attributes matching energy, refining, downstream supply chain, and pipeline transactions.",
     keywords: ["oil", "gas", "energy", "refining", "pipeline", "b2b", "industry", "petroleum", "downstream", "upstream"],
-    pageId: "industries"
+    pageId: "industries",
+    scrollId: "industries"
   },
   {
     title: "Telecommunications Billing",
     category: "Industries",
     description: "Sub-millisecond high-frequency POS clearings for modern telecommunication and data networks with high-volume concurrency.",
     keywords: ["telecom", "telecommunications", "billing", "high-frequency", "pos", "millisecond", "cellular network", "concurrency"],
-    pageId: "industries"
+    pageId: "industries",
+    scrollId: "industries"
   },
 
   // Company
@@ -171,28 +189,32 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Company",
     description: "Learn about Citta ERP Solutions Limited, pioneering software engineering, financial technology, and compliance architecture.",
     keywords: ["csl", "corporate", "profile", "about", "pioneering", "architecture", "citta erp solutions limited", "directors", "history"],
-    pageId: "company"
+    pageId: "about",
+    scrollId: "about"
   },
   {
     title: "Security, Trust & Privacy Standards",
     category: "Company",
     description: "Fully aligned with NDPA privacy directives, featuring military-grade transport encryption (AES-256) and complete non-repudiation.",
     keywords: ["security", "trust", "privacy", "ndpa", "encryption", "compliance success", "security tls", "data protection", "ndpb"],
-    pageId: "company"
+    pageId: "about",
+    scrollId: "about"
   },
   {
     title: "Lagos Engineering & Support Office",
     category: "Company",
     description: "Our regional research and implementation headquarters in Lagos, Nigeria, providing custom systems integration and 24/7 active SLA monitoring.",
     keywords: ["lagos engineering", "lagos office", "regional headquarters", "research hub", "systems monitoring", "engineering team", "nigeria office", "physical office"],
-    pageId: "company"
+    pageId: "about",
+    scrollId: "about"
   },
   {
     title: "Enterprise Clients Portfolio",
     category: "Company",
     description: "CSL proudly serves over 100+ active enterprise clients, executing high-volume digital invoice clearing across disparate databases.",
     keywords: ["enterprise portfolio", "corporate clients", "100+ clients", "integrated installations", "multi-site erp", "trusted partners"],
-    pageId: "company"
+    pageId: "about",
+    scrollId: "about"
   },
 
   // Resources
@@ -201,28 +223,32 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Resources",
     description: "Everything businesses need to know about transitioning to secure digital invoicing models under official FIRS frameworks.",
     keywords: ["digital", "invoice", "guidelines", "transition", "regulations", "firs guidelines", "electronic billing"],
-    pageId: "resources"
+    pageId: "approach",
+    scrollId: "approach"
   },
   {
     title: "FIRS NRS Integration Specs",
     category: "Resources",
     description: "Technical review of official integration steps, API handshake response timelines, security rules, and clearing protocols.",
     keywords: ["firs", "nrs", "specs", "technical", "integration steps", "response", "nrs specs", "api endpoints", "rest specs"],
-    pageId: "resources"
+    pageId: "approach",
+    scrollId: "approach"
   },
   {
     title: "Tax Ecosystem Policy Papers",
     category: "Resources",
     description: "Academic and regulatory analyses on how automated tax frameworks optimize national revenues and prevent corporate leakage.",
     keywords: ["tax", "ecosystem", "policy", "national revenue", "regulatory analysis", "leakage prevention", "whitepapers"],
-    pageId: "resources"
+    pageId: "approach",
+    scrollId: "approach"
   },
   {
     title: "Implementation Roadmap Checklist",
     category: "Resources",
     description: "Four-phase compliance onboarding plan covering Technical Scoping, Middleware Configuration, Sandbox Clearance, and Live Go-Live Operations.",
     keywords: ["implementation roadmap", "onboarding checklist", "technical scoping", "middleware configuration", "sandbox clearance", "go-live production", "phase 1", "phase 2", "phase 3", "phase 4", "checklists"],
-    pageId: "resources"
+    pageId: "approach",
+    scrollId: "approach"
   },
 
   // Contact
@@ -231,21 +257,24 @@ const SEARCH_INDEX: SearchItem[] = [
     category: "Contact",
     description: "Reach our principal engineers or schedule an in-person compliance consultation at our Lagos office. Get real-time onboarding advice.",
     keywords: ["contact", "office", "lagos", "phone", "email", "support", "consultation", "demo", "lagos office", "request demo", "onboarding advice"],
-    pageId: "contact"
+    pageId: "contact",
+    scrollId: "contact"
   },
   {
     title: "Support Hotline & Email Address",
     category: "Contact",
     description: "Send inquiries directly to contact@cittaerp.com or initiate an instant WhatsApp compliance line for immediate engineering support.",
     keywords: ["email", "hotline", "whatsapp", "phone", "support@cittaerp.com", "contact@cittaerp.com", "whatsapp support", "active line"],
-    pageId: "contact"
+    pageId: "contact",
+    scrollId: "contact"
   },
   {
     title: "24/7 Client Systems Support",
     category: "Contact",
     description: "CSL keeps principal engineering hotlines active 24/7 for zero-downtime assurance. Get rapid support tickets for ERP data sync triage.",
     keywords: ["24/7 support", "hotline", "whatsapp support", "downtime triage", "technical support", "systems monitoring", "active support", "support line", "emergency support"],
-    pageId: "contact"
+    pageId: "contact",
+    scrollId: "contact"
   }
 ];
 
