@@ -10,6 +10,7 @@ import SEOStructuredData from './components/SEOStructuredData';
 import CSLHero from './components/CSLHero';
 import CSLAbout from './components/CSLAbout';
 import PartnerLogos from './components/PartnerLogos';
+import TestimonialsCarousel from './components/TestimonialsCarousel';
 import ChallengesSection from './components/ChallengesSection';
 import ProductEcosystem from './components/ProductEcosystem';
 import IndustriesSection from './components/IndustriesSection';
@@ -17,6 +18,7 @@ import WhyChooseCSL from './components/WhyChooseCSL';
 import ApproachSection from './components/ApproachSection';
 import VisionSection from './components/VisionSection';
 import ContactForm from './components/ContactForm';
+import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -122,6 +124,9 @@ export default function App() {
         {/* Corporate Trust Badges & Partners */}
         <PartnerLogos />
 
+        {/* Client Testimonials Carousel */}
+        <TestimonialsCarousel />
+
         {/* SECTION 3: The Challenges We Solve */}
         <div id="challenges">
           <ChallengesSection />
@@ -151,6 +156,9 @@ export default function App() {
         <div id="vision">
           <VisionSection />
         </div>
+
+        {/* SECTION 8.5: Frequently Asked Questions */}
+        <FAQSection />
 
         {/* SECTION 9: Contact */}
         <div id="contact">

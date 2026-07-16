@@ -275,6 +275,32 @@ const SEARCH_INDEX: SearchItem[] = [
     keywords: ["24/7 support", "hotline", "whatsapp support", "downtime triage", "technical support", "systems monitoring", "active support", "support line", "emergency support"],
     pageId: "contact",
     scrollId: "contact"
+  },
+  
+  // Frequently Asked Questions
+  {
+    title: "NRS Compliance FAQ",
+    category: "Resources",
+    description: "How CittaEFS automatically handles digital pre-clearance validation buffers, TIN checks, and SHA-256 cryptographic signatures for real-time tax submissions.",
+    keywords: ["faq", "compliance faq", "nrs compliance", "digital pre-clearance", "validation buffer", "tin checks", "cryptographic signature", "sha-256", "rejections", "errors"],
+    pageId: "approach",
+    scrollId: "faq"
+  },
+  {
+    title: "ERP & Systems Integration FAQ",
+    category: "Resources",
+    description: "Connect to legacy databases like SAP S/4HANA, Oracle Financials, Odoo, and Microsoft Dynamics without altering core workflows or business logic.",
+    keywords: ["faq", "integration faq", "erp integration", "sap integration", "oracle integration", "odoo integration", "dynamics integration", "triggers", "connectors", "onboarding timeline"],
+    pageId: "approach",
+    scrollId: "faq"
+  },
+  {
+    title: "Security, Encryption & Privacy FAQ",
+    category: "Resources",
+    description: "Details regarding CSL's information security design, TLS 1.3 encryption tunnels, AES-256 Audit Ledger Vault, and full NDPA 2023 legal compliance.",
+    keywords: ["faq", "security faq", "encryption", "tls 1.3", "aes-256", "audit ledger", "ledger vault", "ndpa 2023", "non-repudiation", "privacy"],
+    pageId: "approach",
+    scrollId: "faq"
   }
 ];
 
