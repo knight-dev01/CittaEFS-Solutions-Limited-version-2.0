@@ -1,0 +1,8 @@
+{
+  "name": "Remix: CittaERP Solutions Limited (CSL)",
+  "description": "Enterprise-grade Intelligent Electronic Fiscal System (EFS) \u0026 Middleware for NRS Compliance by CittaERP Solutions Limited.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
