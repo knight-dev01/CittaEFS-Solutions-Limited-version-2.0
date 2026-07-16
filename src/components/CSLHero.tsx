@@ -202,9 +202,9 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-display text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900 select-none"
           >
-            Pioneering Enterprise <br />
+            Engineering the Future of <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2582ff] via-slate-800 to-[#ff8e1a] animate-gradient">
-              Software & Compliance Architecture.
+              Enterprise Digital Transformation
             </span>
           </motion.h1>
 
@@ -213,9 +213,9 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium"
+            className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto font-medium"
           >
-            <strong>CSL</strong> architects high-capacity enterprise software suites, secure compliance bridges, and advanced planning systems. We empower modern global organizations with compliant operational excellence.
+            CittaERP Solutions Limited builds secure, intelligent, and scalable enterprise software that helps organisations modernise operations, achieve regulatory compliance, and accelerate digital transformation.
           </motion.p>
 
           {/* Buttons Row */}
@@ -225,20 +225,30 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
           >
-            <button
-              onClick={onExploreEcosystem}
+            <a
+              href="#products"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('products');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide text-white bg-[#2582ff] hover:bg-[#1a73e8] transition-all duration-300 cursor-pointer flex items-center justify-center space-x-2 shadow-lg shadow-[#2582ff]/20 w-full sm:w-auto hover:scale-105"
             >
-              <span>Explore Product Ecosystem</span>
+              <span>Explore Our Solutions</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={onExploreEFS}
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide text-slate-700 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 flex items-center justify-center space-x-1.5 w-full sm:w-auto hover:scale-105"
             >
-              <span>Go to Flagship CittaEFS</span>
+              <span>Talk to Our Team</span>
               <ChevronRight className="w-4 h-4" />
-            </button>
+            </a>
           </motion.div>
 
         </div>

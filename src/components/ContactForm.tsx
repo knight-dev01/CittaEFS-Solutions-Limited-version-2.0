@@ -37,7 +37,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact-section" className="py-12 sm:py-24 bg-white text-slate-800">
+    <section id="contact" className="py-20 sm:py-28 bg-white text-slate-800 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -45,14 +45,14 @@ export default function ContactForm() {
           {/* Left Column: Office details & Trust */}
           <div className="lg:col-span-5 space-y-6 sm:space-y-8 text-left">
             <div className="flex flex-col items-start gap-4 sm:gap-6">
-              <span className="inline-block font-mono text-xs uppercase tracking-widest text-emerald-800 font-bold bg-emerald-100/60 px-3.5 py-1.5 rounded-full border border-emerald-200">
-                07. Contact Sales
+              <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
+                Section 09. Contact Us
               </span>
               <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-                Partner with CSL across our Multi-Product Suite
+                Get in Touch with CSL
               </h2>
               <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
-                Connect with the central parent brand <strong>CittaERP Solutions Limited (CSL)</strong> to integrate any of our specialized software ecosystems (CittaEFS, CittaMatrix, CittaHospitalityX, CittaPlannerX, or CittaNexus) with your active corporate databases.
+                Connect with the central team at <strong>CittaERP Solutions Limited (CSL)</strong> to discuss your enterprise requirements, integrate specialized software, or establish staging configurations.
               </p>
             </div>
 
@@ -63,7 +63,7 @@ export default function ContactForm() {
               </h4>
 
               <div className="flex items-start space-x-3 text-xs sm:text-sm text-slate-600">
-                <MapPin className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#2582ff] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-slate-800">Lagos Head Office</p>
                   <p className="mt-0.5 leading-normal">Victoria Island Corporate District, Lagos State, Nigeria.</p>
@@ -71,7 +71,7 @@ export default function ContactForm() {
               </div>
 
               <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/60 pt-4">
-                <Mail className="w-5 h-5 text-emerald-700 shrink-0" />
+                <Mail className="w-5 h-5 text-[#2582ff] shrink-0" />
                 <div>
                   <p className="text-slate-800 font-mono">info@cittanuvola.com</p>
                   <p className="text-slate-400 text-[11px] font-mono">info1@cittanuvola.com</p>
@@ -79,12 +79,20 @@ export default function ContactForm() {
               </div>
 
               <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/60 pt-4">
-                <Globe className="w-5 h-5 text-emerald-700 shrink-0" />
+                <Phone className="w-5 h-5 text-[#2582ff] shrink-0" />
+                <div>
+                  <p className="text-slate-800 font-mono">+234 (1) 888 3379</p>
+                  <p className="text-slate-400 text-[11px] font-mono">Office Hours: 8:00 AM – 5:00 PM</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/60 pt-4">
+                <Globe className="w-5 h-5 text-[#2582ff] shrink-0" />
                 <a 
                   href="https://www.cittanuvola.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="font-mono text-slate-800 hover:text-emerald-600 transition-all"
+                  className="font-mono text-slate-800 hover:text-[#2582ff] transition-all"
                 >
                   www.cittanuvola.com
                 </a>
@@ -92,8 +100,8 @@ export default function ContactForm() {
             </div>
 
             {/* Trust disclaimer */}
-            <div className="flex items-start space-x-3.5 p-4 bg-emerald-50 rounded-xl border border-emerald-100 text-xs text-emerald-800">
-              <ShieldAlert className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
+            <div className="flex items-start space-x-3.5 p-4 bg-[#2582ff]/5 rounded-xl border border-[#2582ff]/10 text-xs text-slate-700">
+              <ShieldAlert className="w-5 h-5 text-[#2582ff] shrink-0 mt-0.5" />
               <span>We value data confidentiality. All submitted corporate structures and integration specs are protected under non-disclosure protocols in conformity with NDPA 2023 laws.</span>
             </div>
           </div>
@@ -103,7 +111,7 @@ export default function ContactForm() {
             
             <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-lg relative overflow-hidden">
               {/* Background gradient blur */}
-              <div className="absolute top-0 right-0 h-24 w-24 bg-emerald-500/5 rounded-full blur-2xl" />
+              <div className="absolute top-0 right-0 h-24 w-24 bg-[#2582ff]/5 rounded-full blur-2xl" />
 
               {!isSuccess ? (
                 <form onSubmit={handleSubmit} className="space-y-5 text-left">
@@ -130,7 +138,7 @@ export default function ContactForm() {
                         placeholder="e.g. Dangote Cement PLC"
                         value={formState.companyName}
                         onChange={(e) => setFormState({ ...formState, companyName: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-emerald-500 focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-[#2582ff] focus:outline-none"
                       />
                     </div>
                     <div>
@@ -143,7 +151,7 @@ export default function ContactForm() {
                         placeholder="e.g. Aliko Chinedu"
                         value={formState.fullName}
                         onChange={(e) => setFormState({ ...formState, fullName: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-emerald-500 focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-[#2582ff] focus:outline-none"
                       />
                     </div>
                   </div>
@@ -159,7 +167,7 @@ export default function ContactForm() {
                         placeholder="e.g. finance@dangote.com"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-emerald-500 focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-[#2582ff] focus:outline-none"
                       />
                     </div>
                     <div>
@@ -171,7 +179,7 @@ export default function ContactForm() {
                         placeholder="e.g. +234 803 000 0000"
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-emerald-500 focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-[#2582ff] focus:outline-none"
                       />
                     </div>
                   </div>
@@ -184,7 +192,7 @@ export default function ContactForm() {
                       <select
                         value={formState.erpSystem}
                         onChange={(e) => setFormState({ ...formState, erpSystem: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-emerald-500 focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-[#2582ff] focus:outline-none"
                       >
                         <option value="SAP">SAP ERP (S/4HANA / ECC)</option>
                         <option value="Oracle">Oracle Fusion / NetSuite</option>
@@ -201,7 +209,7 @@ export default function ContactForm() {
                       <select
                         value={formState.volume}
                         onChange={(e) => setFormState({ ...formState, volume: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-emerald-500 focus:outline-none"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-[#2582ff] focus:outline-none"
                       >
                         <option value="<500">Less than 500 invoices</option>
                         <option value="500-1000">500 – 1,000 invoices</option>
@@ -221,7 +229,7 @@ export default function ContactForm() {
                       placeholder="Explain your database configurations or current compliance concerns..."
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-emerald-500 focus:outline-none resize-none"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-[#2582ff] focus:outline-none resize-none"
                     />
                   </div>
 
@@ -229,7 +237,7 @@ export default function ContactForm() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-4 rounded-xl bg-emerald-600 text-white hover:bg-emerald-500 transition-all duration-300 font-bold text-sm tracking-wide disabled:opacity-50 flex items-center justify-center space-x-2 shadow-md cursor-pointer"
+                      className="w-full py-4 rounded-xl bg-[#2582ff] text-white hover:bg-[#1a73e8] transition-all duration-300 font-bold text-sm tracking-wide disabled:opacity-50 flex items-center justify-center space-x-2 shadow-md cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
@@ -248,7 +256,7 @@ export default function ContactForm() {
               ) : (
                 /* Success booking message */
                 <div className="py-12 px-4 text-center space-y-6 animate-fade-in text-slate-800">
-                  <div className="inline-flex p-4 bg-emerald-50 text-emerald-600 rounded-full border border-emerald-100 shadow-sm">
+                  <div className="inline-flex p-4 bg-[#2582ff]/5 text-[#2582ff] rounded-full border border-[#2582ff]/10 shadow-sm">
                     <CheckCircle2 className="w-10 h-10 animate-bounce" />
                   </div>
                   
@@ -266,7 +274,7 @@ export default function ContactForm() {
 
                   <div className="border-t border-slate-200 pt-6 max-w-md mx-auto space-y-4">
                     <div className="flex items-center space-x-3 text-xs text-left bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
-                      <Calendar className="w-5 h-5 text-emerald-600 shrink-0" />
+                      <Calendar className="w-5 h-5 text-[#2582ff] shrink-0" />
                       <div>
                         <p className="font-bold text-slate-800">Next Step: Staging API Credentials</p>
                         <p className="text-slate-500 mt-0.5 text-[11px]">We will provide secure REST sandbox credentials for ERP integration testing.</p>
@@ -286,7 +294,7 @@ export default function ContactForm() {
                           message: ''
                         });
                       }}
-                      className="text-xs text-slate-500 hover:text-emerald-700 font-semibold flex items-center justify-center space-x-1 mx-auto cursor-pointer"
+                      className="text-xs text-slate-500 hover:text-[#2582ff] font-semibold flex items-center justify-center space-x-1 mx-auto cursor-pointer"
                     >
                       <Sparkles className="w-3.5 h-3.5" />
                       <span>Submit another sales request</span>

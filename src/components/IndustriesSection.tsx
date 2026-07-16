@@ -121,7 +121,7 @@ export default function IndustriesSection() {
   ];
 
   return (
-    <section className="pt-28 pb-12 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-36 bg-slate-50 text-slate-800 relative overflow-hidden">
+    <section id="industries" className="pt-28 pb-12 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-36 bg-slate-50 text-slate-800 relative overflow-hidden">
       {/* Background Decorative Mesh Elements */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(var(--color-emerald-500)_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04] pointer-events-none" />
 

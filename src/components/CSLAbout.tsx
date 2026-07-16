@@ -48,33 +48,19 @@ export default function CSLAbout({ isTopPage = false, isSummary = false, setCurr
           transition={{ duration: 0.5 }}
           className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-24"
         >
-          <div className="lg:col-span-6 flex flex-col items-start gap-4 sm:gap-6">
-            <span className="inline-block font-mono text-xs uppercase tracking-widest text-emerald-800 font-bold bg-emerald-100/60 px-3.5 py-1.5 rounded-full border border-emerald-200">
-              <AnimatedSectionNumber targetNumber={2} /> Corporate Profile
+          <div className="lg:col-span-6 flex flex-col items-start gap-4 sm:gap-6 text-left">
+            <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
+              Section 02. Who We Are
             </span>
             <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-slate-900 text-left">
-              Global Software Engineering & Regulatory Foundations
+              Engineered for Enterprise Excellence
             </h2>
             <p className="text-slate-600 text-xs sm:text-base leading-relaxed text-left">
-              <strong>CittaERP Solutions Limited (CSL)</strong> is a premier global enterprise software and regulatory compliance firm. Serving as the corporate parent brand, CSL unifies and positions specialized digital ecosystems including <strong>CittaEFS</strong>, <strong>CittaMatrix</strong>, <strong>CittaHospitalityX</strong>, <strong>CittaPlannerX</strong>, and <strong>CittaNexus</strong> to power complex corporate operations.
+              <strong>CittaERP Solutions Limited (CSL)</strong> is a world-class enterprise software firm. We specialize in robust enterprise software engineering, enabling businesses, large-scale institutions, and government bodies to achieve deep digital transformation.
             </p>
-            <p className="text-slate-505 text-xs sm:text-sm leading-relaxed text-left text-slate-500">
-              Our flagship middleware platform, <strong>CittaEFS</strong>, serves as the ultimate regulatory compliance buffer for legacy ERP architectures. By separating complex validation from core ledger tables, CSL enables companies to achieve flawless alignment across all their operational divisions.
+            <p className="text-slate-500 text-xs sm:text-sm leading-relaxed text-left">
+              By combining innovative regulatory technology, advanced systems integration, and seamless business process automation, CSL serves as a long-term technology partner. We help modernise operations and protect system-wide continuity under a unified corporate architecture.
             </p>
-            {isSummary && setCurrentPage && (
-              <div className="pt-4 text-left">
-                <button
-                  onClick={() => {
-                    setCurrentPage('company');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center space-x-2 px-6 py-3 rounded-full text-sm font-semibold text-white bg-slate-900 hover:bg-emerald-800 hover:shadow-lg hover:shadow-emerald-900/10 transition-all duration-300 cursor-pointer"
-                >
-                  <span>Explore CSL Corporate Profile</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
-              </div>
-            )}
           </div>
 
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
