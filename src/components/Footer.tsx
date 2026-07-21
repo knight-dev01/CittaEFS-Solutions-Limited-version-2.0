@@ -103,27 +103,27 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Middleware Engine
+                  CittaEFS Compliance
                 </button>
               </li>
               <li>
                 <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Validation Shield
+                  CittaMatrix Router
                 </button>
               </li>
               <li>
                 <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Excel Bulk Uploader
+                  CittaHospitalityX
                 </button>
               </li>
               <li>
                 <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Audit Ledger Vault
+                  CittaPlannerX
                 </button>
               </li>
               <li>
                 <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Secure API Gateway
+                  CittaNexus API Gateway
                 </button>
               </li>
             </ul>
@@ -131,31 +131,31 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
           {/* Column 3: Solutions */}
           <div className="col-span-6 md:col-span-2 space-y-4 text-left">
-            <h4 className="font-display font-bold text-slate-900 text-sm uppercase tracking-wider">Solutions</h4>
+            <h4 className="font-display font-bold text-slate-900 text-sm uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  SAP ERP Gateway
+                <button onClick={() => handleNavClick('services')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
+                  ERP Integrations
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Oracle Integration
+                <button onClick={() => handleNavClick('services')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
+                  Custom Engineering
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Microsoft Dynamics
+                <button onClick={() => handleNavClick('services')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
+                  Staging & Testing
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Odoo Tax Connector
+                <button onClick={() => handleNavClick('services')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
+                  Compliance Consulting
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('products')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Custom DB Sync
+                <button onClick={() => handleNavClick('services')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
+                  Dedicated SLA Support
                 </button>
               </li>
             </ul>
@@ -163,31 +163,31 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
           {/* Column 4: Resources & Support */}
           <div className="col-span-6 md:col-span-2 space-y-4 text-left">
-            <h4 className="font-display font-bold text-slate-900 text-sm uppercase tracking-wider">Support</h4>
+            <h4 className="font-display font-bold text-slate-900 text-sm uppercase tracking-wider">Resources</h4>
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
-                <button onClick={() => handleNavClick('contact')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Technical Blog
+                <button onClick={() => handleNavClick('why-we-exist')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
+                  Why We Exist
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('contact')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
-                  Compliance FAQ
+                <button onClick={() => handleNavClick('challenges')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left cursor-pointer">
+                  Challenges We Solve
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('contact')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left flex items-center space-x-1 cursor-pointer">
-                  <span>Help Center</span>
+                <button onClick={() => handleNavClick('why-choose-csl')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left flex items-center space-x-1 cursor-pointer">
+                  <span>Why Choose CSL</span>
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick('approach')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left block cursor-pointer">
+                  Our Approach
                 </button>
               </li>
               <li>
                 <button onClick={() => handleNavClick('contact')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left block cursor-pointer">
-                  Developer Docs
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleNavClick('contact')} className="hover:text-[#2582ff] hover:underline text-slate-600 transition-all text-left block cursor-pointer">
-                  SLA & Status
+                  Consultation
                 </button>
               </li>
             </ul>

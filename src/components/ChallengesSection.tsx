@@ -7,52 +7,38 @@ export default function ChallengesSection() {
   const challenges = [
     {
       id: "legacy",
-      title: "Legacy Systems",
-      desc: "Outdated enterprise frameworks cannot keep pace with modern digital demands, yet replacing them entirely is extremely costly and operationally risky.",
-      solution: "CSL positions secure, lightweight compliance bridges and modern API gateways that attach directly to existing ledgers without altering database tables.",
+      title: "Legacy System Agility",
+      desc: "Outdated enterprise software structures cannot keep pace with dynamic digital needs, yet replacing them entirely poses extreme operational risks and prohibitive capital costs.",
+      solution: "Fully modernized system capabilities, restored operational agility, and secure transaction workflows without replacing or disrupting your trusted legacy database systems.",
       icon: Building2
     },
     {
       id: "disconnected",
-      title: "Disconnected Processes",
-      desc: "Information gaps between corporate departments, warehouses, and front-desk checkouts create critical transactional errors and billing friction.",
-      solution: "CSL's unified product ecosystem integrates double-entry finances, booking systems, and schedulers into a real-time data flow.",
+      title: "Operational Disconnection",
+      desc: "Information gaps between corporate departments, remote warehouses, and transactional channels lead to invoicing friction, resource overlap, and critical database errors.",
+      solution: "A unified, real-time data flow that bridges corporate divisions, eliminates transactional leakages, and establishes a single source of operational truth.",
       icon: Shuffle
     },
     {
       id: "regulatory",
-      title: "Regulatory Complexity",
-      desc: "Ever-shifting national tax policies, MBS guidelines, and electronic fiscal rules threaten corporations with severe non-compliance penalties.",
-      solution: "Our CittaEFS middleware executes real-time pre-clearance validation, signing, and stamping of transactions before they hit government servers.",
+      title: "Regulatory Volatility",
+      desc: "Dynamic national tax codes, electronic reporting mandates, and changing compliance rules threaten large enterprises with severe non-compliance risks and administrative overhead.",
+      solution: "Continuous, friction-free regulatory alignment that automatically secures full tax clearance without affecting transactional throughput or ledger speed.",
       icon: ShieldAlert
     },
     {
       id: "inefficiency",
-      title: "Operational Inefficiencies",
-      desc: "Inflexible scheduling, poor resource utilization, and static project timelines directly drain corporate profitability.",
-      solution: "CittaPlannerX introduces intelligent Gantt charts and automated resource leveling to maximize workforce output.",
+      title: "Resource Over-Allocation",
+      desc: "Static scheduling tools, mismanaged supply paths, and team overallocation lead to delayed project milestones and directly erode corporate profit margins.",
+      solution: "Optimal workforce utilization, balanced multi-site scheduling, and predictable project deliveries achieved through intelligent resource leveling.",
       icon: Cpu
     },
     {
       id: "manual",
-      title: "Manual Workflows",
-      desc: "Manual billing, spreadsheet reconciliations, and physical paperwork slow down operations and introduce human validation errors.",
-      solution: "CSL automates end-to-end data pipelines, including SFTP folder listeners and automated XML/JSON translations.",
+      title: "Manual Workflow Bottlenecks",
+      desc: "Manual reconciliations, spreadsheet dependencies, and offline paper tracking slow down transaction cycles and introduce significant human billing errors.",
+      solution: "Complete administrative workflow automation that speeds up transaction cycles, eliminates spreadsheet errors, and reclaims weekly staff hours.",
       icon: FileClock
-    },
-    {
-      id: "silos",
-      title: "Data Silos",
-      desc: "Critical performance metrics and operational statistics remain locked in department-specific software solutions, preventing strategic decision-making.",
-      solution: "CittaMatrix centralizes business data into real-time analytical dashboards and corporate intelligence streams.",
-      icon: Database
-    },
-    {
-      id: "compliance",
-      title: "Growing Compliance",
-      desc: "The rapid global expansion of electronic invoicing and strict data privacy regulations requires constant security audits.",
-      solution: "We implement AES-256 state encryption, NDPA data protection, and ISO-certified infrastructure by default.",
-      icon: ClipboardCheck
     }
   ];
 

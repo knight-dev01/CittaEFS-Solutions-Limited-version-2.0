@@ -10,133 +10,133 @@ export default function IndustriesSection() {
   const industries = [
     {
       title: "Manufacturing & Heavy Industry",
-      sub: "SAP/Oracle & Rounding Shield",
-      desc: "Automatically reconciles complex bills of materials, rounding line-items to regulatory decimals to guarantee seamless pre-clearance.",
+      sub: "Streamlined Logistics & Tax Compliance",
+      desc: "Unifies complex bill-of-materials and ledger reconciliations, instantly syncing heavy production runs with tax clearances to eliminate supply-chain transit hold-ups.",
       icon: Factory,
-      metric: "99.98% Clear Rate",
-      highlight: "SAP/Oracle Integrated",
+      metric: "Zero Logistics Delay",
+      highlight: "Uninterrupted Operations",
       gridSpan: "md:col-span-2 lg:col-span-2",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-blue-500/5 to-indigo-600/5",
+      accent: "text-[#2582ff] bg-blue-50 border-blue-100/50 group-hover:bg-[#2582ff] group-hover:text-white group-hover:border-blue-300"
     },
     {
       title: "Retail & High-Volume F&B",
-      sub: "Micro-Checkout API & Queues",
-      desc: "Sub-second validation API. Supports offline transactional queue storage so checkouts continue even during regulatory offline periods.",
+      sub: "Continuous Transactional Velocity",
+      desc: "Guarantees retail checkouts run at full capacity under all network conditions, protecting sales and ensuring flawless operational continuity during high-traffic seasons.",
       icon: ShoppingBag,
-      metric: "<300ms Latency",
-      highlight: "Offline Queues Ready",
+      metric: "<240ms Verification",
+      highlight: "Offline Transaction Protection",
       gridSpan: "md:col-span-2 lg:col-span-2",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-orange-500/5 to-amber-600/5",
+      accent: "text-[#ff8e1a] bg-orange-50 border-orange-100/50 group-hover:bg-[#ff8e1a] group-hover:text-white group-hover:border-orange-300"
     },
     {
       title: "Financial Services & Insurance",
-      sub: "Core Banking Integration",
-      desc: "Integrate with core transactional ledgers, mainframes, or cloud architectures with bank-grade TLS 1.3 encryption.",
+      sub: "Trust & Ledger Security",
+      desc: "Protects high-value transactional ledgers with institutional safety protocols, ensuring absolute record accuracy, audit-readiness, and flawless regulatory compliance.",
       icon: Landmark,
-      metric: "Bank-Grade Security",
-      highlight: "Full TLS 1.3 Encryption",
+      metric: "Enterprise Trust",
+      highlight: "Absolute Ledger Accuracy",
       gridSpan: "col-span-1",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-blue-500/5 to-blue-600/5",
+      accent: "text-[#2582ff] bg-blue-50 border-blue-100/50 group-hover:bg-[#2582ff] group-hover:text-white group-hover:border-blue-300"
     },
     {
       title: "Healthcare & Pharmaceuticals",
-      sub: "NDPA '23 Patient Privacy Shield",
-      desc: "Safely handles medical and clinical financial billing data while keeping patient sensitive diagnostics anonymized under NDPA 2023 guidelines.",
+      sub: "Safe Patient Administration",
+      desc: "Streamlines clinical fee billing and multi-site insurance allocations while keeping patient financial data completely confidential under privacy guidelines.",
       icon: HeartPulse,
-      metric: "NDPA Compliant",
-      highlight: "Data Confidentiality",
+      metric: "Regulated Secrecy",
+      highlight: "Continuous Data Protection",
       gridSpan: "col-span-1",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-[#2582ff]/5 to-indigo-500/5",
+      accent: "text-[#2582ff] bg-blue-50 border-blue-100/50 group-hover:bg-[#2582ff] group-hover:text-white group-hover:border-blue-300"
     },
     {
       title: "Logistics & Supply Chain",
-      sub: "Dynamic QR & Transport Code",
-      desc: "Generates transport-ready compliance QR stamps instantly onto waybills to bypass delay-prone regulatory checkpoints.",
+      sub: "Uninterrupted Cargo Execution",
+      desc: "Embeds automatic compliance validation directly into transport manifests, ensuring freight flows freely past inspections to arrive on schedule.",
       icon: Truck,
-      metric: "Instant Waybills",
-      highlight: "Frictionless Cargo",
+      metric: "Frictionless Transit",
+      highlight: "On-Time Supply Lines",
       gridSpan: "col-span-1",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-[#ff8e1a]/5 to-orange-500/5",
+      accent: "text-[#ff8e1a] bg-orange-50 border-orange-100/50 group-hover:bg-[#ff8e1a] group-hover:text-white group-hover:border-orange-300"
     },
     {
       title: "Government & Utilities",
-      sub: "High-Throughput Public Ledger",
-      desc: "Supports municipal billing configurations, utility payment processing, and comprehensive state audit logs.",
+      sub: "Unified Revenue Assurance",
+      desc: "Improves local government collection rates and utility payment processing by consolidating complex public billing programs onto a secure ledger.",
       icon: ShieldCheck,
-      metric: "Audit Ledger",
-      highlight: "State-Wide Systems",
+      metric: "Public Integrity",
+      highlight: "High-Throughput Processing",
       gridSpan: "col-span-1",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-blue-500/5 to-blue-600/5",
+      accent: "text-[#2582ff] bg-blue-50 border-blue-100/50 group-hover:bg-[#2582ff] group-hover:text-white group-hover:border-blue-300"
     },
     {
       title: "Telecommunications & Media",
-      sub: "Asynchronous Bulk Billing",
-      desc: "Process millions of monthly cellular utility and subscription billing lines in micro-batches with minimal pipeline load.",
+      sub: "Bulk Account Management",
+      desc: "Processes millions of monthly customer utility and service billing files with minimal administrative overhead, driving cash-flow predictability.",
       icon: Zap,
       metric: "Million+ Scalability",
-      highlight: "Bulk File Middleware",
+      highlight: "Bulk File Automation",
       gridSpan: "col-span-1",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-orange-500/5 to-orange-600/5",
+      accent: "text-[#ff8e1a] bg-orange-50 border-orange-100/50 group-hover:bg-[#ff8e1a] group-hover:text-white group-hover:border-orange-300"
     },
     {
       title: "Construction & Infrastructure",
-      sub: "Milestone Contract Validation",
-      desc: "Handles multi-stage billing schedules and complex long-term contract invoicing with robust VAT tax calculations.",
+      sub: "Milestone-Driven Cash Flow",
+      desc: "Aligns multi-stage builder draws and progressive invoicing structures, ensuring correct tax compliance on long-term capital contracts.",
       icon: Building,
-      metric: "Milestone Ledger",
-      highlight: "Contract Integration",
+      metric: "Milestone Clearance",
+      highlight: "Contract Integrity",
       gridSpan: "col-span-1",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-[#2582ff]/5 to-blue-500/5",
+      accent: "text-[#2582ff] bg-blue-50 border-blue-100/50 group-hover:bg-[#2582ff] group-hover:text-white group-hover:border-blue-300"
     },
     {
-      title: "Education & Research",
-      sub: "Grant & Student Ledger Integration",
-      desc: "Integrates with modern university ERPs for fast student fee validation, research grants, and state scholarship clearances.",
+      title: "Education & Academy Management",
+      sub: "Integrated Campus Ledger",
+      desc: "Streamlines tuition billing, scholarship disbursements, and state-backed educational grants under a secure central portal.",
       icon: GraduationCap,
       metric: "Student Ledger Ready",
-      highlight: "Academic Billing",
+      highlight: "Consolidated Billing",
       gridSpan: "col-span-1",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-[#ff8e1a]/5 to-orange-500/5",
+      accent: "text-[#ff8e1a] bg-orange-50 border-orange-100/50 group-hover:bg-[#ff8e1a] group-hover:text-white group-hover:border-orange-300"
     },
     {
-      title: "Hospitality & Tourism",
-      sub: "POS Restaurant System Sync",
-      desc: "Connect POS checkouts directly, validating dynamic accommodation service tax rates automatically for instant billing clearance.",
+      title: "Hospitality & Tourism Group",
+      sub: "Direct Folio Sync",
+      desc: "Integrates guest booking systems and on-site checkout terminals to prevent revenue leaks and maximize group accommodation yields.",
       icon: Hotel,
-      metric: "POS Synced",
-      highlight: "Real-time Audits",
+      metric: "Synced Operations",
+      highlight: "Zero Revenue Leakage",
       gridSpan: "col-span-1",
-      color: "from-emerald-500/5 to-emerald-600/5",
-      accent: "text-slate-600 bg-slate-100/80 group-hover:text-emerald-700 group-hover:bg-emerald-50 border border-slate-200/50 group-hover:border-emerald-200"
+      color: "from-blue-500/5 to-indigo-600/5",
+      accent: "text-[#2582ff] bg-blue-50 border-blue-100/50 group-hover:bg-[#2582ff] group-hover:text-white group-hover:border-blue-300"
     }
   ];
 
   return (
-    <section id="industries" className="pt-28 pb-12 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-36 bg-slate-50 text-slate-800 relative overflow-hidden">
+    <section id="industries" className="py-20 sm:py-28 bg-slate-50 text-slate-800 relative overflow-hidden border-b border-slate-200">
       {/* Background Decorative Mesh Elements */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(var(--color-emerald-500)_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#2582ff_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Block */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-20 gap-4 sm:gap-6">
-          <span className="inline-block font-mono text-xs uppercase tracking-widest text-emerald-800 font-bold bg-emerald-100/60 px-3.5 py-1.5 rounded-full border border-emerald-200">
-            06. Sector Blueprints
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24 gap-4">
+          <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
+            Section 07. Sector Blueprints
           </span>
-          <h2 className="font-display text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
-            CSL Unified Industry Architectures
+          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Industries We Serve
           </h2>
-          <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
-            Different industries present distinct transactional profiles and operational loads. <strong>CittaERP Solutions Limited (CSL)</strong> acts as the central parent brand, deploying specialized software ecosystems like <strong>CittaEFS</strong>, <strong>CittaMatrix</strong>, <strong>CittaHospitalityX</strong>, <strong>CittaPlannerX</strong>, and <strong>CittaNexus</strong> to fit each sector's exact regulations.
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Different sectors present distinct transactional profiles and regulatory structures. <strong>CittaERP Solutions Limited (CSL)</strong> acts as the enterprise partner, deploying specialized systems to solve exact industry requirements.
           </p>
         </div>
 

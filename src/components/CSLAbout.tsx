@@ -53,13 +53,13 @@ export default function CSLAbout({ isTopPage = false, isSummary = false, setCurr
               Section 02. Who We Are
             </span>
             <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-slate-900 text-left">
-              Engineered for Enterprise Excellence
+              An Enterprise Member of CittaNuvola Group
             </h2>
             <p className="text-slate-600 text-xs sm:text-base leading-relaxed text-left">
-              <strong>CittaERP Solutions Limited (CSL)</strong> is a world-class enterprise software firm. We specialize in robust enterprise software engineering, enabling businesses, large-scale institutions, and government bodies to achieve deep digital transformation.
+              <strong>CittaERP Solutions Limited (CSL)</strong> is a premier enterprise software company within the <strong>CittaNuvola Group</strong>. We specialize in engineering intelligent business platforms and advanced regulatory technology that power deep digital transformation.
             </p>
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed text-left">
-              By combining innovative regulatory technology, advanced systems integration, and seamless business process automation, CSL serves as a long-term technology partner. We help modernise operations and protect system-wide continuity under a unified corporate architecture.
+              By integrating scalable business automation systems, we help major organizations simplify operations, ensure robust compliance, and manage core transaction pipelines. CSL acts as a trusted, long-term partner, engineering software ecosystems that grow alongside your business.
             </p>
           </div>
 

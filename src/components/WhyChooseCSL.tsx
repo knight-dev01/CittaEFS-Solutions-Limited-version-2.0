@@ -6,38 +6,33 @@ import {
 export default function WhyChooseCSL() {
   const points = [
     {
-      title: "Enterprise Expertise",
-      desc: "Our architects understand the unique, complex regulatory and functional challenges of large-scale public institutions and multi-entity corporations.",
-      icon: Briefcase
-    },
-    {
-      title: "Trusted Technology Partner",
-      desc: "We build long-term relationships centered on technical integrity, serving as the quiet, reliable foundation behind your business operations.",
-      icon: Handshake
-    },
-    {
-      title: "Secure Software Platforms",
-      desc: "Security is baked into our engineering core. We defend your corporate ledgers with modern cryptographic protocols and isolated secure middleware.",
+      title: "CittaNuvola Group Backing",
+      desc: "As a proud member of the CittaNuvola Group, CSL holds the robust financial backing, deep technological reserves, and absolute compliance infrastructure of a premier enterprise software conglomerate.",
       icon: Shield
     },
     {
-      title: "Scalable Solutions",
-      desc: "Our modular software engines scale effortlessly alongside your company, handling high transactional volumes and peak loads without latency.",
+      title: "Institutional Expertise",
+      desc: "Our architects understand the unique, complex regulatory and functional challenges of large-scale public institutions, multi-entity corporations, and heavy transaction volumes.",
+      icon: Briefcase
+    },
+    {
+      title: "Trust-First Partnerships",
+      desc: "We build long-term relationships centered on operational integrity, serving as the quiet, highly reliable technology partner behind your daily business operations.",
+      icon: Handshake
+    },
+    {
+      title: "Complete Operational Confidence",
+      desc: "Our modular software ecosystems are architected for absolute dependability, allowing corporate leaders to make strategic moves with perfect peace of mind.",
       icon: Maximize
     },
     {
-      title: "Industry Knowledge",
-      desc: "We bring seasoned, deep-sector insight across retail, manufacturing, government, and hospitality, adapting CSL systems to your exact industry billing flows.",
-      icon: Landmark
-    },
-    {
-      title: "Professional Implementation",
-      desc: "We guide your internal IT teams step-by-step through configuration and deployment, removing delivery friction and guaranteeing timelines.",
+      title: "Zero-Friction Delivery",
+      desc: "We guide your internal IT teams step-by-step through a professional integration plan, eliminating deployment risks and guaranteeing launch timelines.",
       icon: Settings
     },
     {
-      title: "Long-Term Support",
-      desc: "Our dedicated support engineers operate 24/7 to monitor integration nodes, answer compliance questions, and ensure complete system uptime.",
+      title: "24/7 Enterprise Assurances",
+      desc: "Our dedicated support team operates around the clock to monitor system node health and handle critical updates instantly, ensuring non-stop uptime.",
       icon: Headphones
     }
   ];

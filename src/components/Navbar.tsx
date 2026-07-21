@@ -29,10 +29,10 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
 
   const navItems = [
     { id: 'home', label: 'Home', target: 'home' },
-    { id: 'about', label: 'Who We Are', target: 'about' },
+    { id: 'why-we-exist', label: 'Why We Exist', target: 'why-we-exist' },
+    { id: 'challenges', label: 'Challenges', target: 'challenges' },
     { id: 'products', label: 'Solutions', target: 'products' },
-    { id: 'testimonials', label: 'Clients', target: 'testimonials-carousel' },
-    { id: 'faq', label: 'FAQ', target: 'faq' },
+    { id: 'services', label: 'Services', target: 'services' },
     { id: 'contact', label: 'Contact', target: 'contact' },
   ] as const;
 

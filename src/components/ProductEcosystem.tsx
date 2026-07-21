@@ -68,30 +68,21 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
                 </div>
               </div>
 
-              <p className="text-slate-300 text-sm leading-relaxed text-left max-w-2xl">
-                Intelligent Electronic Fiscal System (EFS) that enables organisations to achieve seamless NRS electronic invoicing compliance without replacing their existing ERP systems.
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed text-left max-w-2xl">
+                An intelligent, non-intrusive electronic fiscal system that connects enterprise ERPs with National Revenue Service compliance requirements seamlessly.
               </p>
 
-              {/* Tag metadata blocks */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2 text-left">
-                <div className="bg-white/5 border border-white/5 p-3 rounded-xl">
-                  <span className="text-slate-400 block uppercase text-[8px] tracking-wider font-mono">PRIMARY CAPABILITY</span>
-                  <span className="text-white block font-semibold text-xs mt-1">NRS Fiscal Compliance</span>
-                </div>
-                <div className="bg-white/5 border border-white/5 p-3 rounded-xl">
-                  <span className="text-slate-400 block uppercase text-[8px] tracking-wider font-mono">INTEGRATION HUB</span>
-                  <span className="text-white block font-semibold text-xs mt-1">SAP, Oracle, Dynamics</span>
-                </div>
-                <div className="bg-white/5 border border-white/5 p-3 rounded-xl col-span-2 sm:col-span-1">
-                  <span className="text-slate-400 block uppercase text-[8px] tracking-wider font-mono">DEPLOYMENT</span>
-                  <span className="text-white block font-semibold text-xs mt-1">Non-Intrusive Middleware</span>
-                </div>
+              <div className="pt-4 border-t border-white/5">
+                <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 mb-1">Business Value</span>
+                <p className="text-emerald-400 text-xs sm:text-sm font-semibold">
+                  Minimizes regulatory audit risks and eliminates non-compliance penalties with zero disruption to daily transaction velocity.
+                </p>
               </div>
             </div>
 
-            <div className="pt-8 border-t border-white/5 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="pt-8 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <span className="text-xs font-bold text-[#2582ff] inline-flex items-center space-x-1.5 group-hover:underline">
-                <span>Learn More</span>
+                <span>Request details</span>
                 <span className="font-mono">→</span>
               </span>
               <span className="text-[10px] font-mono text-slate-500">SECURE & ARCHITECTED</span>
@@ -102,7 +93,8 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
           <ProductCard
             name="CittaMatrix"
             tagline="Enterprise operational analytics"
-            description="Enterprise intelligence and operational analytics platform that transforms business data into actionable insights."
+            description="An enterprise operational intelligence platform that transforms raw business metrics into unified, real-time insights."
+            businessValue="Drives strategic alignment and speeds up decision-making cycles across multi-entity operations."
             badge="BUSINESS INTELLIGENCE"
             capability="Decision & Analytics Core"
             icon={Database}
@@ -114,7 +106,8 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
           <ProductCard
             name="CittaHospitalityX"
             tagline="Enterprise hospitality manager"
-            description="Modern hospitality management platform designed for hotels, restaurants, and hospitality enterprises."
+            description="A unified hospitality management platform designed to automate guest folios, room allocations, and channel distribution."
+            businessValue="Boosts front-desk productivity and maximizes accommodation yield automatically."
             badge="HOSPITALITY SYSTEM"
             capability="Property & Folio Management"
             icon={Layers}
@@ -126,7 +119,8 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
           <ProductCard
             name="CittaPlannerX"
             tagline="Intelligent scheduling platform"
-            description="Intelligent planning, scheduling, and resource management platform that improves operational efficiency."
+            description="An advanced resource scheduling and timeline tracking platform powered by real-time critical path and Gantt levelers."
+            businessValue="Cuts scheduling overheads, prevents resource overallocation, and guarantees on-time project deliveries."
             badge="ADVANCED SCHEDULER"
             capability="Timeline & Resource Gantt"
             icon={FileCheck}
@@ -138,7 +132,8 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
           <ProductCard
             name="CittaNexus"
             tagline="API connectivity gateway"
-            description="Enterprise integration platform that securely connects business applications, workflows, and digital services."
+            description="A secure API orchestration and webhook synchronization gateway connecting legacy databases with external corporate endpoints."
+            businessValue="Accelerates third-party app integration speeds by 10x while protecting core database integrity."
             badge="API MATRIX GATEWAY"
             capability="Webhook & System Bridges"
             icon={Cpu}

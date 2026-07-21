@@ -1,4 +1,4 @@
-export type PageId = 'home' | 'about' | 'challenges' | 'products' | 'industries' | 'why-choose-csl' | 'approach' | 'vision' | 'contact' | 'cittaefs' | 'solutions' | 'resources' | 'company' | 'cittamatrix' | 'cittahospitalityx' | 'cittaplannerx' | 'cittanexus' | 'testimonials' | 'faq';
+export type PageId = 'home' | 'about' | 'why-we-exist' | 'challenges' | 'products' | 'services' | 'industries' | 'why-choose-csl' | 'approach' | 'vision' | 'contact' | 'cittaefs' | 'solutions' | 'resources' | 'company' | 'cittamatrix' | 'cittahospitalityx' | 'cittaplannerx' | 'cittanexus' | 'testimonials' | 'faq';
 
 export interface BlogPost {
   id: string;

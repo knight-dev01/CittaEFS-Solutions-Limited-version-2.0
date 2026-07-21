@@ -252,11 +252,12 @@ export function SVGDivider({ type = 'wave', colorTheme = 'blue' }: { type?: 'wav
 
 // Interactive Product Ecosystem Card
 export function ProductCard({ 
-  name, tagline, description, badge, capability, icon: Icon, onClick, isFeatured = false, isBlue = true, href
+  name, tagline, description, businessValue, badge, capability, icon: Icon, onClick, isFeatured = false, isBlue = true, href
 }: {
   name: string;
   tagline: string;
   description: string;
+  businessValue?: string;
   badge: string;
   capability: string;
   icon: any;
@@ -320,6 +321,15 @@ export function ProductCard({
         <p className={`text-xs sm:text-sm leading-relaxed ${isFeatured ? 'text-slate-300' : 'text-slate-600'}`}>
           {description}
         </p>
+
+        {businessValue && (
+          <div className="pt-3 border-t border-slate-100/50">
+            <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 mb-1">Business Value</span>
+            <p className={`text-xs leading-relaxed font-semibold ${isFeatured ? 'text-emerald-300' : 'text-emerald-700'}`}>
+              {businessValue}
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="pt-6">

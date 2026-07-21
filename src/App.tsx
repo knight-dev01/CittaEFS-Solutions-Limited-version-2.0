@@ -8,17 +8,19 @@ import Navbar from './components/Navbar';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import SEOStructuredData from './components/SEOStructuredData';
 import CSLHero from './components/CSLHero';
+import WhyWeExist from './components/WhyWeExist';
 import CSLAbout from './components/CSLAbout';
-import PartnerLogos from './components/PartnerLogos';
-import TestimonialsCarousel from './components/TestimonialsCarousel';
 import ChallengesSection from './components/ChallengesSection';
 import ProductEcosystem from './components/ProductEcosystem';
+import ProfessionalServices from './components/ProfessionalServices';
 import IndustriesSection from './components/IndustriesSection';
 import WhyChooseCSL from './components/WhyChooseCSL';
+import PartnerLogos from './components/PartnerLogos';
+import TestimonialsCarousel from './components/TestimonialsCarousel';
 import ApproachSection from './components/ApproachSection';
-import VisionSection from './components/VisionSection';
-import ContactForm from './components/ContactForm';
+import CallToAction from './components/CallToAction';
 import FAQSection from './components/FAQSection';
+import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -43,15 +45,10 @@ export default function App() {
     const handleScrollSpy = () => {
       const sections: { id: string; pageId: PageId }[] = [
         { id: 'home', pageId: 'home' },
-        { id: 'about', pageId: 'about' },
-        { id: 'testimonials-carousel', pageId: 'testimonials' },
-        { id: 'challenges', pageId: 'products' },
+        { id: 'why-we-exist', pageId: 'why-we-exist' },
+        { id: 'challenges', pageId: 'challenges' },
         { id: 'products', pageId: 'products' },
-        { id: 'industries', pageId: 'products' },
-        { id: 'why-choose-csl', pageId: 'about' },
-        { id: 'approach', pageId: 'about' },
-        { id: 'vision', pageId: 'about' },
-        { id: 'faq', pageId: 'faq' },
+        { id: 'services', pageId: 'services' },
         { id: 'contact', pageId: 'contact' },
       ];
 
@@ -100,10 +97,10 @@ export default function App() {
         onRequestDemo={handleRequestDemo} 
       />
 
-      {/* Main Storytelling Layout with 9 Interconnected Sections */}
-      <main className="flex-grow w-full overflow-x-hidden">
+      {/* Main Storytelling Layout with 13 Interconnected Sections */}
+      <main className="flex-grow w-full overflow-x-hidden pt-20">
         
-        {/* SECTION 1: CSL Corporate Hero */}
+        {/* 1. Hero Section */}
         <div id="home">
           <CSLHero 
             onExploreEcosystem={() => { 
@@ -118,58 +115,68 @@ export default function App() {
           />
         </div>
 
-        {/* SECTION 2: Who We Are (About CSL) */}
+        {/* 2. Why We Exist Section */}
+        <div id="why-we-exist">
+          <WhyWeExist />
+        </div>
+
+        {/* 3. Who We Are (About CSL) */}
         <div id="about">
           <CSLAbout isTopPage={false} isSummary={false} />
         </div>
 
-        {/* Corporate Trust Badges & Partners */}
-        <PartnerLogos />
-
-        {/* Client Testimonials Carousel */}
-        <TestimonialsCarousel />
-
-        {/* SECTION 3: The Challenges We Solve */}
+        {/* 4. Challenges We Solve */}
         <div id="challenges">
           <ChallengesSection />
         </div>
 
-        {/* SECTION 4: Our Enterprise Solutions */}
+        {/* 5. Enterprise Software Portfolio */}
         <div id="products">
           <ProductEcosystem setCurrentPage={setCurrentPage} />
         </div>
 
-        {/* SECTION 5: Industries We Empower */}
+        {/* 6. Professional Services */}
+        <div id="services">
+          <ProfessionalServices />
+        </div>
+
+        {/* 7. Industries We Serve */}
         <div id="industries">
           <IndustriesSection />
         </div>
 
-        {/* SECTION 6: Why Organisations Choose CSL */}
+        {/* 8. Why Organisations Choose CSL */}
         <div id="why-choose-csl">
           <WhyChooseCSL />
         </div>
 
-        {/* SECTION 7: Our Approach */}
+        {/* 9. Our Clients (Logos & Testimonials) */}
+        <div id="clients">
+          <PartnerLogos />
+          <TestimonialsCarousel />
+        </div>
+
+        {/* 10. Our Approach */}
         <div id="approach">
           <ApproachSection />
         </div>
 
-        {/* SECTION 8: Vision for the Future */}
-        <div id="vision">
-          <VisionSection />
+        {/* 11. High-Impact Call to Action */}
+        <div id="cta">
+          <CallToAction />
         </div>
 
-        {/* SECTION 8.5: Frequently Asked Questions */}
+        {/* 11.5 Frequently Asked Questions */}
         <FAQSection />
 
-        {/* SECTION 9: Contact */}
+        {/* 12. Contact Form */}
         <div id="contact">
           <ContactForm />
         </div>
 
       </main>
 
-      {/* Corporate Sitemap Footer */}
+      {/* 13. Corporate Sitemap Footer */}
       <Footer setCurrentPage={setCurrentPage} />
 
       {/* Back to Top Floating Button */}

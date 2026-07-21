@@ -215,7 +215,7 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto font-medium"
           >
-            CittaERP Solutions Limited builds secure, intelligent, and scalable enterprise software that helps organisations modernise operations, achieve regulatory compliance, and accelerate digital transformation.
+            CSL builds enterprise software that helps organisations modernise operations, simplify compliance, and accelerate digital transformation.
           </motion.p>
 
           {/* Buttons Row */}
@@ -246,7 +246,7 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
               }}
               className="px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-wide text-slate-700 bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:text-slate-900 transition-all duration-300 flex items-center justify-center space-x-1.5 w-full sm:w-auto hover:scale-105"
             >
-              <span>Talk to Our Team</span>
+              <span>Request a Consultation</span>
               <ChevronRight className="w-4 h-4" />
             </a>
           </motion.div>

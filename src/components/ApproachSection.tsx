@@ -7,29 +7,29 @@ export default function ApproachSection() {
   const steps = [
     {
       step: "01",
-      title: "Understand",
-      desc: "We perform a thorough analysis of your active enterprise systems, transaction ledgers, database fields, and compliance needs.",
+      title: "Discovery & Mapping",
+      desc: "We analyze your existing corporate ledger configurations and operational targets to establish perfect strategic alignment before implementation.",
       icon: Eye,
       color: "border-[#2582ff]/20 bg-[#2582ff]/5 text-[#2582ff]"
     },
     {
       step: "02",
-      title: "Design",
-      desc: "Our architects map custom middleware integration gates, SFTP folders, and API webhooks tailored to your company's billing flows.",
+      title: "Architecture & Integration",
+      desc: "Our engineers design a secure, non-intrusive modular system layer that protects your core database while unlocking new transaction capabilities.",
       icon: Cpu,
       color: "border-[#ff8e1a]/20 bg-[#ff8e1a]/5 text-[#ff8e1a]"
     },
     {
       step: "03",
-      title: "Deliver",
-      desc: "We deploy the CSL software layer seamlessly alongside your current systems, ensuring secure, automated clearance without downtime.",
+      title: "Validation & Auditing",
+      desc: "We perform rigorous scenario trials and transaction dry-runs to guarantee continuous, automatic tax clearances with absolute compliance integrity.",
       icon: CheckCircle2,
       color: "border-[#2582ff]/20 bg-[#2582ff]/5 text-[#2582ff]"
     },
     {
       step: "04",
-      title: "Support",
-      desc: "We provide ongoing, 24/7 technical monitoring, regulatory compliance updates, and dedicated SLA-backed engineering support.",
+      title: "Operational Readiness",
+      desc: "We partner with your team for a smooth system activation, ensuring long-term operational confidence, continuous uptime, and active SLA support.",
       icon: ShieldCheck,
       color: "border-[#ff8e1a]/20 bg-[#ff8e1a]/5 text-[#ff8e1a]"
     }
