@@ -62,14 +62,14 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               <div className="flex items-start space-x-2">
                 <Globe className="w-4 h-4 text-[#2582ff] shrink-0 mt-0.5" />
                 <span>
-                  <strong>Web:</strong> <a href="http://www.cittanuvola.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2582ff] transition-colors underline">www.cittanuvola.com</a>
+                  <strong>Web:</strong> <a href="https://www.cittasl.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2582ff] transition-colors underline">www.cittasl.com</a>
                 </span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-[#2582ff] shrink-0" />
                 <div className="flex flex-col">
-                  <a href="mailto:info@cittanuvola.com" className="hover:text-[#2582ff] transition-colors">info@cittanuvola.com</a>
-                  <a href="mailto:info1@cittanuvola.com" className="hover:text-[#2582ff] transition-colors">info1@cittanuvola.com</a>
+                  <a href="mailto:info@cittasl.com" className="hover:text-[#2582ff] transition-colors">info@cittasl.com</a>
+                  <a href="mailto:info1@cittasl.com" className="hover:text-[#2582ff] transition-colors">info1@cittasl.com</a>
                 </div>
               </div>
               <div className="flex items-center space-x-2">

@@ -8,7 +8,7 @@ interface SEOStructuredDataProps {
 export default function SEOStructuredData({ currentPage }: SEOStructuredDataProps) {
   useEffect(() => {
     // 1. Define base variables
-    const siteUrl = window.location.origin || 'https://cittaerp.com';
+    const siteUrl = window.location.origin || 'https://www.cittasl.com';
     const logoUrl = `${siteUrl}/logo.png`;
 
     // 2. Define Organization Schema

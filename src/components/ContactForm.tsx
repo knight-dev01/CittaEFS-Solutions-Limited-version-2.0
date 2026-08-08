@@ -97,8 +97,8 @@ export default function ContactForm() {
               <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/60 pt-4">
                 <Mail className="w-5 h-5 text-[#2582ff] shrink-0" />
                 <div>
-                  <p className="text-slate-800 font-mono font-semibold">info@cittanuvola.com</p>
-                  <p className="text-slate-400 text-[10px] font-mono mt-0.5">Contact alias: info1@cittanuvola.com</p>
+                  <p className="text-slate-800 font-mono font-semibold">info@cittasl.com</p>
+                  <p className="text-slate-400 text-[10px] font-mono mt-0.5">Contact alias: info1@cittasl.com</p>
                 </div>
               </div>
 
@@ -113,12 +113,12 @@ export default function ContactForm() {
               <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/60 pt-4">
                 <Globe className="w-5 h-5 text-[#2582ff] shrink-0" />
                 <a 
-                  href="https://www.cittanuvola.com" 
+                  href="https://www.cittasl.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="font-mono font-semibold text-slate-800 hover:text-[#2582ff] transition-all"
                 >
-                  www.cittanuvola.com
+                  www.cittasl.com
                 </a>
               </div>
             </div>
@@ -186,7 +186,7 @@ export default function ContactForm() {
                       </label>
                       <input
                         type="text"
-                        placeholder="e.g. West Metro Group"
+                        placeholder="e.g. Acme Enterprise Corp"
                         value={formState.organisation}
                         onChange={(e) => setFormState({ ...formState, organisation: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 text-sm focus:border-[#2582ff] focus:outline-none focus:ring-1 focus:ring-[#2582ff]/10"

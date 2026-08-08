@@ -21,21 +21,9 @@ export default function PartnerLogos() {
       logoClass: "h-9 w-auto max-h-full object-contain"
     },
     { 
-      name: "Sety.io", 
-      desc: "Emergency Response & Safety Protocols", 
-      logo: "https://www.sety.io/assets/img/logo.svg", 
-      logoClass: "h-8 w-auto max-h-full object-contain" 
-    },
-    { 
       name: "Scarlet and Snow", 
       desc: "E-commerce & Smart Inventory Orchestration", 
       logo: "https://scarletandsnow.com/wp-content/uploads/2024/10/Sands-Main-BK.png", 
-      logoClass: "h-9 w-auto max-h-full object-contain"
-    },
-    {
-      name: "West Metro",
-      desc: "Urban Mass Transit & Smart Mobility Integration",
-      logo: "https://westmetro.ng/assets/images/logo-dark.png",
       logoClass: "h-9 w-auto max-h-full object-contain"
     },
     {

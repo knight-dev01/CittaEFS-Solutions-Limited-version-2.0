@@ -50,16 +50,7 @@ export default function TestimonialsCarousel() {
       text: "For a heavy logistics and construction company, managing cross-entity material ledgers was a major structural pain point. CSL's custom database triggers and Odoo tax connector integrated seamlessly into our architecture, enabling live pipeline tracking.",
       rating: 5
     },
-    {
-      id: "sety-io",
-      name: "Olayemi Coker",
-      role: "Principal Infrastructure Architect",
-      company: "Sety.io",
-      logo: "https://www.sety.io/assets/img/logo.svg",
-      logoClass: "h-8 w-20 object-contain brightness-0 opacity-90",
-      text: "Our emergency safety protocols rely on sub-millisecond response rates. CSL deployed CittaNexus to route webhooks across our service meshes with high-availability circuit breakers. The telemetry tracking and error-handling routines have been rock solid.",
-      rating: 5
-    },
+
     {
       id: "scarlet-snow",
       name: "Elizabeth Nwosu",
@@ -70,16 +61,7 @@ export default function TestimonialsCarousel() {
       text: "Running high-velocity retail sales meant we struggled to align automated point-of-sale invoices with regulatory rules. CSL configured the drag-and-drop Excel Bulk Uploader along with live VAT calculations, making our monthly accounting cycles stress-free.",
       rating: 5
     },
-    {
-      id: "west-metro",
-      name: "Adewale Thompson",
-      role: "Chief Infrastructure Officer",
-      company: "West Metro Transit",
-      logo: "https://westmetro.ng/assets/images/logo-dark.png",
-      logoClass: "h-9 w-24 object-contain",
-      text: "West Metro relies on CSL's CittaMatrix to synchronize smart ticket terminals with municipal transport routers. Having live telemetry feedback while maintaining 100% tax clearance compliance has dramatically enhanced our operational reliability.",
-      rating: 5
-    },
+
     {
       id: "redeemers-school",
       name: "Mrs. O. O. Adejuwon",

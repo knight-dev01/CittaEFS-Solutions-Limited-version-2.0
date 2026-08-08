@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cittaerp.com/sitemap.xml
+Sitemap: https://www.cittasl.com/sitemap.xml

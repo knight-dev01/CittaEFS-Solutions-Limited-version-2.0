@@ -239,26 +239,10 @@ export const SEARCH_INDEX: SearchItem[] = [
     scrollId: "clients"
   },
   {
-    title: "Sety.io Safety & Emergency Systems",
-    category: "Clients",
-    description: "Emergency Response & Safety Protocols platform integrated with CSL API gateways.",
-    keywords: ["sety.io", "emergency response", "safety protocols", "client"],
-    pageId: "home",
-    scrollId: "clients"
-  },
-  {
     title: "Scarlet & Snow E-commerce",
     category: "Clients",
     description: "E-commerce & Smart Inventory Orchestration brand running CSL automated transaction systems.",
     keywords: ["scarlet and snow", "e-commerce", "inventory", "client"],
-    pageId: "home",
-    scrollId: "clients"
-  },
-  {
-    title: "West Metro Mass Transit",
-    category: "Clients",
-    description: "Urban Mass Transit & Smart Mobility Integration enterprise using CSL transaction modules.",
-    keywords: ["west metro", "transit", "mobility", "urban transit", "client"],
     pageId: "home",
     scrollId: "clients"
   },
@@ -309,8 +293,8 @@ export const SEARCH_INDEX: SearchItem[] = [
   {
     title: "CSL Corporate HQ & Consultation Inquiries",
     category: "Contact",
-    description: "Victoria Island Corporate District, Lagos State. Phone: +234 (1) 888 3379. Email: info@cittanuvola.com.",
-    keywords: ["contact", "lagos office", "victoria island", "phone", "email", "info@cittanuvola.com", "request consultation", "demo"],
+    description: "Victoria Island Corporate District, Lagos State. Phone: +234 (1) 888 3379. Email: info@cittasl.com.",
+    keywords: ["contact", "lagos office", "victoria island", "phone", "email", "info@cittasl.com", "request consultation", "demo"],
     pageId: "contact",
     scrollId: "contact"
   }
