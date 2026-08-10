@@ -4,6 +4,7 @@ import {
   Linkedin, Twitter, Github, Send, HelpCircle 
 } from 'lucide-react';
 import { PageId } from '../types';
+import cslLogo from '../logo.png';
 
 interface FooterProps {
   setCurrentPage: (page: PageId) => void;
@@ -44,10 +45,12 @@ export default function Footer({ setCurrentPage }: FooterProps) {
           <div className="col-span-12 md:col-span-4 space-y-6">
             <div className="flex items-center cursor-pointer group space-x-3" onClick={() => handleNavClick('home')}>
               <img 
-                src="https://cittanuvola.com/images/Cittanuvola%20logo.png" 
+                src={cslLogo} 
                 alt="CittaSL Logo" 
                 className="h-10 w-auto object-contain bg-white p-1 rounded-lg border border-slate-200 shadow-sm"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = "https://cittanuvola.com/images/Cittanuvola%20logo.png";
+                }}
               />
               <div className="flex flex-col text-left">
                 <span className="font-display font-extrabold text-base sm:text-lg leading-none text-slate-900 tracking-tight">

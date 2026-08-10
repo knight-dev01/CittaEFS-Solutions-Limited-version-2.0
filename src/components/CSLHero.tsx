@@ -190,26 +190,38 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center space-x-2 sm:space-x-3 px-3.5 sm:px-4 py-1.5 bg-slate-900/5 border border-slate-200/80 rounded-full text-xs font-mono text-slate-800 shadow-2xs backdrop-blur-xs flex-wrap justify-center gap-y-1"
+            className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-3.5 sm:px-5 py-2 sm:py-2 bg-slate-900/5 border border-slate-200/80 rounded-2xl sm:rounded-full text-xs font-mono text-slate-800 shadow-2xs backdrop-blur-xs mx-auto max-w-full"
           >
             <div className="flex items-center space-x-2">
-              <img src={cslLogo} alt="CSL Logo" className="h-5 w-auto object-contain" />
-              <span className="font-extrabold text-slate-900">CittaSL</span>
+              <img src={cslLogo} alt="CSL Logo" className="h-4 sm:h-5 w-auto object-contain shrink-0" />
+              <span className="font-extrabold text-slate-900 tracking-tight text-xs">CittaSL</span>
             </div>
             <span className="text-slate-300 hidden sm:inline">•</span>
             <a 
               href="https://cittanuvola.com" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center space-x-1.5 hover:text-[#2582ff] transition-colors group"
+              className="flex items-center space-x-2 hover:text-[#2582ff] transition-colors group text-center"
             >
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider group-hover:text-[#2582ff]">An Enterprise Member of CittaNuvola Group</span>
+              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider group-hover:text-[#2582ff] leading-tight">
+                An Enterprise Member of CittaNuvola Group
+              </span>
               <img 
                 src="https://cittanuvola.com/images/Cittanuvola%20logo.png" 
                 alt="CittaNuvola Logo" 
-                className="h-4 w-auto object-contain" 
+                className="h-3.5 sm:h-4 w-auto object-contain shrink-0" 
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  target.style.display = 'none';
+                  if (target.nextElementSibling) {
+                    (target.nextElementSibling as HTMLElement).style.display = 'inline-block';
+                  }
+                }}
               />
+              <span className="hidden text-[9px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">
+                Group ↗
+              </span>
             </a>
           </motion.div>
 

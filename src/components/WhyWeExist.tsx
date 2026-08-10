@@ -107,34 +107,47 @@ export default function WhyWeExist() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mt-10 p-6 sm:p-8 rounded-2xl bg-slate-900 text-white relative overflow-hidden border border-slate-800 shadow-xl text-left"
+          className="mt-10 p-5 sm:p-7 rounded-2xl bg-slate-900 text-white relative overflow-hidden border border-slate-800 shadow-xl text-left max-w-full"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
-            <div className="flex items-center space-x-4 w-full md:w-auto">
-              <div className="p-2.5 bg-white rounded-xl shrink-0 shadow-sm">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+            {/* Logo on top with text directly underneath */}
+            <div className="flex flex-col items-start gap-3 w-full lg:w-auto">
+              <div className="p-2.5 bg-white rounded-xl shadow-sm inline-flex items-center justify-center">
                 <img 
                   src="https://cittanuvola.com/images/Cittanuvola%20logo.png" 
                   alt="CittaNuvola Group Logo" 
-                  className="h-9 sm:h-10 w-auto object-contain"
+                  className="h-8 sm:h-9 w-auto object-contain"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
+                    if (target.nextElementSibling) {
+                      (target.nextElementSibling as HTMLElement).style.display = 'flex';
+                    }
+                  }}
                 />
+                <div className="hidden items-center space-x-1.5 text-slate-900 font-bold font-display text-xs">
+                  <span className="w-2 h-2 rounded-full bg-[#2582ff]" />
+                  <span>CittaNuvola Group</span>
+                </div>
               </div>
-              <div>
-                <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest font-bold block">
+
+              <div className="space-y-1">
+                <span className="text-[10px] sm:text-[11px] font-mono text-blue-400 uppercase tracking-widest font-bold block">
                   Parent Technology Group
                 </span>
-                <h3 className="font-display text-base sm:text-lg font-bold text-white leading-tight">
+                <h3 className="font-display text-base sm:text-lg font-bold text-white leading-snug">
                   Powered by CittaNuvola Group Infrastructure
                 </h3>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2 w-full md:w-auto justify-start md:justify-end text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 w-full lg:w-auto shrink-0 text-xs pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800">
               <a 
                 href="https://cittanuvola.com/citta-erp.html" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-3.5 py-2 bg-[#2582ff] hover:bg-blue-600 text-white font-bold rounded-lg transition-colors text-center text-xs"
+                className="px-3.5 py-2.5 bg-[#2582ff] hover:bg-blue-600 text-white font-bold rounded-lg transition-colors text-center text-xs block w-full"
               >
                 Citta ERP ↗
               </a>
@@ -142,7 +155,7 @@ export default function WhyWeExist() {
                 href="https://cittanuvola.com/#our-service-section" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs"
+                className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs block w-full"
               >
                 Services ↗
               </a>
@@ -150,7 +163,7 @@ export default function WhyWeExist() {
                 href="https://cittanuvola.com/#About-us-section" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs"
+                className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs block w-full"
               >
                 About Group ↗
               </a>
