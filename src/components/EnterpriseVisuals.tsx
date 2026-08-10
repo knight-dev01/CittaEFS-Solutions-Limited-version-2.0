@@ -218,7 +218,7 @@ export function AnimatedBridge() {
       <div className="flex flex-col sm:flex-row items-center justify-between border-t border-white/5 pt-3 text-[8px] sm:text-[9px] text-slate-500 gap-2">
         <div className="flex items-center space-x-3">
           <span>ENCRYPTION: AES-256-GCM</span>
-          <span>COMPLIANCE RATING: 100%</span>
+          <span>COMPLIANCE STATUS: VERIFIED</span>
         </div>
         <span>SYSTEM PACKETS PROCESSED: SECURE & STAMPED</span>
       </div>

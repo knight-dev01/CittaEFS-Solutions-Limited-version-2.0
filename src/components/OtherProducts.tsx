@@ -75,8 +75,8 @@ const PRODUCTS_DATA: Record<string, ProductData> = {
       { title: 'Integrated Folio Billing', desc: 'Consolidate room rates, minibar, restaurant bills, and spa tabs into a clean, compliant invoice.' }
     ],
     benefits: [
-      { label: 'Booking Accuracy', value: '99.9%', desc: 'Avoid duplicate reservations across all channels in real time.' },
-      { label: 'Front-desk Efficiency', value: '+35%', desc: 'Free up staff time using self-service kiosks and guest portals.' },
+      { label: 'Booking Accuracy', value: 'Verified', desc: 'Avoid duplicate reservations across all channels in real time.' },
+      { label: 'Front-desk Efficiency', value: 'Streamlined', desc: 'Free up staff time using self-service kiosks and guest portals.' },
       { label: 'F&B POS Consolidation', desc: 'Instantly post transactions from resort bars and spas directly into guest bills.' }
     ],
     industries: ['Resorts & Luxury Hotels', 'Boutique Lodgings', 'Serviced Apartments', 'Vacation Rentals', 'Hospitality Chains'],
@@ -84,14 +84,14 @@ const PRODUCTS_DATA: Record<string, ProductData> = {
     pricing: [
       {
         tier: 'Boutique Portal',
-        price: '$299',
-        period: 'per month',
+        price: 'Standard Plan',
+        period: 'Flexible deployment',
         features: ['Up to 100 rooms', 'Standard Channel Sync', 'Housekeeping dispatch board', 'Standard payment gateways']
       },
       {
         tier: 'Resort Orchestrator',
-        price: '$799',
-        period: 'per month',
+        price: 'Enterprise Plan',
+        period: 'Tailored architecture',
         features: ['Unlimited rooms', 'F&B POS integration', 'Custom guest mobile portals', 'Multi-property management hub', '24/7 emergency system SLA']
       }
     ]
@@ -112,23 +112,23 @@ const PRODUCTS_DATA: Record<string, ProductData> = {
       { title: 'Timesheet & Billing Ledger', desc: 'Log work hours directly against task components, feeding into client billing and payroll.' }
     ],
     benefits: [
-      { label: 'Deadline Deliveries', value: '+18%', desc: 'Boost on-time project completion with intelligent bottlenecks forecasting.' },
-      { label: 'Over-Allocation Fix', value: '95%', desc: 'Eliminate scheduling overlaps and double-bookings across projects.' },
-      { label: 'Cost Accuracy', value: '100%', desc: 'Map every billable hour straight to structural parent tasks.' }
+      { label: 'Deadline Deliveries', value: 'On-Time', desc: 'Boost on-time project completion with intelligent bottlenecks forecasting.' },
+      { label: 'Over-Allocation Fix', value: 'Automated', desc: 'Eliminate scheduling overlaps and double-bookings across projects.' },
+      { label: 'Cost Accuracy', value: 'Precise', desc: 'Map every billable hour straight to structural parent tasks.' }
     ],
     industries: ['Heavy Construction & Infra', 'Civil Engineering Firms', 'Professional Service Agencies', 'Energy & Utilities', 'Industrial R&D Teams'],
     visualType: 'calendar',
     pricing: [
       {
         tier: 'Studio Planner',
-        price: '$189',
-        period: 'per month',
+        price: 'Standard Plan',
+        period: 'Flexible deployment',
         features: ['Up to 30 active projects', 'Standard Gantt & Dependencies', 'Basic time tracking', 'Slack & Teams alerts']
       },
       {
         tier: 'Enterprise Master',
-        price: '$499',
-        period: 'per month',
+        price: 'Enterprise Plan',
+        period: 'Tailored architecture',
         features: ['Unlimited projects & teams', 'Critical path auto-solver', 'Resource capacity leveling algorithms', 'API timesheet import', 'Dedicated onboarding manager']
       }
     ]
@@ -149,8 +149,8 @@ const PRODUCTS_DATA: Record<string, ProductData> = {
       { title: 'Live Telemetry Dashboard', desc: 'Monitor request rates, latencies, payloads, and API status codes in millisecond intervals.' }
     ],
     benefits: [
-      { label: 'Integration Speed', value: '10x', desc: 'Deploy new external webhooks and mappings in minutes instead of weeks.' },
-      { label: 'Payload Latency', value: '<25ms', desc: 'Deliver transactional data envelopes instantly with global edge routing.' },
+      { label: 'Integration Speed', value: 'Accelerated', desc: 'Deploy new external webhooks and mappings rapidly.' },
+      { label: 'Payload Latency', value: 'Low Latency', desc: 'Deliver transactional data envelopes instantly with global edge routing.' },
       { label: 'Security Standard', value: 'SOC2', desc: 'All connections utilize strict credential vaults and encrypted configurations.' }
     ],
     industries: ['Fintech & Neo-banks', 'High-Volume E-Commerce', 'Insurance Providers', 'Logistics Providers', 'Government Integration Nodes'],
@@ -158,14 +158,14 @@ const PRODUCTS_DATA: Record<string, ProductData> = {
     pricing: [
       {
         tier: 'Nexus Core',
-        price: '$350',
-        period: 'per month',
-        features: ['Up to 500,000 monthly queries', '5 secure API credentials', 'Standard payload mappings', 'Standard API monitoring dashboard']
+        price: 'Standard Gateway',
+        period: 'Flexible deployment',
+        features: ['High-volume monthly queries', '5 secure API credentials', 'Standard payload mappings', 'Standard API monitoring dashboard']
       },
       {
         tier: 'Nexus Edge',
-        price: '$1,200',
-        period: 'per month',
+        price: 'Enterprise Gateway',
+        period: 'Tailored architecture',
         features: ['Unlimited transactional queries', 'Custom mapping scripts', 'Edge computing gateway routing', 'Custom encryption vaults', 'Custom SLA agreements']
       }
     ]
@@ -213,7 +213,7 @@ export default function OtherProducts({ productId, onRequestDemo }: OtherProduct
                 <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-emerald-400 text-[10px]">CITTA_MATRIX_DATABASE_ENGINE</span>
               </div>
-              <span className="text-[10px] text-slate-500">TPS: 4,500/s</span>
+              <span className="text-[10px] text-slate-500">STATUS: ONLINE</span>
             </div>
 
             <div className="space-y-3 my-4 z-10 flex-1 flex flex-col justify-center">
@@ -239,7 +239,7 @@ export default function OtherProducts({ productId, onRequestDemo }: OtherProduct
               <div className="bg-slate-950/80 rounded-lg p-2.5 border border-slate-800/60 font-mono text-[9px] text-slate-500 space-y-1 text-left">
                 <div>[09:44:02] INITIALIZING MULTI-ENTITY SECURE ROUTING...</div>
                 <div className="text-emerald-400/80">[09:44:03] TRANSACTION LEDGER VALIDATED: HASH_OK_99F37C</div>
-                <div>[09:44:03] FORECAST AR/AP RUNNING SIMULATIONS [50,000 SCENARIOS]</div>
+                <div>[09:44:03] FORECAST AR/AP RUNNING SIMULATIONS [SCENARIO_ENGINE]</div>
               </div>
             </div>
 
@@ -259,7 +259,7 @@ export default function OtherProducts({ productId, onRequestDemo }: OtherProduct
                 <div className="h-2 w-2 rounded-full bg-teal-500 animate-pulse" />
                 <span className="text-teal-400 text-[10px]">HOSPITALITY_X_PMS_LAYERS</span>
               </div>
-              <span className="text-[10px] text-slate-500">ROOMS SYNCED: 100%</span>
+              <span className="text-[10px] text-slate-500">ROOMS SYNCED: VERIFIED</span>
             </div>
 
             <div className="space-y-2 py-4 z-10 flex-1 flex flex-col justify-center items-center">
@@ -293,7 +293,7 @@ export default function OtherProducts({ productId, onRequestDemo }: OtherProduct
                 <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-emerald-400 text-[10px]">PLANNER_X_GANTT_ENGINE</span>
               </div>
-              <span className="text-[10px] text-slate-500">TASKS ALLOCATED: 48,200</span>
+              <span className="text-[10px] text-slate-500">TASKS ALLOCATED: ACTIVE</span>
             </div>
 
             <div className="space-y-2 py-4 z-10 flex-1 flex flex-col justify-center">
@@ -343,7 +343,7 @@ export default function OtherProducts({ productId, onRequestDemo }: OtherProduct
                 <div className="h-2 w-2 rounded-full bg-teal-500 animate-pulse" />
                 <span className="text-teal-400 text-[10px]">CITTA_NEXUS_API_ROUTER</span>
               </div>
-              <span className="text-[10px] text-slate-500">PING: 14ms</span>
+              <span className="text-[10px] text-slate-500">STATUS: ONLINE</span>
             </div>
 
             {/* Central hub and radiating nodes vector graphic representation */}

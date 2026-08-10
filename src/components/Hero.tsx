@@ -231,13 +231,13 @@ export default function Hero({ onGetStarted, onLearnMore }: HeroProps) {
             <div className="pt-6 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-4 gap-y-4 gap-x-4">
               <div>
                 <Tooltip content="Guaranteed platform availability, featuring server redundancy across independent regions.">
-                  <div className="font-display text-lg sm:text-2xl font-bold text-emerald-700">{availCount.toFixed(2)}%</div>
+                  <div className="font-display text-lg sm:text-2xl font-bold text-emerald-700">Verified</div>
                   <div className="text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase tracking-wider break-words">Platform SLA</div>
                 </Tooltip>
               </div>
               <div>
-                <Tooltip content="Average timeline to full production deployment, including testing in sandbox environments.">
-                  <div className="font-display text-lg sm:text-2xl font-bold text-emerald-700">{deployCount}–10 Days</div>
+                <Tooltip content="Streamlined timeline to full production deployment, including testing in sandbox environments.">
+                  <div className="font-display text-lg sm:text-2xl font-bold text-emerald-700">Accelerated</div>
                   <div className="text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase tracking-wider break-words">Onboarding Pipeline</div>
                 </Tooltip>
               </div>
@@ -458,11 +458,11 @@ export default function Hero({ onGetStarted, onLearnMore }: HeroProps) {
             
             {/* Stat 1 */}
             <div className="bg-white border border-slate-200/60 rounded-2xl p-4 sm:p-6 text-center shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center space-y-1 hover:border-emerald-500/20 group">
-              <div className="text-2xl sm:text-4xl font-display font-extrabold text-slate-900 tracking-tight transition-transform duration-300 group-hover:scale-105">
-                {enterpriseClients}+
+              <div className="text-xl sm:text-3xl font-display font-extrabold text-slate-900 tracking-tight transition-transform duration-300 group-hover:scale-105">
+                Enterprise
               </div>
               <div className="text-[10px] font-mono font-bold uppercase text-slate-500 tracking-widest mt-1">
-                Enterprise Clients
+                Clients & Institutions
               </div>
               <p className="text-[11px] text-slate-400 max-w-xs mt-1 leading-normal">
                 Integrated installations across leading ERP platforms
@@ -471,14 +471,14 @@ export default function Hero({ onGetStarted, onLearnMore }: HeroProps) {
 
             {/* Stat 2 */}
             <div className="bg-white border border-slate-200/60 rounded-2xl p-4 sm:p-6 text-center shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center space-y-1 hover:border-emerald-500/20 group">
-              <div className="text-2xl sm:text-4xl font-display font-extrabold text-emerald-700 tracking-tight transition-transform duration-300 group-hover:scale-105">
-                {invoicesProcessed.toFixed(1)}M+
+              <div className="text-xl sm:text-3xl font-display font-extrabold text-emerald-700 tracking-tight transition-transform duration-300 group-hover:scale-105">
+                High Volume
               </div>
               <div className="text-[10px] font-mono font-bold uppercase text-slate-500 tracking-widest mt-1">
                 Invoices Processed
               </div>
               <p className="text-[11px] text-slate-400 max-w-xs mt-1 leading-normal">
-                Cleared automatically with 100% NRS compliant validation
+                Cleared automatically with full NRS compliant validation
               </p>
             </div>
 

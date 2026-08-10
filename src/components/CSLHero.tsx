@@ -328,7 +328,7 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
           <div className="space-y-1">
             <span className="text-[10px] font-mono text-[#ff8e1a] uppercase tracking-widest font-extrabold">02. PERFORMANCE</span>
             <h4 className="font-extrabold text-sm text-slate-800">High-Velocity</h4>
-            <p className="text-[11px] text-slate-500">Under 240ms end-to-end data validation & transit.</p>
+            <p className="text-[11px] text-slate-500">Real-time end-to-end data validation & transit.</p>
           </div>
           <div className="space-y-1">
             <span className="text-[10px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold">03. ARCHITECTURE</span>

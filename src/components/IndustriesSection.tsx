@@ -24,7 +24,7 @@ export default function IndustriesSection() {
       sub: "Continuous Transactional Velocity",
       desc: "Guarantees retail checkouts run at full capacity under all network conditions, protecting sales and ensuring flawless operational continuity during high-traffic seasons.",
       icon: ShoppingBag,
-      metric: "<240ms Verification",
+      metric: "Real-Time Verification",
       highlight: "Offline Transaction Protection",
       gridSpan: "md:col-span-2 lg:col-span-2",
       color: "from-orange-500/5 to-amber-600/5",

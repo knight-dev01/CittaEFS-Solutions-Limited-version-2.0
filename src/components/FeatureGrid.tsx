@@ -66,7 +66,7 @@ export default function FeatureGrid() {
     },
     {
       title: "Real-Time Error Handlers",
-      desc: "Gives your accounts team instant human-readable explanations of validation errors, allowing correction inside 30 seconds.",
+      desc: "Gives your accounts team instant human-readable explanations of validation errors, allowing correction in real time.",
       icon: Terminal,
       category: "operations",
       highlight: false

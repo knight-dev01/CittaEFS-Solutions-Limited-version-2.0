@@ -26,7 +26,7 @@ export default function FAQSection() {
     {
       category: 'compliance',
       question: "How does the pre-clearance validation shield prevent tax authority penalties?",
-      answer: "When a billing system submits an invoice, CittaEFS intercepts it inside a local validation buffer. It checks for common error triggers—such as missing TIN formats, mathematical mismatches, and incorrect rounding formulas. If any discrepancies are identified, CittaEFS flags the record in our middleware command center before transmission, securing a 100% compliant data transfer to government servers."
+      answer: "When a billing system submits an invoice, CittaEFS intercepts it inside a local validation buffer. It checks for common error triggers—such as missing TIN formats, mathematical mismatches, and incorrect rounding formulas. If any discrepancies are identified, CittaEFS flags the record in our middleware command center before transmission, securing a fully compliant data transfer to government servers."
     },
     {
       category: 'security',

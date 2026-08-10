@@ -10,10 +10,10 @@ interface CSLAboutProps {
 
 export default function CSLAbout({ isTopPage = false, isSummary = false, setCurrentPage }: CSLAboutProps) {
   const stats = [
-    { label: "Compliance Success Rate", value: 100, suffix: "%" },
-    { label: "Standard Deployment Time", value: 10 }, // Range, skipping animation for simplicity
-    { label: "Systems Integrations", value: 500, suffix: "+" },
-    { label: "Validation Response Time", value: 240, prefix: "< ", suffix: "ms" }
+    { label: "Compliance Status", value: "Verified" },
+    { label: "Deployment Pipeline", value: "Accelerated" },
+    { label: "ERP Systems Integration", value: "Universal" },
+    { label: "Validation Performance", value: "Real-Time" }
   ];
 
   const values = [
@@ -59,7 +59,7 @@ export default function CSLAbout({ isTopPage = false, isSummary = false, setCurr
               <strong>CittaSL (CSL)</strong> specializes in engineering intelligent business platforms and advanced regulatory software for major enterprises. As a technology unit under <strong>CittaNuvola Group</strong>, we connect core corporate ledgers with national compliance networks seamlessly.
             </p>
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed text-left">
-              By integrating non-intrusive fiscal middleware and automated workflows, we help major organizations simplify operations, ensure 100% compliance, and safeguard critical financial data.
+              By integrating non-intrusive fiscal middleware and automated workflows, we help major organizations simplify operations, ensure complete regulatory compliance, and safeguard critical financial data.
             </p>
           </div>
 
@@ -70,8 +70,8 @@ export default function CSLAbout({ isTopPage = false, isSummary = false, setCurr
                 className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-8 flex flex-col justify-between min-h-[140px] sm:h-40 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="font-mono text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-wider font-semibold text-left">{st.label}</div>
-                <div className="font-display text-2xl sm:text-4xl font-bold text-emerald-700 mt-2 sm:mt-4 text-left">
-                  {idx === 1 ? st.value + " Days" : <AnimatedStat targetValue={st.value} prefix={st.prefix} suffix={st.suffix} />}
+                <div className="font-display text-2xl sm:text-3xl font-bold text-emerald-700 mt-2 sm:mt-4 text-left">
+                  {st.value}
                 </div>
               </div>
             ))}

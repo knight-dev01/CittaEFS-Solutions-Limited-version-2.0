@@ -134,7 +134,7 @@ export default function ChallengesSection() {
               </div>
               <div className="flex items-center space-x-3 text-xs">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                <span className="text-slate-300">Under 240ms pre-clearance validation latency</span>
+                <span className="text-slate-300">Real-time pre-clearance validation latency</span>
               </div>
               <div className="flex items-center space-x-3 text-xs">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />

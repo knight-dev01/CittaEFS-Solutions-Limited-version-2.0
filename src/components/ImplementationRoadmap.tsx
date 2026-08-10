@@ -98,7 +98,7 @@ export default function ImplementationRoadmap() {
                 )}
                 {index === 3 && (
                   <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-emerald-700">
-                    <span>100% Compliant</span>
+                    <span>Fully Compliant</span>
                     <Rocket className="w-4 h-4 text-emerald-600 animate-bounce" />
                   </div>
                 )}

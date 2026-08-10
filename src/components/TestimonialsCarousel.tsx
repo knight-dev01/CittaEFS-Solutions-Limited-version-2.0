@@ -27,7 +27,7 @@ export default function TestimonialsCarousel() {
       company: "Adron Homes & Properties",
       logo: "https://i0.wp.com/gmposts.com/wp-content/uploads/2016/07/adron.jpg?fit=225%2C225&ssl=1",
       logoClass: "h-11 w-11 rounded-lg object-contain",
-      text: "CSL's dual deployment of CittaMatrix and CittaPlannerX transformed our housing planning logistics. We synchronized multi-site land rosters and leveled material allocation on our critical paths. Operational bottlenecks fell by 40% in our first quarter of implementation.",
+      text: "CSL's dual deployment of CittaMatrix and CittaPlannerX transformed our housing planning logistics. We synchronized multi-site land rosters and leveled material allocation on our critical paths. Operational bottlenecks were significantly reduced in our first quarter of implementation.",
       rating: 5
     },
     {
