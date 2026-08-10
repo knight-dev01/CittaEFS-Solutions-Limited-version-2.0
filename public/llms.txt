@@ -1,0 +1,45 @@
+# CittaSL (CSL) - Enterprise Software & Regulatory Middleware
+
+> CittaSL (CSL) is an enterprise software engineering firm and technology member of CittaNuvola Group. CSL specializes in non-intrusive regulatory fiscal middleware (CittaEFS), enterprise transaction routing (CittaMatrix), resource planning (CittaPlannerX), API gateway infrastructure (CittaNexus), and industry-specific ERP software.
+
+## Primary Products & Solutions
+
+### 1. CittaEFS (Electronic Fiscal Middleware)
+- **Category:** Regulatory Fiscal Middleware & Tax Pre-Clearance
+- **Function:** Intercepts invoice payloads from ERP systems (SAP, Oracle, Odoo, Dynamics, custom software) before ledger commitment, validates tax logic (such as Nigerian VAT 7.5%, withholding tax, withholding certificates), and securely transmits compliant data to National Revenue Service (NRS) and statutory tax portals.
+- **Key Feature:** Non-intrusive database trigger integration without requiring core ERP refactoring.
+
+### 2. CittaMatrix (Enterprise Transaction Router)
+- **Category:** Transaction Processing & Multi-Ledger Synchronization
+- **Function:** Real-time multi-entity transaction routing engine and payment clearing middleware for corporate groups and financial institutions.
+
+### 3. CittaPlannerX (Resource Allocation & Project Logistics)
+- **Category:** Enterprise Resource Planning & Project Logistics
+- **Function:** Intelligent critical path analysis, resource capacity leveling, and multi-site project scheduling software for heavy construction, logistics, and engineering operations.
+
+### 4. CittaNexus (API Gateway & Integration Mesh)
+- **Category:** Enterprise Middleware & Security Gateway
+- **Function:** Ultra-low-latency API gateway featuring cryptographic data hashing, token vault management, and circuit breaker protection for sensitive corporate data flows.
+
+### 5. CittaHospitalityX (Property Management System)
+- **Category:** Hospitality & Property Management Software
+- **Function:** Real-time channel manager, folio billing, front-desk management, and multi-property management system for luxury hotels, resorts, and vacation rentals.
+
+---
+
+## Organization Details
+
+- **Company Name:** CittaSL (CSL)
+- **Parent Group:** CittaNuvola Group
+- **HQ Address:** 5, Sadiku Street, Agidingbi, Ikeja, Lagos State, Nigeria
+- **Phone:** +234 813 424 8104
+- **Email:** cittasl@cittanuvola.com
+- **Website:** https://www.cittasl.com/
+- **Parent Website:** https://www.cittanuvola.com/
+
+---
+
+## Technical & Integration Highlights
+- **ERP Compatibility:** Seamlessly integrates with SAP S/4HANA, Oracle NetSuite, Odoo ERP, Microsoft Dynamics 365, and custom SQL databases.
+- **Compliance:** 100% compliant with National Revenue Service (NRS), Tax Compliance Council, and state fiscal authority guidelines.
+- **Security Standard:** Cryptographically stamped data envelopes, AES-256-GCM encryption, and SOC2-ready architecture.

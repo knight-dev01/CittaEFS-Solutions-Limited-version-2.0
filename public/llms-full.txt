@@ -1,0 +1,83 @@
+# CittaSL (CSL) - Complete AI Context & Enterprise Product Manual
+
+## About CittaSL (CSL)
+CittaSL (CSL) is an enterprise software engineering firm and a key technology member of **CittaNuvola Group**. CSL designs, deploys, and maintains mission-critical software infrastructure, non-intrusive regulatory fiscal middleware, high-throughput financial routing engines, and industry-tailored enterprise resource platforms.
+
+Our engineering philosophy centers on **zero-disruption digital transformation**: enabling large-scale enterprises, government agencies, and multi-entity corporations to achieve complete statutory compliance and operational efficiency without ripping apart their legacy IT infrastructure.
+
+---
+
+## Core Product Ecosystem
+
+### 1. CittaEFS — Electronic Fiscal Middleware
+CittaEFS acts as a non-intrusive compliance bridge between enterprise ERPs (SAP, Oracle, Odoo, Microsoft Dynamics, Infor, custom accounting software) and statutory government tax authority portals (such as the National Revenue Service / NRS).
+
+- **How It Works:**
+  1. An invoice or billing entry is created in the host ERP.
+  2. CittaEFS intercepts the transaction at the database trigger or API layer in real time.
+  3. CittaEFS validates calculation rules (e.g., standard 7.5% Nigerian VAT, exempt items, withholding tax logic, TIN format verification).
+  4. Once pre-cleared, CittaEFS cryptographically signs the record and transmits it directly to the statutory authority portal.
+  5. The official QR code / clearance stamp is returned and embedded into the ERP invoice before dispatch to the customer.
+- **Key Advantages:**
+  - Zero modification to existing accounting workflows.
+  - Automatic error isolation: invalid tax calculations are flagged immediately in a local queue rather than failing silently at government submission.
+  - Native support for Odoo ERP, SAP S/4HANA, and custom SQL ledgers.
+
+### 2. CittaMatrix — Enterprise Multi-Ledger Router
+CittaMatrix is a high-throughput transaction router built for corporate conglomerates, holding companies, and financial institutions managing multi-subsidiary ledgers.
+
+- **Capabilities:**
+  - Automated inter-company ledger reconciliation.
+  - Real-time treasury cash flow visibility and automated settlement routing.
+  - Multi-currency conversion engines with live audit trailing.
+
+### 3. CittaPlannerX — Resource & Critical Path Logistics Engine
+Designed for heavy construction, civil engineering, real estate developers (such as Adron Homes), and industrial logistics providers.
+
+- **Capabilities:**
+  - Automated critical path scheduling and bottleneck forecasting.
+  - Multi-site material allocation leveling and equipment roster management.
+  - Direct integration between field timesheets and financial ledgers.
+
+### 4. CittaNexus — Secure Enterprise API Gateway
+A hardened integration gateway serving as the centralized entry point for corporate data exchange.
+
+- **Capabilities:**
+  - AES-256-GCM hardware-grade payload encryption.
+  - Token vault management and circuit breakers for high-concurrency API calls.
+  - Rate limiting, IP whitelisting, and automated audit logging.
+
+### 5. CittaHospitalityX — Property & Resort Management System
+An all-in-one property management suite for luxury resorts, hotels, and serviced apartments.
+
+- **Capabilities:**
+  - Real-time channel manager preventing double-bookings across OTA channels.
+  - Integrated folio billing consolidating rooms, F&B, spa, and amenity charges into single tax-compliant invoices.
+  - Self-service guest portals and front-desk kiosks.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+### What is CittaSL's parent company?
+CittaSL (CSL) is an enterprise technology member of **CittaNuvola Group**, an African technology conglomerate specializing in enterprise software, cloud infrastructure, and ERP solutions (including Citta ERP).
+
+### Does CittaEFS require replacing our existing accounting software or ERP?
+No. CittaEFS is a non-intrusive middleware layer. It connects directly to your existing database (Oracle, SQL Server, PostgreSQL, MySQL) or ERP via lightweight triggers or REST APIs without altering your staff's day-to-day user interface.
+
+### What tax compliance frameworks are supported?
+CittaEFS supports statutory frameworks including National Revenue Service (NRS) electronic invoicing mandates, standard 7.5% Nigerian VAT calculations, withholding tax (WHT) schedules, state internal revenue requirements, and custom corporate tax logic.
+
+---
+
+## Contact & Corporate HQ
+
+- **Full Legal Name:** CittaSL Limited (CSL)
+- **Parent Entity:** CittaNuvola Group
+- **Address:** 5, Sadiku Street, Agidingbi, Ikeja, Lagos, Nigeria
+- **Customer Support Phone:** +234 813 424 8104
+- **Email:** cittasl@cittanuvola.com
+- **Official Web Portals:**
+  - CittaSL: https://www.cittasl.com/
+  - CittaNuvola Group: https://www.cittanuvola.com/
+  - Citta ERP: https://cittanuvola.com/citta-erp.html

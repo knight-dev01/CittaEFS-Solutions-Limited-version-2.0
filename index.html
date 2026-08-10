@@ -30,11 +30,16 @@
     <!-- Favicon using Cittanuvola Logo -->
     <link rel="icon" type="image/png" href="https://cittanuvola.com/images/Cittanuvola%20logo.png" />
 
+    <!-- LLMs Text Manifest for AI Agents & Search Engine AI Summarization -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="AI Summary Context Document" />
+
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="Q9yGzm6xlPq5FUipe_UGthF1lWqyV6G-Xvp6nIruNmY" />
 
-    <!-- Google Search Engine Crawler directives -->
-    <meta name="googlebot" content="index, follow" />
+    <!-- Google Search Engine & Generative AI Crawler Directives -->
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googleOther" content="index, follow" />
+    <meta name="google-extended" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
 
     <!-- Structured Data (JSON-LD) for Search Engine Rich Snippets & Google Product Indexing -->
@@ -66,6 +71,36 @@
           "areaServed": "NG",
           "availableLanguage": "English"
         }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is CittaSL (CSL)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CittaSL (CSL) is an enterprise technology provider and a member of CittaNuvola Group, specializing in regulatory electronic fiscal middleware (CittaEFS), enterprise transaction routers, resource scheduling, and hospitality management software."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is CittaEFS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CittaEFS is a non-intrusive electronic fiscal middleware that connects core ERP systems (SAP, Oracle, Odoo, Dynamics) with statutory National Revenue Service portals for real-time tax validation and pre-clearance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does CittaEFS require replacing existing accounting software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. CittaEFS operates as a non-intrusive layer that integrates directly into existing database triggers or APIs without requiring core refactoring of existing ERP software."
+            }
+          }
+        ]
       },
       {
         "@context": "https://schema.org",

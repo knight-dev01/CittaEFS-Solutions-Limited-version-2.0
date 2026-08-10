@@ -1,16 +1,49 @@
-# CittaSL (CSL) - Search Engine Crawler Rules
+# CittaSL (CSL) - Search Engine & AI Crawler Rules
 # CittaNuvola Group Enterprise Software Site
 User-agent: *
 Allow: /
 
+# Google Search & Google AI Overview Crawlers
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Bing & Copilot Crawlers
 User-agent: Bingbot
 Allow: /
 
-# XML Sitemap Location
+# OpenAI / ChatGPT Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude Crawlers
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI Crawler
+User-agent: PerplexityBot
+Allow: /
+
+# Apple / Siri AI Crawlers
+User-agent: Applebot-Extended
+Allow: /
+
+# XML Sitemap & AI Manifest
 Sitemap: https://www.cittasl.com/sitemap.xml
+# LLMs Text File for AI Summarization & Generative Search
+# https://www.cittasl.com/llms.txt
+
