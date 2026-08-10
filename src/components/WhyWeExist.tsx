@@ -67,7 +67,7 @@ export default function WhyWeExist() {
               We started CSL with a simple insight: corporate leaders should never feel restricted by the systems they use to run their businesses. 
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Our engineering values focus entirely on stripping away frustration. We craft solutions that solve heavy administrative problems gracefully, creating quiet operational peace of mind across your entire institution.
+              As the enterprise software division of <strong>CittaNuvola Group</strong>, our engineering values focus entirely on stripping away frustration. We craft solutions that solve heavy administrative problems gracefully, creating quiet operational peace of mind across your entire institution.
             </p>
           </motion.div>
 
@@ -100,6 +100,63 @@ export default function WhyWeExist() {
             })}
           </div>
         </div>
+
+        {/* CittaNuvola Parent Organization Banner - Compact & Mobile Optimized */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-10 p-6 sm:p-8 rounded-2xl bg-slate-900 text-white relative overflow-hidden border border-slate-800 shadow-xl text-left"
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+            <div className="flex items-center space-x-4 w-full md:w-auto">
+              <div className="p-2.5 bg-white rounded-xl shrink-0 shadow-sm">
+                <img 
+                  src="https://cittanuvola.com/images/Cittanuvola%20logo.png" 
+                  alt="CittaNuvola Group Logo" 
+                  className="h-9 sm:h-10 w-auto object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest font-bold block">
+                  Parent Technology Group
+                </span>
+                <h3 className="font-display text-base sm:text-lg font-bold text-white leading-tight">
+                  Powered by CittaNuvola Group Infrastructure
+                </h3>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2 w-full md:w-auto justify-start md:justify-end text-xs">
+              <a 
+                href="https://cittanuvola.com/citta-erp.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-3.5 py-2 bg-[#2582ff] hover:bg-blue-600 text-white font-bold rounded-lg transition-colors text-center text-xs"
+              >
+                Citta ERP ↗
+              </a>
+              <a 
+                href="https://cittanuvola.com/#our-service-section" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs"
+              >
+                Services ↗
+              </a>
+              <a 
+                href="https://cittanuvola.com/#About-us-section" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-3.5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs"
+              >
+                About Group ↗
+              </a>
+            </div>
+          </div>
+        </motion.div>
 
       </div>
     </section>

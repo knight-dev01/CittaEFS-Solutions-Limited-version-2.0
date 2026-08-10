@@ -50,16 +50,16 @@ export default function CSLAbout({ isTopPage = false, isSummary = false, setCurr
         >
           <div className="lg:col-span-6 flex flex-col items-start gap-4 sm:gap-6 text-left">
             <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
-              Section 02. Who We Are
+              Who We Are
             </span>
             <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-slate-900 text-left">
-              An Enterprise Member of CittaNuvola Group
+              Enterprise Software & Regulatory Technology
             </h2>
             <p className="text-slate-600 text-xs sm:text-base leading-relaxed text-left">
-              <strong>CittaERP Solutions Limited (CSL)</strong> is a premier enterprise software company within the <strong>CittaNuvola Group</strong>. We specialize in engineering intelligent business platforms and advanced regulatory technology that power deep digital transformation.
+              <strong>CittaSL (CSL)</strong> specializes in engineering intelligent business platforms and advanced regulatory software for major enterprises. As a technology unit under <strong>CittaNuvola Group</strong>, we connect core corporate ledgers with national compliance networks seamlessly.
             </p>
             <p className="text-slate-500 text-xs sm:text-sm leading-relaxed text-left">
-              By integrating scalable business automation systems, we help major organizations simplify operations, ensure robust compliance, and manage core transaction pipelines. CSL acts as a trusted, long-term partner, engineering software ecosystems that grow alongside your business.
+              By integrating non-intrusive fiscal middleware and automated workflows, we help major organizations simplify operations, ensure 100% compliance, and safeguard critical financial data.
             </p>
           </div>
 

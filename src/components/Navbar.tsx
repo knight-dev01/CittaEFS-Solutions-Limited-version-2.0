@@ -61,16 +61,15 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
           <div className="flex items-center cursor-pointer group space-x-3 shrink-0" onClick={() => handleNavClick('home')}>
             <img 
               src={cslLogo} 
-              alt="CSL Logo" 
-              className="h-10 w-auto object-contain bg-slate-50 p-1 rounded-lg border border-slate-100 transition-transform duration-300 group-hover:scale-105"
-              referrerPolicy="no-referrer"
+              alt="CittaSL Logo" 
+              className="h-10 w-auto object-contain bg-white p-1 rounded-lg border border-slate-200 transition-transform duration-300 group-hover:scale-105 shadow-xs"
             />
             <div className="flex flex-col text-left">
-              <span className="block text-[11px] sm:text-xs font-display font-extrabold leading-none text-slate-900 tracking-tight">
-                CittaERP Solutions Limited
+              <span className="block text-base font-display font-black leading-none text-slate-900 tracking-tight">
+                CittaSL
               </span>
               <span className="block text-[8px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold mt-0.5">
-                CSL CORPORATE SITE
+                CITTANUVOLA GROUP
               </span>
             </div>
           </div>

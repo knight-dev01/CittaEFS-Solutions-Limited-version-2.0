@@ -8,43 +8,44 @@ interface SEOStructuredDataProps {
 export default function SEOStructuredData({ currentPage }: SEOStructuredDataProps) {
   useEffect(() => {
     // 1. Define base variables
-    const siteUrl = window.location.origin || 'https://www.cittasl.com';
-    const logoUrl = `${siteUrl}/logo.png`;
+    const siteUrl = 'https://www.cittasl.com';
+    const logoUrl = 'https://cittanuvola.com/images/Cittanuvola%20logo.png';
 
     // 2. Define Organization Schema
     const organizationSchema = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       '@id': `${siteUrl}/#organization`,
-      'name': 'Citta ERP Solutions Limited',
+      'name': 'CittaSL',
       'alternateName': 'CSL',
       'url': siteUrl,
       'logo': {
         '@type': 'ImageObject',
         '@id': `${siteUrl}/#logo`,
         'url': logoUrl,
-        'caption': 'Citta ERP Solutions Limited Logo'
+        'caption': 'CittaSL Logo'
       },
       'image': {
         '@id': `${siteUrl}/#logo`
       },
-      'description': 'CSL architects high-capacity enterprise software suites, secure middleware bridges, and advanced planning systems. We empower modern global organizations with compliant operational excellence.',
+      'description': 'CittaSL (CSL), an enterprise software division of CittaNuvola Group, architects high-capacity enterprise software suites, secure middleware bridges, and advanced planning systems.',
       'contactPoint': {
         '@type': 'ContactPoint',
-        'telephone': '+234-1-234-5678',
-        'contactType': 'customer service',
+        'telephone': '0813-424-8104',
+        'email': 'cittasl@cittanuvola.com',
+        'contactType': 'customer support',
         'areaServed': 'NG',
         'availableLanguage': ['en']
       },
       'address': {
         '@type': 'PostalAddress',
-        'addressLocality': 'Lagos',
+        'streetAddress': '5, Sadiku Street, Agidingbi',
+        'addressLocality': 'Ikeja',
         'addressRegion': 'Lagos State',
         'addressCountry': 'NG'
       },
       'sameAs': [
-        'https://twitter.com/cittaerp',
-        'https://linkedin.com/company/cittaerp'
+        'https://www.cittanuvola.com'
       ]
     };
 
@@ -62,7 +63,7 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
       'mpn': 'CITTAEFS-V2',
       'brand': {
         '@type': 'Brand',
-        'name': 'Citta ERP Solutions Limited (CSL)'
+        'name': 'CittaSL (CSL)'
       },
       'offers': {
         '@type': 'AggregateOffer',

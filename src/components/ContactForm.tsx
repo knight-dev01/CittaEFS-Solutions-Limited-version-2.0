@@ -52,11 +52,24 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     
-    // Simulate professional API dispatch
+    // Dispatch email directly to cittasl@cittanuvola.com via mailto trigger & state update
+    const subject = encodeURIComponent(`Consultation Request: ${formState.organisation} (${formState.fullName})`);
+    const body = encodeURIComponent(
+      `Full Name: ${formState.fullName}\n` +
+      `Corporate Email: ${formState.corporateEmail}\n` +
+      `Phone: ${formState.phone || 'N/A'}\n` +
+      `Organisation: ${formState.organisation}\n` +
+      `Job Title: ${formState.jobTitle}\n` +
+      `Area of Interest: ${formState.areaOfInterest}\n\n` +
+      `Message:\n${formState.message}`
+    );
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 1800);
+      // Automatically open email client addressed to cittasl@cittanuvola.com
+      window.location.href = `mailto:cittasl@cittanuvola.com?subject=${subject}&body=${body}`;
+    }, 1200);
   };
 
   return (
@@ -83,43 +96,57 @@ export default function ContactForm() {
             
             <div className="space-y-5 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
               <h4 className="font-display font-bold text-slate-900 text-lg mb-2">
-                CittaERP Solutions Limited HQ
+                CittaSL (CSL Corporate HQ)
               </h4>
 
               <div className="flex items-start space-x-3 text-xs sm:text-sm text-slate-600">
                 <MapPin className="w-5 h-5 text-[#2582ff] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold text-slate-800">Lagos Head Office</p>
-                  <p className="mt-0.5 leading-normal">Victoria Island Corporate District, Lagos State, Nigeria.</p>
+                  <p className="mt-0.5 leading-normal">5, Sadiku Street, Agidingbi, Ikeja, Lagos, Nigeria.</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/60 pt-4">
                 <Mail className="w-5 h-5 text-[#2582ff] shrink-0" />
                 <div>
-                  <p className="text-slate-800 font-mono font-semibold">info@cittasl.com</p>
-                  <p className="text-slate-400 text-[10px] font-mono mt-0.5">Contact alias: info1@cittasl.com</p>
+                  <a href="mailto:cittasl@cittanuvola.com" className="text-slate-800 font-mono font-semibold hover:text-[#2582ff] transition-colors">
+                    cittasl@cittanuvola.com
+                  </a>
+                  <p className="text-slate-400 text-[10px] font-mono mt-0.5">Parent domain: www.cittanuvola.com</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/60 pt-4">
                 <Phone className="w-5 h-5 text-[#2582ff] shrink-0" />
                 <div>
-                  <p className="text-slate-800 font-mono font-semibold">+234 (1) 888 3379</p>
-                  <p className="text-slate-400 text-[10px] font-mono mt-0.5">Mon – Fri: 8:00 AM – 5:00 PM</p>
+                  <a href="tel:08134248104" className="text-slate-800 font-mono font-semibold hover:text-[#2582ff] transition-colors">
+                    0813–424–8104
+                  </a>
+                  <p className="text-slate-400 text-[10px] font-mono mt-0.5">Mon – Fri: 8:00 AM – 5:00 PM WAT</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-600 border-t border-slate-200/60 pt-4">
                 <Globe className="w-5 h-5 text-[#2582ff] shrink-0" />
-                <a 
-                  href="https://www.cittasl.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="font-mono font-semibold text-slate-800 hover:text-[#2582ff] transition-all"
-                >
-                  www.cittasl.com
-                </a>
+                <div className="flex flex-col font-mono text-xs font-semibold">
+                  <a 
+                    href="https://www.cittasl.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-800 hover:text-[#2582ff] transition-all"
+                  >
+                    www.cittasl.com
+                  </a>
+                  <a 
+                    href="https://www.cittanuvola.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-400 hover:text-[#2582ff] transition-all text-[11px]"
+                  >
+                    www.cittanuvola.com
+                  </a>
+                </div>
               </div>
             </div>
 

@@ -40,58 +40,52 @@ export default function Footer({ setCurrentPage }: FooterProps) {
         {/* Main Sitemap & Newsletter Grid */}
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8 pb-16 border-b border-slate-200">
           
-          {/* Column 1: Pitch, Seal, Contact, Socials (Spans 4 cols on Desktop) */}
+          {/* Column 1: Pitch, Seal, Contact (Spans 4 cols on Desktop) */}
           <div className="col-span-12 md:col-span-4 space-y-6">
-            <div className="flex items-center cursor-pointer group" onClick={() => handleNavClick('home')}>
+            <div className="flex items-center cursor-pointer group space-x-3" onClick={() => handleNavClick('home')}>
+              <img 
+                src="https://cittanuvola.com/images/Cittanuvola%20logo.png" 
+                alt="CittaSL Logo" 
+                className="h-10 w-auto object-contain bg-white p-1 rounded-lg border border-slate-200 shadow-sm"
+                referrerPolicy="no-referrer"
+              />
               <div className="flex flex-col text-left">
                 <span className="font-display font-extrabold text-base sm:text-lg leading-none text-slate-900 tracking-tight">
-                  CittaERP Solutions Limited (CSL)
+                  CittaSL (CSL)
                 </span>
                 <span className="block text-[8px] sm:text-[9px] font-mono text-[#2582ff] uppercase tracking-widest font-bold mt-1">
-                  Enterprise Software Parent Framework
+                  CittaNuvola Group Enterprise Framework
                 </span>
               </div>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-500 leading-relaxed text-left">
-              CSL unifies specialized digital solutions to power active operations, advanced resource leveling, and statutory tax compliance under an enterprise-shielded secure architecture.
+              CittaSL unifies specialized digital solutions to power active operations, advanced resource leveling, and statutory tax compliance under an enterprise-shielded secure architecture.
             </p>
 
             {/* Corporate Location and Contacts */}
             <div className="space-y-3 text-xs sm:text-sm text-slate-500 font-sans text-left">
               <div className="flex items-start space-x-2">
                 <Globe className="w-4 h-4 text-[#2582ff] shrink-0 mt-0.5" />
-                <span>
-                  <strong>Web:</strong> <a href="https://www.cittasl.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2582ff] transition-colors underline">www.cittasl.com</a>
-                </span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-[#2582ff] shrink-0" />
                 <div className="flex flex-col">
-                  <a href="mailto:info@cittasl.com" className="hover:text-[#2582ff] transition-colors">info@cittasl.com</a>
-                  <a href="mailto:info1@cittasl.com" className="hover:text-[#2582ff] transition-colors">info1@cittasl.com</a>
+                  <span><strong>Web:</strong> <a href="https://www.cittasl.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2582ff] transition-colors underline">www.cittasl.com</a></span>
+                  <span className="text-[11px] text-slate-400">Parent: <a href="https://www.cittanuvola.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2582ff] transition-colors underline">www.cittanuvola.com</a></span>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4 text-[#2582ff] shrink-0" />
+                <a href="mailto:cittasl@cittanuvola.com" className="hover:text-[#2582ff] transition-colors font-mono font-semibold text-slate-800">cittasl@cittanuvola.com</a>
+              </div>
+              <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-[#2582ff] shrink-0" />
-                <a href="tel:+23418883379" className="hover:text-[#2582ff] transition-colors">+234 (1) 888-EFS9</a>
+                <a href="tel:08134248104" className="hover:text-[#2582ff] transition-colors font-mono font-semibold text-slate-800">0813–424–8104</a>
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center space-x-3.5 pt-2">
-              <a href="#" className="p-2 bg-white rounded-xl border border-slate-200 hover:border-[#2582ff] text-slate-500 hover:text-[#2582ff] transition-all shadow-sm">
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="#" className="p-2 bg-white rounded-xl border border-slate-200 hover:border-[#2582ff] text-slate-500 hover:text-[#2582ff] transition-all shadow-sm">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href="#" className="p-2 bg-white rounded-xl border border-slate-200 hover:border-[#2582ff] text-slate-500 hover:text-[#2582ff] transition-all shadow-sm">
-                <Github className="w-4 h-4" />
-              </a>
-              {/* Compliance Seal badge */}
-              <div className="ml-2 inline-flex items-center space-x-1 px-2.5 py-1 bg-white border border-slate-200 rounded-xl text-[9px] font-mono text-[#2582ff] font-bold shadow-sm">
-                <ShieldCheck className="w-3.5 h-3.5" />
+            {/* Verification Seal badge */}
+            <div className="flex items-center space-x-3 pt-1">
+              <div className="inline-flex items-center space-x-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-[10px] font-mono text-[#2582ff] font-bold shadow-sm">
+                <ShieldCheck className="w-4 h-4" />
                 <span>NRS VERIFIED</span>
               </div>
             </div>
@@ -241,7 +235,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
         {/* Footer Bottom Credentials and Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-xs font-mono text-slate-400">
-          <p>© 2024 CSL. All rights reserved. Powered by CittaERP Solutions Limited.</p>
+          <p>© 2024 CittaSL (CSL). All rights reserved. Member of CittaNuvola Group.</p>
           <div className="flex items-center space-x-4 mt-4 sm:mt-0">
             <a href="#" className="hover:text-[#2582ff] transition-all">Privacy Policy</a>
             <span>•</span>

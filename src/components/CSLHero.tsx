@@ -1,5 +1,6 @@
 import { ArrowRight, ChevronRight, Cpu, Database, Landmark, Layers, Calendar, Link2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import cslLogo from '../logo.png';
 
 interface CSLHeroProps {
   onExploreEcosystem: () => void;
@@ -189,23 +190,70 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center space-x-2.5 px-4 py-1.5 bg-[#2582ff]/5 border border-[#2582ff]/15 rounded-full text-[11px] sm:text-xs font-mono text-[#2582ff] tracking-wide"
+            className="inline-flex items-center space-x-2 sm:space-x-3 px-3.5 sm:px-4 py-1.5 bg-slate-900/5 border border-slate-200/80 rounded-full text-xs font-mono text-slate-800 shadow-2xs backdrop-blur-xs flex-wrap justify-center gap-y-1"
           >
-            <span className="h-2 w-2 rounded-full bg-[#2582ff] animate-ping" />
-            <span className="font-extrabold uppercase">CSL Enterprise Software Ecosystem</span>
+            <div className="flex items-center space-x-2">
+              <img src={cslLogo} alt="CSL Logo" className="h-5 w-auto object-contain" />
+              <span className="font-extrabold text-slate-900">CittaSL</span>
+            </div>
+            <span className="text-slate-300 hidden sm:inline">•</span>
+            <a 
+              href="https://cittanuvola.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-1.5 hover:text-[#2582ff] transition-colors group"
+            >
+              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider group-hover:text-[#2582ff]">An Enterprise Member of CittaNuvola Group</span>
+              <img 
+                src="https://cittanuvola.com/images/Cittanuvola%20logo.png" 
+                alt="CittaNuvola Logo" 
+                className="h-4 w-auto object-contain" 
+                referrerPolicy="no-referrer"
+              />
+            </a>
           </motion.div>
 
-          {/* Heading */}
+          {/* Heading with Sequential Animation */}
           <motion.h1
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-display text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900 select-none"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: 0.15
+                }
+              }
+            }}
+            className="font-display text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900 select-none flex flex-wrap justify-center gap-x-3 gap-y-1"
           >
-            Engineering the Future of <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2582ff] via-slate-800 to-[#ff8e1a] animate-gradient">
-              Enterprise Digital Transformation
-            </span>
+            {["Engineering", "the", "Future", "of"].map((word, i) => (
+              <motion.span
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 18, filter: 'blur(4px)' },
+                  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.45, ease: 'easeOut' } }
+                }}
+                className="inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
+            <span className="w-full h-0 block" /> {/* Line Break */}
+            {["Enterprise", "Digital", "Transformation"].map((word, i) => (
+              <motion.span
+                key={`grad-${i}`}
+                variants={{
+                  hidden: { opacity: 0, y: 18, filter: 'blur(4px)' },
+                  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.45, ease: 'easeOut' } }
+                }}
+                className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#2582ff] via-slate-800 to-[#ff8e1a] animate-gradient"
+              >
+                {word}
+              </motion.span>
+            ))}
           </motion.h1>
 
           {/* Description */}

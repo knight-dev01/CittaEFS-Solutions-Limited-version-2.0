@@ -40,6 +40,19 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Initial hash scroll handling (e.g., #why-we-exist, #solutions, #contact)
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash) || (hash === 'solutions' ? document.getElementById('products') : null);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 200);
+    }
+  }, []);
+
   // Scroll spy to highlight active menu section in the navbar
   useEffect(() => {
     const handleScrollSpy = () => {
@@ -130,8 +143,9 @@ export default function App() {
           <ChallengesSection />
         </div>
 
-        {/* 5. Enterprise Software Portfolio */}
+        {/* 5. Enterprise Software Portfolio & Solutions */}
         <div id="products">
+          <div id="solutions" />
           <ProductEcosystem setCurrentPage={setCurrentPage} />
         </div>
 

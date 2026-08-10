@@ -1,4 +1,16 @@
+# CittaSL (CSL) - Search Engine Crawler Rules
+# CittaNuvola Group Enterprise Software Site
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# XML Sitemap Location
 Sitemap: https://www.cittasl.com/sitemap.xml
