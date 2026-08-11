@@ -144,10 +144,18 @@ export default function WhyWeExist() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 w-full lg:w-auto shrink-0 text-xs pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-800">
               <a 
-                href="https://cittanuvola.com/citta-erp.html" 
+                href="https://cittanuvola.com/#About-us-section" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="px-3.5 py-2.5 bg-[#2582ff] hover:bg-blue-600 text-white font-bold rounded-lg transition-colors text-center text-xs block w-full"
+              >
+                About Group ↗
+              </a>
+              <a 
+                href="https://cittanuvola.com/citta-erp.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs block w-full"
               >
                 Citta ERP ↗
               </a>
@@ -158,14 +166,6 @@ export default function WhyWeExist() {
                 className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs block w-full"
               >
                 Services ↗
-              </a>
-              <a 
-                href="https://cittanuvola.com/#About-us-section" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold rounded-lg transition-colors text-center text-xs block w-full"
-              >
-                About Group ↗
               </a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Quote, ChevronLeft, ChevronRight, Play, Pause, Star } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, Play, Pause, Star, Loader2 } from 'lucide-react';
 
 interface Testimonial {
   id: string;
@@ -17,7 +17,20 @@ export default function TestimonialsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [direction, setDirection] = useState<number>(0); // -1 for left, 1 for right
+  const [isLoading, setIsLoading] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 700);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleReload = () => {
+    setIsLoading(true);
+    setTimeout(() => setIsLoading(false), 700);
+  };
 
   const testimonials: Testimonial[] = [
     {
@@ -156,9 +169,19 @@ export default function TestimonialsCarousel() {
         
         {/* Header Block */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 gap-4">
-          <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/10 px-3.5 py-1.5 rounded-full border border-[#2582ff]/20">
-            Social Proof & Client Outcomes
-          </span>
+          <div className="flex items-center space-x-3">
+            <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/10 px-3.5 py-1.5 rounded-full border border-[#2582ff]/20">
+              Social Proof & Client Outcomes
+            </span>
+            <button
+              onClick={handleReload}
+              title="Simulate loading state"
+              className="text-xs font-mono text-slate-400 hover:text-[#2582ff] flex items-center space-x-1 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md shadow-xs transition-colors"
+            >
+              <span>{isLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : '↻'}</span>
+              <span>Reload Skeleton</span>
+            </button>
+          </div>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
             Trusted by Leaders
           </h2>
@@ -167,8 +190,45 @@ export default function TestimonialsCarousel() {
           </p>
         </div>
 
-        {/* Carousel Container */}
-        <div className="relative min-h-[380px] sm:min-h-[320px] bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-12 shadow-2xl flex flex-col justify-between overflow-hidden">
+        {/* Carousel Container or Skeleton */}
+        {isLoading ? (
+          <div className="relative min-h-[380px] sm:min-h-[320px] bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-12 shadow-2xl flex flex-col justify-between overflow-hidden animate-pulse">
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-8 space-y-6 text-left">
+                <div className="flex items-center space-x-1">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div key={i} className="w-4 h-4 bg-slate-800 rounded-sm" />
+                  ))}
+                </div>
+                <div className="space-y-3">
+                  <div className="h-4 w-full bg-slate-800 rounded-md" />
+                  <div className="h-4 w-5/6 bg-slate-800 rounded-md" />
+                  <div className="h-4 w-2/3 bg-slate-800 rounded-md" />
+                </div>
+                <div className="space-y-2 pt-2">
+                  <div className="h-5 w-40 bg-slate-800 rounded-md" />
+                  <div className="h-3.5 w-56 bg-slate-800/70 rounded-md" />
+                </div>
+              </div>
+              <div className="md:col-span-4 flex flex-col items-center md:items-end justify-center h-full border-t md:border-t-0 md:border-l border-slate-800 pt-6 md:pt-0 md:pl-8 gap-4">
+                <div className="w-36 h-20 bg-slate-800 rounded-2xl" />
+                <div className="w-28 h-3 bg-slate-800 rounded-md" />
+              </div>
+            </div>
+            <div className="pt-8 mt-8 border-t border-slate-800 flex items-center justify-between">
+              <div className="flex space-x-2">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div key={i} className="w-2.5 h-2.5 rounded-full bg-slate-800" />
+                ))}
+              </div>
+              <div className="flex space-x-2">
+                <div className="w-10 h-10 rounded-full bg-slate-800" />
+                <div className="w-10 h-10 rounded-full bg-slate-800" />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="relative min-h-[380px] sm:min-h-[320px] bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-12 shadow-2xl flex flex-col justify-between overflow-hidden">
           
           <div className="absolute top-0 right-0 p-6 text-slate-800 pointer-events-none">
             <Quote className="w-24 h-24 stroke-[1.5] opacity-5 rotate-180" />
@@ -284,6 +344,7 @@ export default function TestimonialsCarousel() {
           </div>
 
         </div>
+        )}
 
       </div>
     </section>
