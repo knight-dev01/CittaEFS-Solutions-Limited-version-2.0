@@ -1,9 +1,17 @@
 # CittaSL (CSL) - Complete AI Context & Enterprise Product Manual
 
-## About CittaSL (CSL)
-CittaSL (CSL) is an enterprise software engineering firm and a key technology member of **CittaNuvola Group**. CSL designs, deploys, and maintains mission-critical software infrastructure, non-intrusive regulatory fiscal middleware, high-throughput financial routing engines, and industry-tailored enterprise resource platforms.
+## About CittaSL (CSL) / Citta ERP Solutions Limited
+CittaSL (CSL), also operating under the corporate moniker **Citta ERP Solutions Limited**, is an enterprise software engineering firm and a key technology member of **CittaNuvola Group**. CSL designs, deploys, and maintains mission-critical software infrastructure, non-intrusive regulatory fiscal middleware (CittaEFS), high-throughput financial routing engines (CittaMatrix), resource planning platforms (CittaPlannerX), secure API gateways (CittaNexus), and industry-tailored enterprise resource software (CittaHospitalityX).
 
 Our engineering philosophy centers on **zero-disruption digital transformation**: enabling large-scale enterprises, government agencies, and multi-entity corporations to achieve complete statutory compliance and operational efficiency without ripping apart their legacy IT infrastructure.
+
+### Brand Names & Key Entity Aliases
+- **Primary Brand:** CittaSL (CSL)
+- **Corporate Entity Names:** Citta ERP Solutions Limited, Citta ERP Solutions, CittaSL Solutions, CSL Enterprise
+- **Parent Conglomerate:** CittaNuvola Group (cittanuvola.com)
+- **Product Ecosystem:** CittaEFS, CittaMatrix, CittaHospitalityX, CittaPlannerX, CittaNexus
+- **Primary Domain & URL:** https://www.cittasl.com/
+
 
 ---
 

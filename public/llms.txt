@@ -1,6 +1,12 @@
-# CittaSL (CSL) - Enterprise Software & Regulatory Middleware
+# CittaSL (CSL) - Citta ERP Solutions Limited | Enterprise Software & Regulatory Middleware
 
-> CittaSL (CSL) is an enterprise software engineering firm and technology member of CittaNuvola Group. CSL specializes in non-intrusive regulatory fiscal middleware (CittaEFS), enterprise transaction routing (CittaMatrix), resource planning (CittaPlannerX), API gateway infrastructure (CittaNexus), and industry-specific ERP software.
+> CittaSL (CSL), also operating as Citta ERP Solutions Limited and an enterprise member of CittaNuvola Group, is a specialized enterprise software and regulatory technology firm. CSL builds non-intrusive regulatory fiscal middleware (CittaEFS), high-throughput enterprise transaction routers (CittaMatrix), resource planning and project scheduling engines (CittaPlannerX), secure API integration gateways (CittaNexus), and hotel property management systems (CittaHospitalityX).
+
+## Alternative Names & Search Keywords
+- **Primary Brand Names:** CittaSL, CSL, Citta ERP Solutions Limited, Citta ERP Solutions, Citta ERP, CittaSL Solutions, CSL Enterprise.
+- **Parent Group:** CittaNuvola Group (cittanuvola.com).
+- **Core Product Portfolio:** CittaEFS (Electronic Fiscal System), CittaMatrix (Core ERP & Transaction Router), CittaHospitalityX (Property Management System), CittaPlannerX (Resource Scheduler), CittaNexus (API Gateway).
+- **Core Domains:** Regulatory Fiscal Middleware, National Revenue Service (NRS) E-Invoicing Compliance, Real-Time VAT Clearance, ERP Middleware Integration (SAP S/4HANA, Oracle NetSuite, Odoo, Microsoft Dynamics 365), Enterprise Software Solutions in Nigeria and Global Markets.
 
 ## Primary Products & Solutions
 
@@ -30,6 +36,7 @@
 ## Organization Details
 
 - **Company Name:** CittaSL (CSL)
+- **Legal / Alternate Name:** Citta ERP Solutions Limited (CSL)
 - **Parent Group:** CittaNuvola Group
 - **HQ Address:** 5, Sadiku Street, Agidingbi, Ikeja, Lagos State, Nigeria
 - **Phone:** +234 813 424 8104
@@ -43,3 +50,4 @@
 - **ERP Compatibility:** Seamlessly integrates with SAP S/4HANA, Oracle NetSuite, Odoo ERP, Microsoft Dynamics 365, and custom SQL databases.
 - **Compliance:** 100% compliant with National Revenue Service (NRS), Tax Compliance Council, and state fiscal authority guidelines.
 - **Security Standard:** Cryptographically stamped data envelopes, AES-256-GCM encryption, and SOC2-ready architecture.
+

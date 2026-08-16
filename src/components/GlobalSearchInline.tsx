@@ -23,12 +23,22 @@ export interface SearchItem {
 }
 
 export const SEARCH_INDEX: SearchItem[] = [
+  // Corporate Entity & Brand Name
+  {
+    title: "CittaSL (CSL) - Citta ERP Solutions Limited",
+    category: "Company",
+    description: "Enterprise software & regulatory middleware division of CittaNuvola Group. Architecting CittaEFS, CittaMatrix, CittaHospitalityX, CittaPlannerX, and CittaNexus.",
+    keywords: ["cittasl", "csl", "citta erp", "citta erp solutions", "citta erp solutions limited", "cittasl limited", "cittanuvola", "cittanuvola group", "lagos", "enterprise software", "about csl"],
+    pageId: "why-we-exist",
+    scrollId: "why-we-exist"
+  },
+
   // Products / CittaEFS
   {
     title: "CittaEFS Compliance Middleware Engine",
     category: "Product",
     description: "Flagship electronic fiscal system middleware bridging ERP systems to NRS compliance with real-time tax stamping.",
-    keywords: ["cittaefs", "middleware", "engine", "compliance", "nrs", "electronic fiscal", "tax stamp", "firs", "clearing", "automated"],
+    keywords: ["cittaefs", "citta efs", "csl efs", "middleware", "engine", "compliance", "nrs", "electronic fiscal", "tax stamp", "firs", "clearing", "automated", "cittasl", "csl"],
     pageId: "products",
     scrollId: "products"
   },
@@ -36,7 +46,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "Validation Shield Gateway",
     category: "Product",
     description: "Secures transactions by validating TIN numbers, tax calculations, and currency formats prior to NRS transmission.",
-    keywords: ["validation shield", "gateway", "tin check", "tax check", "security", "cryptography", "tin verification", "pre-clearance"],
+    keywords: ["validation shield", "gateway", "tin check", "tax check", "security", "cryptography", "tin verification", "pre-clearance", "cittaefs", "csl"],
     pageId: "products",
     scrollId: "products"
   },
@@ -44,7 +54,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "Excel Bulk Uploader Gateway",
     category: "Product",
     description: "Drag-and-drop gateway for SMEs to bulk upload Excel spreadsheets or CSV billing files for batch fiscal clearing.",
-    keywords: ["excel", "bulk", "uploader", "csv", "spreadsheet", "drag", "drop", "sme", "excel uploader", "batch"],
+    keywords: ["excel", "bulk", "uploader", "csv", "spreadsheet", "drag", "drop", "sme", "excel uploader", "batch", "cittaefs", "csl"],
     pageId: "products",
     scrollId: "products"
   },
@@ -52,7 +62,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "Live Validation Sandbox & Simulator",
     category: "Product",
     description: "Interactive simulator to inspect compliance handshakes, test raw JSON payloads, and measure clearance speed.",
-    keywords: ["live", "validation", "sandbox", "simulator", "rest api", "json payload", "firs simulator", "api test"],
+    keywords: ["live", "validation", "sandbox", "simulator", "rest api", "json payload", "firs simulator", "api test", "cittaefs", "csl"],
     pageId: "products",
     scrollId: "products"
   },
@@ -60,7 +70,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "Audit Ledger Vault (AES-256)",
     category: "Product",
     description: "Secures cleared compliance transaction history with AES-256 encryption and immutable non-repudiation logs.",
-    keywords: ["audit ledger", "vault", "history", "aes-256", "ledger list", "tls", "security", "non-repudiation", "secure log"],
+    keywords: ["audit ledger", "vault", "history", "aes-256", "ledger list", "tls", "security", "non-repudiation", "secure log", "cittaefs", "csl"],
     pageId: "products",
     scrollId: "products"
   },
@@ -68,7 +78,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "Clearance Speed & Latency Metrics",
     category: "Product",
     description: "Examine sub-240ms system validation latency, packet clearance logs, and high-concurrency throughput rates.",
-    keywords: ["clearing speed", "validation latency", "packet clearance", "routing speed", "high load", "clearing rate", "sub-240ms"],
+    keywords: ["clearing speed", "validation latency", "packet clearance", "routing speed", "high load", "clearing rate", "sub-240ms", "cittaefs", "csl"],
     pageId: "products",
     scrollId: "products"
   },
@@ -78,7 +88,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "CittaMatrix Core ERP",
     category: "Product",
     description: "Consolidate multi-entity operations, supply chain stock, asset depreciation, and double-entry general ledgers.",
-    keywords: ["cittamatrix", "matrix", "erp", "ledger", "general ledger", "accounting", "operations", "supply chain"],
+    keywords: ["cittamatrix", "citta matrix", "matrix", "citta erp", "erp", "ledger", "general ledger", "accounting", "operations", "supply chain", "cittasl", "csl"],
     pageId: "products",
     scrollId: "products",
     url: "https://cittamatrix.com/"
@@ -87,7 +97,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "CittaHospitalityX Property Management",
     category: "Product",
     description: "Next-generation hotel PMS, room allocations, housekeeping rosters, guest mobile portals, and unified folio billing.",
-    keywords: ["cittahospitalityx", "hospitalityx", "pms", "hotel", "resort", "booking", "folio", "room allocation"],
+    keywords: ["cittahospitalityx", "citta hospitality", "hospitalityx", "pms", "hotel", "resort", "booking", "folio", "room allocation", "cittasl", "csl"],
     pageId: "products",
     scrollId: "products",
     url: "https://cittahospitalityx.com/"
@@ -96,7 +106,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "CittaPlannerX Resource Scheduler",
     category: "Product",
     description: "Enterprise scheduling software featuring interactive Gantt charts, milestone paths, and resource leveling.",
-    keywords: ["cittaplannerx", "plannerx", "scheduler", "gantt", "critical path", "milestone", "resource leveling"],
+    keywords: ["cittaplannerx", "citta planner", "plannerx", "scheduler", "gantt", "critical path", "milestone", "resource leveling", "cittasl", "csl"],
     pageId: "products",
     scrollId: "products",
     url: "https://cittaplannerx.com/"
@@ -105,7 +115,7 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "CittaNexus API Gateway",
     category: "Product",
     description: "Central encryption integration hub supporting webhooks, REST / SOAP protocols, and live telemetry.",
-    keywords: ["cittanexus", "nexus", "api gateway", "webhooks", "integration", "tls tunnel", "router"],
+    keywords: ["cittanexus", "citta nexus", "nexus", "api gateway", "webhooks", "integration", "tls tunnel", "router", "cittasl", "csl"],
     pageId: "products",
     scrollId: "products",
     url: "https://cittanexus.com/"
@@ -301,13 +311,15 @@ export const SEARCH_INDEX: SearchItem[] = [
 ];
 
 export const POPULAR_SUGGESTIONS = [
+  "CittaSL Enterprise",
   "CittaEFS Compliance",
+  "CittaMatrix ERP",
+  "CittaERP Solutions",
   "SAP Integration",
   "Excel Bulk Uploader",
   "NRS Specs",
   "TIN Verification",
   "Lagos Corporate HQ",
-  "CittaMatrix ERP",
   "Request Staging"
 ];
 

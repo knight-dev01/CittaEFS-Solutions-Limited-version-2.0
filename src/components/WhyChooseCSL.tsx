@@ -7,7 +7,7 @@ export default function WhyChooseCSL() {
   const points = [
     {
       title: "CittaNuvola Group Backing",
-      desc: "As a proud member of the CittaNuvola Group, CSL holds the robust financial backing, deep technological reserves, and absolute compliance infrastructure of a premier enterprise software conglomerate.",
+      desc: "Backed by the formidable global conglomerate CittaNuvola Group, CSL combines limitless financial stability, world-class R&D reserves, and elite compliance governance to power mission-critical enterprise systems without compromise.",
       icon: Shield
     },
     {

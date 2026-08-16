@@ -17,7 +17,14 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
       '@type': 'Organization',
       '@id': `${siteUrl}/#organization`,
       'name': 'CittaSL',
-      'alternateName': 'CSL',
+      'alternateName': [
+        'CSL',
+        'Citta ERP Solutions Limited',
+        'Citta ERP Solutions',
+        'Citta ERP',
+        'CittaSL Solutions',
+        'CittaNuvola Group Enterprise Division'
+      ],
       'url': siteUrl,
       'logo': {
         '@type': 'ImageObject',
@@ -28,7 +35,7 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
       'image': {
         '@id': `${siteUrl}/#logo`
       },
-      'description': 'CittaSL (CSL), an enterprise software division of CittaNuvola Group, architects high-capacity enterprise software suites, secure middleware bridges, and advanced planning systems.',
+      'description': 'CittaSL (CSL), also operating as Citta ERP Solutions Limited under CittaNuvola Group, architects high-capacity enterprise software suites, secure middleware bridges (CittaEFS), ERP connectors, and advanced planning systems.',
       'contactPoint': {
         '@type': 'ContactPoint',
         'telephone': '0813-424-8104',
@@ -53,12 +60,12 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
     const productSchema = {
       '@context': 'https://schema.org',
       '@type': 'Product',
-      '@id': `${siteUrl}/cittaefs/#product`,
+      '@id': `${siteUrl}/#product-cittaefs`,
       'name': 'CittaEFS Compliance Gateway',
       'image': [
-        `${siteUrl}/assets/cittaefs-dashboard.png`
+        logoUrl
       ],
-      'description': 'An intelligent real-time compliance bridge and validation middleware that connects ERP systems (SAP, Oracle, Dynamics) to state tax and fiscal authorities for sub-240ms automated invoice pre-clearance.',
+      'description': 'An intelligent real-time compliance bridge and validation middleware that connects ERP systems (SAP, Oracle, Dynamics, Odoo) to state tax and fiscal authorities for sub-240ms automated invoice pre-clearance.',
       'sku': 'CSL-CEFS-001',
       'mpn': 'CITTAEFS-V2',
       'brand': {
@@ -73,7 +80,7 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
         'offerCount': '3',
         'priceValidUntil': '2027-12-31',
         'availability': 'https://schema.org/InStock',
-        'url': `${siteUrl}/#cittaefs`
+        'url': `${siteUrl}/`
       },
       'review': {
         '@type': 'Review',
