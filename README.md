@@ -1,149 +1,225 @@
-# CSL (CittaERP Solutions Limited) - Enterprise Software Ecosystem
+# CittaSL (Citta Software Limited) — Enterprise Software Ecosystem
 
-[![Regulatory Status](https://img.shields.io/badge/Regulatory-NRS%20Ready-emerald?style=flat-square)](#compliance-standards)
-[![License Sec Seal](https://img.shields.io/badge/NDPA%202023-Audited-blue?style=flat-square)](#security--data-privacy)
-[![Build Status](https://img.shields.io/badge/Build-Passed-success?style=flat-square)](#)
+[![Regulatory Compliance](https://img.shields.io/badge/Tax%20Compliance-NRS%20Pre--Clearance%20Ready-2582ff?style=flat-square)](#statutory-tax-compliance--cittaefs)
+[![Data Privacy Seal](https://img.shields.io/badge/NDPA%202023-Audited%20%26%20Compliant-emerald?style=flat-square)](#security--data-privacy)
+[![SMTP Gateway](https://img.shields.io/badge/Email%20Gateway-QServers%20SMTP%20Active-orange?style=flat-square)](#enterprise-email-functionality--qservers-smtp)
+[![Deployment Ready](https://img.shields.io/badge/Deployment-Vercel%20%7C%20Node%20Server-purple?style=flat-square)](#deployment--production-readiness)
 
-> **CittaERP Solutions Limited (CSL)** is a premier enterprise software architect. CSL unifies specialized digital solutions, advanced resource leveling, and statutory tax compliance under an enterprise-shielded secure architecture.
-
-This repository hosts the official corporate presentation platform and interactive middleware sandbox of CSL. It showcases our specialized software family, industry vertical solutions, and an interactive Electronic Fiscal System (EFS) simulator.
-
----
-
-## 🏛️ Executive Summary & Mission
-
-CSL unifies complex business workflows into a highly secure, reliable, and integrated software ecosystem. Standardized operating models demand that modern enterprises navigate intricate statutory taxation, hospitality guest experience cycles, deep supply chain schedules, and legacy accounting systems. 
-
-Our mission is to dissolve technical debt, eliminate structural fragmentation, and secure full compliance without disrupting active business operations.
+> **Citta Software Limited (CSL)** is a premier enterprise software architect operating under the **CittaNuvola** technology umbrella. CSL delivers mission-critical enterprise resource planning (ERP), advanced interactive schedulers, property management engines (PMS), high-throughput API mesh routers, and automated regulatory fiscal compliance infrastructure.
 
 ---
 
-## 🧱 The CSL Software Ecosystem & Core Products
+## 📑 Table of Contents
+- [Executive Overview](#-executive-overview)
+- [Implemented Features & Capabilities](#-implemented-features--capabilities)
+  - [1. Core Enterprise Products](#1-core-enterprise-products)
+  - [2. Interactive EFS Compliance Sandbox](#2-interactive-efs-compliance-sandbox)
+  - [3. Enterprise Email Functionality (QServers SMTP)](#3-enterprise-email-functionality-qservers-smtp)
+  - [4. Production Deployment & Vercel Serverless Ready](#4-production-deployment--vercel-serverless-ready)
+  - [5. Visual Identity, Custom Favicon & Branding](#5-visual-identity-custom-favicon--branding)
+  - [6. SEO, Structured Data & AI Search Optimization](#6-seo-structured-data--ai-search-optimization)
+- [System Architecture](#-system-architecture)
+- [Technology Stack](#-technology-stack)
+- [Environment Configuration](#-environment-configuration)
+- [Local Development & Build Scripts](#-local-development--build-scripts)
+- [Corporate Profile & Support](#-corporate-profile--support)
 
-Our core suite consists of highly integrated, enterprise-grade software products designed for frictionless scalability:
+---
 
-### ⚡ CittaEFS (Compliance & Electronic Fiscal System)
-* **Pre-clearance Handshake:** Bridges legacy ERPs (SAP, Oracle, MS Dynamics, Odoo) with federal tax authorities like the **National Revenue Service (NRS)**.
-* **Cryptographic Signing:** Digitally signs (SHA-256) transaction payloads in real-time under local regulation standards.
-* **Error Prevention Shield:** Prevents math and decimal rounding errors that trigger regulatory API rejections.
-* **7-Year Compliance Vault:** Retains fully indexed transactional history in high-availability immutable ledger archives.
+## 🏛️ Executive Overview
 
-### ⚙️ CittaMatrix (Core ERP & Advanced Ledger)
-* **Financial Core:** Professional multi-currency accounting, comprehensive journal entries, and automated financial reporting.
-* **Supply Chain Suite:** Live warehousing, stock movement tracking, automated procurement, and vendor portals.
-* **API First:** Natively integrates with modern cloud systems and webhooks.
+Modern enterprises face immense friction when connecting complex day-to-day operations with statutory taxation mandates, legacy database silos, and distributed supply chains. CSL solves this by delivering an integrated, high-availability suite of software engines that run standalone or seamlessly overlay existing legacy infrastructure (SAP, Oracle, Microsoft Dynamics, Odoo) without operational downtime.
 
-### 🏨 CittaHospitalityX (PMS & Guest Orchestration)
-* **PMS Core:** Next-generation property management software for luxury hotels, resorts, and vacation properties.
-* **Guest Flow:** Frictionless booking, self-service check-in kiosks, guest profiles, and digital room key orchestration.
-* **Housekeeping Engines:** Algorithmic room status tracking and maintenance dispatching.
+---
 
-### 📅 CittaPlannerX (Interactive Scheduler & Resource Leveling)
-* **Timeline Canvas:** Dynamic, interactive scheduler with drag-and-drop mechanics.
-* **Resource Optimization:** Automated workload balancing, critical path analysis, and equipment leveling.
-* **Operational Sync:** Integrates directly with core manufacturing, PMS, and project accounting modules.
+## 🚀 Implemented Features & Capabilities
 
-### 🔗 CittaNexus (API & Webhook Router)
-* **Routing Gateway:** Central communication hub managing all secure webhooks and microservice integrations.
-* **High Availability:** Sub-millisecond latency routing with automatic circuit-breakers and retry policies.
+### 1. Core Enterprise Products
+
+* **⚡ CittaEFS (Electronic Fiscal System & Compliance Middleware)**
+  * **Real-Time Pre-Clearance:** Bridges enterprise billing directly to the **National Revenue Service (NRS)** fiscalization APIs.
+  * **Cryptographic Payload Signing:** Signs invoice records using standard SHA-256 / private key encryption at sub-second speeds.
+  * **Math & Rounding Shield:** Automated validation engine that eliminates decimal precision errors before submission.
+  * **7-Year Immutable Compliance Vault:** Encrypted, tamper-proof audit trails ensuring complete statutory audit-readiness.
+
+* **⚙️ CittaMatrix (Enterprise ERP & Unified Ledger)**
+  * **Financial Engine:** Multi-currency general ledger, automated reconciliation, bank feeds, and statutory financial reporting.
+  * **Supply Chain & Inventory:** Multi-warehouse inventory tracking, procurement workflows, goods receipts, and vendor management.
+  * **Asset Life Cycle:** Automated depreciation calculation, asset tagging, and maintenance logging.
+
+* **🏨 CittaHospitalityX (PMS & Guest Experience Orchestration)**
+  * **Property Management Core:** End-to-end reservation management for luxury hotels, multi-property resorts, and boutique lodges.
+  * **Guest Journey Automation:** Mobile check-in, keyless room entry coordination, and guest profile history.
+  * **Housekeeping & Folios:** Algorithmic room assignment, automated turnover schedules, and multi-point folio billing.
+
+* **📅 CittaPlannerX (Resource Scheduling & Timeline Canvas)**
+  * **Interactive Gantt Scheduler:** Canvas with drag-and-drop task rescheduling, dependency links, and milestone tracking.
+  * **Resource Workload Leveling:** Prevents personnel and equipment bottlenecks across concurrent industrial projects.
+  * **Critical Path Engine:** Dynamically recalculates project timelines on scope or shift modifications.
+
+* **🔗 CittaNexus (API Gateway & Webhook Mesh)**
+  * **Sub-Millisecond Message Router:** Manages all microservice events and bidirectional ERP data synchronization.
+  * **Resilience Protocols:** Automated exponential backoff retry mechanisms, dead-letter queues, and circuit breaker patterns.
+
+---
+
+### 2. Interactive EFS Compliance Sandbox
+
+* **Live Simulation Engine:** Allows technical directors and compliance officers to test real-world invoice fiscalization directly within the web app.
+* **Payload Generator & JSON Inspector:** Generates raw and cryptographically signed payload structures matching NRS pre-clearance specifications.
+* **Status Telemetry:** Visual indicators for QR validation codes, digital signature verification, and timestamp handshakes.
+
+---
+
+### 3. Enterprise Email Functionality (QServers SMTP)
+
+* **Direct QServers / cPanel Relay:**
+  * Uses `nodemailer` to dispatch corporate inquiries via **QServers Secure SSL/TLS** (`mail.cittanuvola.com:465`).
+  * Sends verified incoming requests directly to **`cittasl@cittanuvola.com`**.
+* **Enterprise HTML & Plaintext Templates:**
+  * Formats submissions into styled corporate email reports containing inquirer details, organisation name, phone/WhatsApp, job title, area of interest, and full request specifications.
+  * Dynamically populates `Reply-To` headers so responses go straight to the client's corporate inbox.
+* **Resilient Dual-Path Dispatch:**
+  * Automatically attempts secure backend SMTP transmission first.
+  * Provides a zero-downtime client-side fallback with 1-click **"Copy Summary"** clipboard tools and pre-formatted mail launchers if SMTP credentials are being configured.
+
+---
+
+### 4. Production Deployment & Vercel Serverless Ready
+
+* **Dual Runtime Compatibility:**
+  * **Vercel Serverless Function (`/api/contact.ts`):** Native Vercel serverless handler with CORS management and JSON body parsing.
+  * **Full-Stack Express Gateway (`server.ts`):** High-performance Express server bundled with `esbuild` for Docker containers, Cloud Run, or custom VPS instances.
+* **Vercel Routing (`vercel.json`):** Pre-configured rewrite rules routing `/api/*` to serverless handlers and all other routes to the Single-Page Application (SPA) bundle.
+
+---
+
+### 5. Visual Identity, Custom Favicon & Branding
+
+* **Official CSL Brand Integration:**
+  * Integrated the official CSL logo (`src/logo.png`) across all application viewports.
+* **Multi-Platform Favicon Specification:**
+  * Synchronized `/src/logo.png`, `public/logo.png`, `public/favicon.ico`, `public/favicon.png`, and `public/apple-touch-icon.png`.
+  * Configured active React lifecycle hooks to dynamic-bind the tab favicon in modern browsers, eliminating stale browser cache issues.
+
+---
+
+### 6. SEO, Structured Data & AI Search Optimization
+
+* **Search Engine Meta & Social Sharing:**
+  * OpenGraph and Twitter Cards pre-configured with canonical domain `https://www.cittasl.com`.
+* **JSON-LD Structured Data Schema:**
+  * Rich schema types for `Organization`, `SoftwareApplication` (CittaEFS, CittaMatrix, CittaHospitalityX), and `WebSite`.
+* **AI Agent & LLM Manifests:**
+  * `llms.txt` and `llms-full.txt` files placed in `/public` for LLM search indexing and AI crawler comprehension.
+  * Complete `robots.txt` and `sitemap.xml`.
 
 ---
 
 ## 🛠️ System Architecture
 
 ```
-                       ┌────────────────────────────────────────┐
-                       │      CSL Unified Parent Framework      │
-                       └───────────────────┬────────────────────┘
-                                           │
-         ┌───────────────────┬─────────────┼─────────────┬───────────────────┐
-         ▼                   ▼             ▼             ▼                   ▼
-   ┌───────────┐       ┌───────────┐ ┌───────────┐ ┌───────────┐       ┌───────────┐
-   │ CittaEFS  │       │CittaMatrix│ │Hospitality│ │ PlannerX  │       │CittaNexus │
-   │Compliance │       │ Core ERP  │ │    PMS    │ │ Scheduler │       │ API Route │
-   └─────┬─────┘       └───────────┘ └───────────┘ └───────────┘       └───────────┘
-         │
-         │ Secure REST API / TLS 1.3
-         ▼
-   ┌────────────────────────────────────────┐
-   │    Accredited Access Point Partner     │
-   └───────────────────┬────────────────────┘
-                       │
-                       ▼
-   ┌────────────────────────────────────────┐
-   │     National Revenue Service (NRS)     │
-   └────────────────────────────────────────┘
+                               ┌──────────────────────────────────────────────┐
+                               │        CSL Enterprise Web Platform           │
+                               │           (React 18 + TypeScript)            │
+                               └──────────────────────┬───────────────────────┘
+                                                      │
+                       ┌──────────────────────────────┴──────────────────────────────┐
+                       ▼                                                             ▼
+         ┌───────────────────────────┐                                 ┌───────────────────────────┐
+         │     Vercel Serverless     │                                 │     Full-Stack Express    │
+         │     (/api/contact.ts)     │                                 │        (server.ts)        │
+         └─────────────┬─────────────┘                                 └─────────────┬─────────────┘
+                       │                                                             │
+                       └──────────────────────────────┬──────────────────────────────┘
+                                                      │  Secure SMTP (SSL / Port 465)
+                                                      ▼
+                                       ┌─────────────────────────────┐
+                                       │     QServers Mail Gateway   │
+                                       │   (mail.cittanuvola.com)    │
+                                       └──────────────┬──────────────┘
+                                                      │
+                                                      ▼
+                                       ┌─────────────────────────────┐
+                                       │   cittasl@cittanuvola.com   │
+                                       │      (Corporate Inbox)      │
+                                       └─────────────────────────────┘
 ```
 
 ---
 
-## 💻 Tech Stack & Design Standards
+## 💻 Technology Stack
 
-The CSL corporate platform is engineered using modern, high-performance web practices:
-
-* **Framework:** React 18+ with strict TypeScript
-* **Build Engine:** Vite
-* **Styling Paradigm:** Tailwind CSS utility class system
-* **Animations:** Fluid, declarative transitions powered by Framer Motion (`motion/react`)
-* **Icons:** Standardized SVG imports from `lucide-react`
-* **Accessibility:** Generous typographic hierarchy and deep contrast values adhering to WCAG standards.
+* **Frontend Framework:** React 18+ with strict TypeScript
+* **Build Tooling:** Vite & esbuild
+* **Styling Framework:** Tailwind CSS
+* **Animations:** Framer Motion (`motion/react`)
+* **Icons:** Lucide React (`lucide-react`)
+* **Email Engine:** Nodemailer with QServers Secure SSL/TLS
+* **Server Runtimes:** Express.js & Vercel Serverless Functions
 
 ---
 
-## 🚀 Developer Setup & Command Line Interface
+## 🔐 Environment Configuration
 
-### Prerequisites
-* **Node.js** v18 or newer
-* **npm** or **yarn** package managers
+Create a `.env` file in the project root or configure your production environment variables (e.g. in Vercel or Cloud Run settings):
 
-### Installation
-Clone or download the project files and run dependency installation:
+```env
+# Server Application URL
+APP_URL="https://www.cittasl.com"
+
+# QServers SMTP Mail Configuration
+SMTP_HOST="mail.cittanuvola.com"
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER="cittasl@cittanuvola.com"
+SMTP_PASS="YOUR_QSERVERS_EMAIL_PASSWORD"
+
+# Recipient Address for Consultation Inquiries
+CONTACT_RECIPIENT_EMAIL="cittasl@cittanuvola.com"
+```
+
+---
+
+## 🚀 Local Development & Build Scripts
+
+### 1. Install Dependencies
 ```bash
 npm install
 ```
 
-### Local Development Server
-Boot the HMR-configured development server locally:
+### 2. Run Local Development Server
 ```bash
 npm run dev
 ```
-The server binds to port `3000` (mapped via nginx proxy) and will be accessible at http://localhost:3000.
+Starts the full-stack development server on `http://localhost:3000`.
 
-### Static Production Build
-Compile the application into highly compressed, optimized static assets under `/dist`:
+### 3. Production Build
 ```bash
 npm run build
 ```
+Compiles Vite client assets to `/dist` and bundles the standalone Node server to `/dist/server.cjs`.
 
-### Static Build Execution
-To run the production bundle locally:
+### 4. Run Production Build
 ```bash
 npm run start
 ```
 
-### Quality Assurance & Linting
-Validate type safety, syntax consistency, and formatting standards:
+### 5. Type-Checking & Linting
 ```bash
 npm run lint
 ```
 
 ---
 
-## 🔒 Security & Regulatory Foundations
+## 🏢 Corporate Profile & Support
 
-* **TLS 1.3 Architecture:** All internal and external routing vectors are protected by transport-layer security protocols.
-* **NDPA 2023 Audited:** All sensitive transactional databases, employee records, and client databases conform to the guidelines of the **Nigerian Data Protection Act (NDPA) 2023**.
-* **ISO 27001 Prepared:** Systems are structured around strict information security management system (ISMS) controls.
-* **NTAA Section 23 Compliant:** Financial ledgers are immutable and automatically mirror statutory records in complete alignment with regional tax laws.
+**Citta Software Limited (CSL)**  
+*Under the CittaNuvola Group*
 
----
-
-## 🏢 Corporate Profile & Contact Info
-
-**CittaERP Solutions Limited (CSL)** is a registered, licensed corporate technology firm.
-
-* **HQ Location:** Victoria Island Corporate District, Lagos State, Nigeria.
-* **Web:** [www.cittanuvola.com](http://www.cittanuvola.com)
-* **Inquiries & Support:** [info@cittanuvola.com](mailto:info@cittanuvola.com) | [info1@cittanuvola.com](mailto:info1@cittanuvola.com)
-* **Corporate Telephone:** +234 (1) 888-EFS9 (+234 1 888 3379)
-* **SLA Target:** 99.99% system availability with 24/7 designated solutions architect support.
+* **Head Office:** 5, Sadiku Street, Agidingbi, Ikeja, Lagos, Nigeria.
+* **Official Website:** [www.cittasl.com](https://www.cittasl.com)
+* **Parent Organization:** [www.cittanuvola.com](https://www.cittanuvola.com)
+* **Corporate Inquiries:** [cittasl@cittanuvola.com](mailto:cittasl@cittanuvola.com)
+* **Phone / WhatsApp:** 0813–424–8104
+* **Operating Hours:** Monday – Friday, 8:00 AM – 5:00 PM WAT
