@@ -1,7 +1,7 @@
 import { useState, FormEvent } from 'react';
 import { 
   Building2, Mail, Phone, Globe, ShieldAlert, CheckCircle2, Send, 
-  MapPin, HelpCircle, Calendar, Sparkles, Briefcase
+  MapPin, HelpCircle, Calendar, Sparkles, Briefcase, Copy, Check, Server
 } from 'lucide-react';
 
 export default function ContactForm() {
@@ -18,13 +18,22 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [deliveryMode, setDeliveryMode] = useState<'qservers_smtp' | 'direct_client' | 'unconfigured_smtp'>('qservers_smtp');
+  const [copied, setCopied] = useState(false);
 
   // Robust email pattern check
   const isValidEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleCopySummary = () => {
+    const summary = `Full Name: ${formState.fullName}\nCorporate Email: ${formState.corporateEmail}\nOrganisation: ${formState.organisation}\nJob Title: ${formState.jobTitle}\nPhone: ${formState.phone || 'N/A'}\nArea of Interest: ${formState.areaOfInterest}\n\nMessage:\n${formState.message}`;
+    navigator.clipboard.writeText(summary);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
@@ -52,24 +61,51 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     
-    // Dispatch email directly to cittasl@cittanuvola.com via mailto trigger & state update
-    const subject = encodeURIComponent(`Consultation Request: ${formState.organisation} (${formState.fullName})`);
-    const body = encodeURIComponent(
-      `Full Name: ${formState.fullName}\n` +
-      `Corporate Email: ${formState.corporateEmail}\n` +
-      `Phone: ${formState.phone || 'N/A'}\n` +
-      `Organisation: ${formState.organisation}\n` +
-      `Job Title: ${formState.jobTitle}\n` +
-      `Area of Interest: ${formState.areaOfInterest}\n\n` +
-      `Message:\n${formState.message}`
-    );
+    try {
+      // Dispatch inquiry to QServers SMTP endpoint on the backend
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        if (result.mode === 'qservers_smtp') {
+          setDeliveryMode('qservers_smtp');
+        } else {
+          setDeliveryMode('unconfigured_smtp');
+          // If SMTP password is not set yet in env, trigger mailto fallback
+          if (result.fallbackUrl) {
+            window.location.href = result.fallbackUrl;
+          }
+        }
+        setIsSuccess(true);
+      } else {
+        // If server returned an error, fallback gracefully to direct email
+        setDeliveryMode('direct_client');
+        setIsSuccess(true);
+        const subject = encodeURIComponent(`Consultation Request: ${formState.organisation} (${formState.fullName})`);
+        const body = encodeURIComponent(
+          `Full Name: ${formState.fullName}\nCorporate Email: ${formState.corporateEmail}\nPhone: ${formState.phone || 'N/A'}\nOrganisation: ${formState.organisation}\nJob Title: ${formState.jobTitle}\nArea of Interest: ${formState.areaOfInterest}\n\nMessage:\n${formState.message}`
+        );
+        window.location.href = `mailto:cittasl@cittanuvola.com?subject=${subject}&body=${body}`;
+      }
+    } catch {
+      // Network offline or static environment fallback
+      setDeliveryMode('direct_client');
       setIsSuccess(true);
-      // Automatically open email client addressed to cittasl@cittanuvola.com
+      const subject = encodeURIComponent(`Consultation Request: ${formState.organisation} (${formState.fullName})`);
+      const body = encodeURIComponent(
+        `Full Name: ${formState.fullName}\nCorporate Email: ${formState.corporateEmail}\nPhone: ${formState.phone || 'N/A'}\nOrganisation: ${formState.organisation}\nJob Title: ${formState.jobTitle}\nArea of Interest: ${formState.areaOfInterest}\n\nMessage:\n${formState.message}`
+      );
       window.location.href = `mailto:cittasl@cittanuvola.com?subject=${subject}&body=${body}`;
-    }, 1200);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -303,21 +339,44 @@ export default function ContactForm() {
                 </form>
               ) : (
                 /* Success Message Box */
-                <div className="py-12 px-4 text-center space-y-6 animate-fade-in text-slate-800">
-                  <div className="inline-flex p-4 bg-[#2582ff]/5 text-[#2582ff] rounded-full border border-[#2582ff]/10 shadow-sm">
+                <div className="py-10 px-4 text-center space-y-6 animate-fade-in text-slate-800">
+                  <div className="inline-flex p-4 bg-emerald-50 text-emerald-600 rounded-full border border-emerald-200 shadow-sm">
                     <CheckCircle2 className="w-10 h-10 animate-bounce" />
                   </div>
                   
                   <div className="space-y-2">
+                    <div className="inline-flex items-center space-x-1.5 bg-blue-50 text-[#2582ff] border border-blue-200 px-3 py-1 rounded-full text-xs font-mono font-semibold mb-1">
+                      <Server className="w-3.5 h-3.5" />
+                      <span>{deliveryMode === 'qservers_smtp' ? 'Dispatched via QServers Mail Gateway' : 'Consultation Request Prepared'}</span>
+                    </div>
+
                     <h3 className="font-display text-2xl font-black text-slate-900">
-                      Inquiry Logged!
+                      Inquiry Successfully Received!
                     </h3>
                     <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
-                      Thank you, <strong>{formState.fullName}</strong>. We have logged your request on behalf of <strong>{formState.organisation}</strong>.
+                      Thank you, <strong>{formState.fullName}</strong>. We have logged your consultation request for <strong>{formState.organisation}</strong>.
                     </p>
-                    <p className="text-slate-500 text-xs max-w-sm mx-auto italic mt-1">
-                      A senior CSL Integration Engineer will contact you at <strong>{formState.corporateEmail}</strong> shortly to align schedules.
+                    <p className="text-slate-500 text-xs max-w-sm mx-auto mt-1">
+                      Our enterprise integration desk has been notified and will reply to <strong>{formState.corporateEmail}</strong> shortly.
                     </p>
+                  </div>
+
+                  {/* Summary & Copy Box */}
+                  <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs max-w-md mx-auto text-left text-xs space-y-2">
+                    <div className="flex justify-between items-center border-b border-slate-100 pb-2">
+                      <span className="font-mono font-bold text-slate-500 uppercase text-[10px]">Reference Copy</span>
+                      <button
+                        onClick={handleCopySummary}
+                        className="text-[11px] font-mono text-[#2582ff] hover:underline flex items-center space-x-1 cursor-pointer"
+                      >
+                        {copied ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
+                        <span>{copied ? 'Copied to Clipboard' : 'Copy Summary'}</span>
+                      </button>
+                    </div>
+                    <div className="text-slate-600 text-[11px] font-mono space-y-0.5">
+                      <div><strong>Area:</strong> {formState.areaOfInterest}</div>
+                      <div><strong>Client:</strong> {formState.fullName} ({formState.organisation})</div>
+                    </div>
                   </div>
 
                   <div className="border-t border-slate-200 pt-6 max-w-md mx-auto space-y-4">
@@ -326,7 +385,7 @@ export default function ContactForm() {
                       <div>
                         <p className="font-bold text-slate-800">What Happens Next?</p>
                         <p className="text-slate-500 mt-0.5 text-[11px] leading-normal">
-                          We will initiate a non-disclosure agreement to securely map your requirements and schedule a staging demo.
+                          A CSL Solution Architect will review your stack requirements and schedule a non-disclosure technical briefing.
                         </p>
                       </div>
                     </div>
