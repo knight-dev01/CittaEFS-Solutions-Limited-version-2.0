@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
+import srcLogo from './logo.png';
 import { PageId } from './types';
 
 // Component Imports
@@ -27,18 +28,21 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Ensure tab favicon actively displays CittaSL site logo
+  // Ensure tab favicon actively displays the logo from the src directory
   useEffect(() => {
     try {
       const updateFavicon = () => {
-        let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
-        if (!link) {
-          link = document.createElement('link');
-          link.rel = 'icon';
-          document.getElementsByTagName('head')[0].appendChild(link);
-        }
-        link.type = 'image/svg+xml';
-        link.href = `/favicon.svg?v=${Date.now()}`;
+        const iconRels = ['icon', 'shortcut icon', 'apple-touch-icon'];
+        iconRels.forEach(rel => {
+          let link = document.querySelector(`link[rel='${rel}']`) as HTMLLinkElement;
+          if (!link) {
+            link = document.createElement('link');
+            link.rel = rel;
+            document.head.appendChild(link);
+          }
+          link.type = 'image/png';
+          link.href = srcLogo;
+        });
       };
       updateFavicon();
     } catch {
