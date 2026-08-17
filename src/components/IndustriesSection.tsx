@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { 
   Factory, ShoppingBag, Landmark, HeartPulse, ShieldCheck, 
-  Truck, Building, Hotel, GraduationCap, Zap, ChevronRight 
+  Truck, Building, Hotel, GraduationCap, Zap, ChevronRight, CheckCircle2 
 } from 'lucide-react';
+import { motion } from 'motion/react';
+import industryLeadImg from '../assets/images/csl_industry_lead_1786930437006.jpg';
 
 export default function IndustriesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -128,7 +130,7 @@ export default function IndustriesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Block */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24 gap-4">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20 gap-4">
           <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
             Section 07. Sector Blueprints
           </span>
@@ -139,6 +141,53 @@ export default function IndustriesSection() {
             Different sectors present distinct transactional profiles and regulatory structures. <strong>CittaERP Solutions Limited (CSL)</strong> acts as the enterprise partner, deploying specialized systems to solve exact industry requirements.
           </p>
         </div>
+
+        {/* Human Sector Leadership Photographic Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-14 sm:mb-18 rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl"
+        >
+          <div className="grid lg:grid-cols-12 items-center">
+            <div className="lg:col-span-6 relative h-72 sm:h-96 lg:h-[380px] overflow-hidden">
+              <img 
+                src={industryLeadImg} 
+                alt="Enterprise Operational Managers and Supply Chain Directors coordinating manufacturing and logistics systems with CSL" 
+                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent lg:hidden" />
+            </div>
+
+            <div className="lg:col-span-6 p-8 sm:p-10 lg:p-12 text-left space-y-5">
+              <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold text-[#ff8e1a] bg-orange-50 px-3 py-1 rounded-full border border-orange-200">
+                <span className="w-2 h-2 rounded-full bg-[#ff8e1a]" />
+                <span>CROSS-INDUSTRY OPERATIONAL RESILIENCE</span>
+              </div>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
+                Empowering Sector Leaders with Zero-Downtime Operations
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                From high-volume retail checkouts to heavy manufacturing supply chains and regulated banking ledgers, CSL engineers solutions tailored to the physical and digital realities of each operational sector.
+              </p>
+              <div className="space-y-2.5 pt-2">
+                {[
+                  "Continuous transaction clearance during peak holiday shopping surges",
+                  "Automated transport and cargo clearance with zero customs delays",
+                  "Compliant patient ledger and multi-branch hospital administration"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center space-x-2.5 text-xs text-slate-700 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-[#ff8e1a] shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

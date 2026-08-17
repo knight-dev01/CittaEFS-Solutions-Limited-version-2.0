@@ -278,7 +278,7 @@ export function ProductCard({
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       {...extraProps}
-      className={`p-6 sm:p-8 rounded-3xl border transition-all cursor-pointer flex flex-col justify-between text-left h-full ${
+      className={`p-6 sm:p-8 rounded-3xl border transition-all cursor-pointer flex flex-col justify-between text-left h-full group ${
         isFeatured 
           ? `bg-slate-900 text-white border-slate-800 ${isBlue ? 'ring-1 ring-emerald-500/20' : 'ring-1 ring-teal-500/20'} md:col-span-2 shadow-xl` 
           : 'bg-white text-slate-800 border-slate-200 hover:shadow-xl ' + borderHoverClass
@@ -295,11 +295,11 @@ export function ProductCard({
           }`}>
             {badge}
           </span>
-          <ArrowUpRight className={`w-5 h-5 ${isFeatured ? 'text-slate-400' : 'text-slate-400 hover:text-slate-600'}`} />
+          <ArrowUpRight className={`w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${isFeatured ? 'text-slate-400' : 'text-slate-400 group-hover:text-slate-700'}`} />
         </div>
 
         <div className="flex items-center space-x-3.5">
-          <div className={`p-3 rounded-2xl ${
+          <div className={`p-3 rounded-2xl shrink-0 ${
             isFeatured 
               ? 'bg-white/10 text-[#2582ff]' 
               : isBlue 
@@ -309,7 +309,7 @@ export function ProductCard({
             <Icon className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="font-display font-bold text-lg sm:text-xl">
+            <h3 className="font-display font-bold text-lg sm:text-xl text-slate-900">
               {name}
             </h3>
             <span className={`block text-[10px] font-mono tracking-wider uppercase opacity-80 ${isFeatured ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -323,7 +323,7 @@ export function ProductCard({
         </p>
 
         {businessValue && (
-          <div className="pt-3 border-t border-slate-100/50">
+          <div className="pt-3 border-t border-slate-100/70">
             <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 mb-1">Business Value</span>
             <p className={`text-xs leading-relaxed font-semibold ${isFeatured ? 'text-emerald-300' : 'text-emerald-700'}`}>
               {businessValue}

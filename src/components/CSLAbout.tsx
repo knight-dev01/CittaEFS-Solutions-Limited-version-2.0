@@ -1,6 +1,7 @@
-import { Compass, Eye, ShieldCheck, Award, Landmark, Users2, ArrowUpRight } from 'lucide-react';
+import { Compass, Eye, ShieldCheck, Award, Landmark, Users2, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { AnimatedSectionNumber, AnimatedStat } from './AnimatedComponents';
+import teamCollabImg from '../assets/images/csl_team_collab_1786930394725.jpg';
 
 interface CSLAboutProps {
   isTopPage?: boolean;
@@ -46,7 +47,7 @@ export default function CSLAbout({ isTopPage = false, isSummary = false, setCurr
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-24"
+          className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-20"
         >
           <div className="lg:col-span-6 flex flex-col items-start gap-4 sm:gap-6 text-left">
             <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
@@ -75,6 +76,58 @@ export default function CSLAbout({ isTopPage = false, isSummary = false, setCurr
                 </div>
               </div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Human Team & Collaborative Culture Photographic Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-16 sm:mb-24 rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl"
+        >
+          <div className="grid lg:grid-cols-12 items-center">
+            <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-[420px] overflow-hidden">
+              <img 
+                src={teamCollabImg} 
+                alt="CittaSL (CSL) Enterprise Software Architects & Engineering Team collaborating on digital transformation strategy" 
+                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent lg:hidden" />
+              <div className="absolute bottom-4 left-4 lg:hidden text-white text-left">
+                <span className="font-mono text-[10px] uppercase tracking-wider bg-emerald-600/90 px-2.5 py-1 rounded-full font-bold">
+                  CSL Engineering Hub
+                </span>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-5 p-8 sm:p-10 lg:p-12 text-left space-y-5">
+              <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                <span className="w-2 h-2 rounded-full bg-emerald-600" />
+                <span>EXPERIENCED ENGINEERING TALENT</span>
+              </div>
+              <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight">
+                Architected by Seasoned Enterprise Practitioners
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                Our interdisciplinary engineering teams bring deep technical expertise in distributed systems, financial cryptographic hashing, and legacy ERP architectures (SAP, Oracle, Odoo, Microsoft Dynamics).
+              </p>
+              <div className="space-y-2.5 pt-2">
+                {[
+                  "Dedicated in-house systems architects & compliance engineers",
+                  "Direct engineering support for corporate onboarding",
+                  "Continuous regulatory sync with national revenue authorities"
+                ].map((point, i) => (
+                  <div key={i} className="flex items-center space-x-2.5 text-xs text-slate-700 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
 

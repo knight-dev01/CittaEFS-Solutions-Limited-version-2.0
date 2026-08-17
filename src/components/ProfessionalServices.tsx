@@ -1,7 +1,8 @@
 import { motion } from 'motion/react';
 import { 
-  Network, Code2, Cloud, HelpCircle, FileCheck, Sliders, ArrowUpRight 
+  Network, Code2, Cloud, HelpCircle, FileCheck, Sliders, ArrowUpRight, CheckCircle2 
 } from 'lucide-react';
+import consultTeamImg from '../assets/images/csl_consult_team_1786930422777.jpg';
 
 export default function ProfessionalServices() {
   const services = [
@@ -44,7 +45,7 @@ export default function ProfessionalServices() {
   ];
 
   return (
-    <section id="services" className="py-20 sm:py-28 bg-slate-50 text-slate-800 relative overflow-hidden border-b border-slate-200">
+    <section id="services" className="py-20 sm:py-28 bg-white text-slate-800 relative overflow-hidden border-b border-slate-200">
       {/* Decorative glows */}
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-96 h-96 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none" />
@@ -52,7 +53,7 @@ export default function ProfessionalServices() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header block */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24 gap-4">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20 gap-4">
           <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
             Section 06. Supporting Capabilities
           </span>
@@ -63,6 +64,53 @@ export default function ProfessionalServices() {
             We provide expert engineering capabilities to support successful implementation, custom integration, and long-term system optimization for your organization.
           </p>
         </div>
+
+        {/* Human Consulting & Client Collaboration Visual Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-14 sm:mb-18 rounded-3xl overflow-hidden bg-slate-50 border border-slate-200 shadow-xl"
+        >
+          <div className="grid lg:grid-cols-12 items-center">
+            <div className="lg:col-span-6 relative h-72 sm:h-96 lg:h-[400px] overflow-hidden">
+              <img 
+                src={consultTeamImg} 
+                alt="Senior CSL Technology Consultants guiding client through cloud ERP migration and regulatory integration" 
+                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent lg:hidden" />
+            </div>
+
+            <div className="lg:col-span-6 p-8 sm:p-10 lg:p-12 text-left space-y-5">
+              <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                <span className="w-2 h-2 rounded-full bg-blue-600" />
+                <span>HANDS-ON ADVISORY & ON-SITE IMPLEMENTATION</span>
+              </div>
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
+                Direct Collaboration with Your Internal Engineering Teams
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                We do not just hand over software licenses. Our certified solution architects and database consultants work side-by-side with your IT leadership to blueprint, test, and deploy integrations with zero operational disruption.
+              </p>
+              <div className="space-y-2.5 pt-2">
+                {[
+                  "Dedicated Lead Solutions Architect assigned to your account",
+                  "Structured milestones with guaranteed go-live SLA targets",
+                  "Comprehensive knowledge transfer and staff training sessions"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center space-x-2.5 text-xs text-slate-700 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">

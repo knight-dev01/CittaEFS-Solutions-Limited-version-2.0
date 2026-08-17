@@ -136,7 +136,8 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
       '@id': `${siteUrl}/#product-cittaefs`,
       'name': 'CittaEFS Compliance Gateway',
       'image': [
-        logoUrl
+        logoUrl,
+        `${siteUrl}/logo.png`
       ],
       'description': 'An intelligent real-time compliance bridge and validation middleware that connects ERP systems (SAP, Oracle, Dynamics, Odoo) to state tax and fiscal authorities for sub-240ms automated invoice pre-clearance.',
       'sku': 'CSL-CEFS-001',

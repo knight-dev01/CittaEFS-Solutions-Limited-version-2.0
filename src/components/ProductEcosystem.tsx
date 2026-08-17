@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Database, Cpu, Landmark, Layers, FileCheck, ArrowRight, Star, Loader2 } from 'lucide-react';
+import { Database, Cpu, Layers, FileCheck, ArrowRight, Star, Loader2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PageId } from '../types';
 import { ProductCard } from './EnterpriseVisuals';
@@ -32,7 +32,7 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Title Block */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-24 gap-4">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20 gap-4">
           <div className="flex items-center space-x-3">
             <span className="inline-block font-mono text-xs uppercase tracking-widest text-[#2582ff] font-bold bg-[#2582ff]/5 px-3.5 py-1.5 rounded-full border border-[#2582ff]/10">
               Section 04. Enterprise Solutions
@@ -40,7 +40,7 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
             <button
               onClick={handleReload}
               title="Simulate loading state"
-              className="text-xs font-mono text-slate-400 hover:text-[#2582ff] flex items-center space-x-1 bg-white border border-slate-200 px-2.5 py-1 rounded-md shadow-xs transition-colors"
+              className="text-xs font-mono text-slate-400 hover:text-[#2582ff] flex items-center space-x-1 bg-white border border-slate-200 px-2.5 py-1 rounded-md shadow-xs transition-colors cursor-pointer"
             >
               <span>{isLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : '↻'}</span>
               <span>Reload Skeleton</span>
@@ -150,10 +150,10 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
 
               <div className="pt-8 mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <span className="text-xs font-bold text-[#2582ff] inline-flex items-center space-x-1.5 group-hover:underline">
-                  <span>Request details</span>
+                  <span>Request live demo</span>
                   <span className="font-mono">→</span>
                 </span>
-                <span className="text-[10px] font-mono text-slate-500">SECURE & ARCHITECTED</span>
+                <span className="text-[10px] font-mono text-slate-500">AES-256-GCM SECURE & ARCHITECTED</span>
               </div>
             </motion.div>
 
@@ -216,4 +216,3 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
     </section>
   );
 }
-

@@ -59,14 +59,6 @@ export const SEARCH_INDEX: SearchItem[] = [
     scrollId: "products"
   },
   {
-    title: "Live Validation Sandbox & Simulator",
-    category: "Product",
-    description: "Interactive simulator to inspect compliance handshakes, test raw JSON payloads, and measure clearance speed.",
-    keywords: ["live", "validation", "sandbox", "simulator", "rest api", "json payload", "firs simulator", "api test", "cittaefs", "csl"],
-    pageId: "products",
-    scrollId: "products"
-  },
-  {
     title: "Audit Ledger Vault (AES-256)",
     category: "Product",
     description: "Secures cleared compliance transaction history with AES-256 encryption and immutable non-repudiation logs.",
