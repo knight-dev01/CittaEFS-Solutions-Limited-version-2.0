@@ -14,21 +14,28 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content="CittaSL (CSL)" />
-    <meta property="og:title" content="CittaSL | Enterprise Digital Transformation & Regulatory Middleware" />
+    <meta property="og:title" content="CittaSL (CSL) | Enterprise Digital Transformation & Regulatory Middleware" />
     <meta property="og:description" content="CittaSL (Citta ERP Solutions Limited), powered by CittaNuvola Group, delivers enterprise middleware, CittaEFS fiscal systems, and ERP integration platforms." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.cittasl.com/" />
-    <meta property="og:image" content="https://cittanuvola.com/images/Cittanuvola%20logo.png" />
+    <meta property="og:image" content="https://www.cittasl.com/logo.png" />
+    <meta property="og:image:secure_url" content="https://www.cittasl.com/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="CittaSL (CSL) Enterprise Logo" />
     <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="CittaSL (CSL) | Enterprise Digital Transformation" />
     <meta name="twitter:description" content="Achieve seamless compliance and enterprise digital transformation with CittaSL software solutions." />
-    <meta name="twitter:image" content="https://cittanuvola.com/images/Cittanuvola%20logo.png" />
+    <meta name="twitter:image" content="https://www.cittasl.com/logo.png" />
     
-    <!-- Favicon using Local CittaSL Logo -->
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <!-- Complete Favicon Specification with CittaSL Logo -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
+    <link rel="shortcut icon" type="image/png" href="/logo.png" />
+    <link rel="mask-icon" href="/logo.png" color="#2582ff" />
 
     <!-- LLMs Text Manifest for AI Agents & Search Engine AI Summarization -->
     <link rel="alternate" type="text/plain" href="/llms.txt" title="AI Summary Context Document" />
@@ -42,12 +49,13 @@
     <meta name="google-extended" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
 
-    <!-- Structured Data (JSON-LD) for Search Engine Rich Snippets & Google Product Indexing -->
+    <!-- Structured Data (JSON-LD) for Search Engine Rich Snippets, Sitelinks, and Google/Bing Indexing -->
     <script type="application/ld+json">
     [
       {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://www.cittasl.com/#organization",
         "name": "CittaSL",
         "alternateName": [
           "CSL",
@@ -58,7 +66,12 @@
           "CittaNuvola Group Enterprise Division"
         ],
         "url": "https://www.cittasl.com/",
-        "logo": "https://cittanuvola.com/images/Cittanuvola%20logo.png",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.cittasl.com/logo.png",
+          "caption": "CittaSL Logo"
+        },
+        "image": "https://www.cittasl.com/logo.png",
         "sameAs": [
           "https://www.cittanuvola.com"
         ],
@@ -82,9 +95,72 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://www.cittasl.com/#website",
         "name": "CittaSL",
-        "alternateName": "Citta ERP Solutions Limited",
-        "url": "https://www.cittasl.com/"
+        "alternateName": [
+          "Citta ERP Solutions Limited",
+          "CSL Enterprise Software"
+        ],
+        "url": "https://www.cittasl.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.cittasl.com/?search={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": "https://www.cittasl.com/#sitelinks-navigation",
+        "name": "CittaSL Key Navigation & Enterprise Services",
+        "description": "Primary sitelinks and core solutions for CittaSL (Citta ERP Solutions Limited).",
+        "itemListElement": [
+          {
+            "@type": "SiteNavigationElement",
+            "position": 1,
+            "name": "CittaEFS Compliance Gateway",
+            "description": "Intelligent electronic fiscal system and automated tax compliance gateway for SAP, Oracle, Odoo, and Microsoft Dynamics.",
+            "url": "https://www.cittasl.com/#products"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 2,
+            "name": "CittaMatrix Core ERP",
+            "description": "Multi-entity enterprise transaction router, double-entry general ledger, and ERP suite.",
+            "url": "https://cittamatrix.com/"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 3,
+            "name": "CittaHospitalityX PMS",
+            "description": "Hotel property management system, guest folio billing, and reservation engine.",
+            "url": "https://cittahospitalityx.com/"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 4,
+            "name": "CittaPlannerX Scheduler",
+            "description": "Enterprise project planning, milestone scheduler, and resource leveling.",
+            "url": "https://cittaplannerx.com/"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 5,
+            "name": "Enterprise Solutions & Integration",
+            "description": "ERP connectors for SAP S/4HANA, Oracle NetSuite, Odoo, and Microsoft Dynamics.",
+            "url": "https://www.cittasl.com/#services"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 6,
+            "name": "Contact & Request Staging",
+            "description": "Connect with CSL enterprise architects and request sandbox staging access in Lagos.",
+            "url": "https://www.cittasl.com/#contact"
+          }
+        ]
       },
       {
         "@context": "https://schema.org",
@@ -123,7 +199,7 @@
         "operatingSystem": "Web / Cloud",
         "applicationCategory": "BusinessApplication",
         "url": "https://www.cittasl.com/",
-        "image": "https://cittanuvola.com/images/Cittanuvola%20logo.png",
+        "image": "https://www.cittasl.com/logo.png",
         "provider": {
           "@type": "Organization",
           "name": "CittaSL",
@@ -139,7 +215,7 @@
         "operatingSystem": "Cloud Infrastructure",
         "applicationCategory": "BusinessApplication",
         "url": "https://www.cittasl.com/",
-        "image": "https://cittanuvola.com/images/Cittanuvola%20logo.png",
+        "image": "https://www.cittasl.com/logo.png",
         "provider": {
           "@type": "Organization",
           "name": "CittaSL",
@@ -155,7 +231,7 @@
         "operatingSystem": "Web Application",
         "applicationCategory": "BusinessApplication",
         "url": "https://www.cittasl.com/",
-        "image": "https://cittanuvola.com/images/Cittanuvola%20logo.png",
+        "image": "https://www.cittasl.com/logo.png",
         "provider": {
           "@type": "Organization",
           "name": "CittaSL",
@@ -171,7 +247,7 @@
         "operatingSystem": "Cloud Middleware",
         "applicationCategory": "DeveloperApplication",
         "url": "https://www.cittasl.com/",
-        "image": "https://cittanuvola.com/images/Cittanuvola%20logo.png",
+        "image": "https://www.cittasl.com/logo.png",
         "provider": {
           "@type": "Organization",
           "name": "CittaSL",

@@ -9,7 +9,7 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
   useEffect(() => {
     // 1. Define base variables
     const siteUrl = 'https://www.cittasl.com';
-    const logoUrl = 'https://cittanuvola.com/images/Cittanuvola%20logo.png';
+    const logoUrl = 'https://www.cittasl.com/logo.png';
 
     // 2. Define Organization Schema
     const organizationSchema = {
@@ -53,6 +53,79 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
       },
       'sameAs': [
         'https://www.cittanuvola.com'
+      ]
+    };
+
+    // 3. Define WebSite Schema with Sitelinks SearchAction
+    const webSiteSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      'name': 'CittaSL',
+      'alternateName': [
+        'Citta ERP Solutions Limited',
+        'CSL Enterprise Software'
+      ],
+      'url': siteUrl,
+      'potentialAction': {
+        '@type': 'SearchAction',
+        'target': {
+          '@type': 'EntryPoint',
+          'urlTemplate': `${siteUrl}/?search={search_term_string}`
+        },
+        'query-input': 'required name=search_term_string'
+      }
+    };
+
+    // 4. Define SiteNavigationElement Sitelinks List
+    const navigationSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      '@id': `${siteUrl}/#sitelinks-navigation`,
+      'name': 'CittaSL Navigation Sitelinks',
+      'itemListElement': [
+        {
+          '@type': 'SiteNavigationElement',
+          'position': 1,
+          'name': 'CittaEFS Compliance Gateway',
+          'description': 'Intelligent electronic fiscal system and automated tax compliance gateway for SAP, Oracle, Odoo, and Microsoft Dynamics.',
+          'url': `${siteUrl}/#products`
+        },
+        {
+          '@type': 'SiteNavigationElement',
+          'position': 2,
+          'name': 'CittaMatrix Core ERP',
+          'description': 'Multi-entity enterprise transaction router, double-entry general ledger, and ERP suite.',
+          'url': 'https://cittamatrix.com/'
+        },
+        {
+          '@type': 'SiteNavigationElement',
+          'position': 3,
+          'name': 'CittaHospitalityX PMS',
+          'description': 'Hotel property management system, guest folio billing, and reservation engine.',
+          'url': 'https://cittahospitalityx.com/'
+        },
+        {
+          '@type': 'SiteNavigationElement',
+          'position': 4,
+          'name': 'CittaPlannerX Scheduler',
+          'description': 'Enterprise project planning, milestone scheduler, and resource leveling.',
+          'url': 'https://cittaplannerx.com/'
+        },
+        {
+          '@type': 'SiteNavigationElement',
+          'position': 5,
+          'name': 'Enterprise Solutions & Integration',
+          'description': 'ERP connectors for SAP S/4HANA, Oracle NetSuite, Odoo, and Microsoft Dynamics.',
+          'url': `${siteUrl}/#services`
+        },
+        {
+          '@type': 'SiteNavigationElement',
+          'position': 6,
+          'name': 'Contact & Request Staging',
+          'description': 'Connect with CSL enterprise architects and request sandbox staging access in Lagos.',
+          'url': `${siteUrl}/#contact`
+        }
       ]
     };
 
@@ -201,6 +274,8 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
       '@context': 'https://schema.org',
       '@graph': [
         organizationSchema,
+        webSiteSchema,
+        navigationSchema,
         productSchema,
         breadcrumbSchema
       ]
