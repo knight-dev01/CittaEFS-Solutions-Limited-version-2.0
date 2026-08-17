@@ -27,6 +27,25 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Ensure tab favicon actively displays CittaSL site logo
+  useEffect(() => {
+    try {
+      const updateFavicon = () => {
+        let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+        if (!link) {
+          link = document.createElement('link');
+          link.rel = 'icon';
+          document.getElementsByTagName('head')[0].appendChild(link);
+        }
+        link.type = 'image/svg+xml';
+        link.href = `/favicon.svg?v=${Date.now()}`;
+      };
+      updateFavicon();
+    } catch {
+      // safe fallback
+    }
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 500) {
