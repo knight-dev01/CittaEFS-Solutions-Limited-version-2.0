@@ -57,7 +57,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                   CittaSL (CSL)
                 </span>
                 <span className="block text-[8px] sm:text-[9px] font-mono text-[#2582ff] uppercase tracking-widest font-bold mt-1">
-                  CittaNuvola Group Enterprise Framework
+                  CSL Subsidiary Unit • CittaNuvola
                 </span>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
         {/* Footer Bottom Credentials and Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 text-xs font-mono text-slate-400">
-          <p>© 2024 CittaSL (CSL). All rights reserved. Member of CittaNuvola Group.</p>
+          <p>© 2024 CittaSL (CSL) — Operating Subsidiary of CittaNuvola. All rights reserved.</p>
           <div className="flex items-center space-x-4 mt-4 sm:mt-0">
             <a href="#" className="hover:text-[#2582ff] transition-all">Privacy Policy</a>
             <span>•</span>

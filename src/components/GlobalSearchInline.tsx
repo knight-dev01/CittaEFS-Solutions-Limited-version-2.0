@@ -27,8 +27,8 @@ export const SEARCH_INDEX: SearchItem[] = [
   {
     title: "CittaSL (CSL) - Citta ERP Solutions Limited",
     category: "Company",
-    description: "Enterprise software & regulatory middleware division of CittaNuvola Group. Architecting CittaEFS, CittaMatrix, CittaHospitalityX, CittaPlannerX, and CittaNexus.",
-    keywords: ["cittasl", "csl", "citta erp", "citta erp solutions", "citta erp solutions limited", "cittasl limited", "cittanuvola", "cittanuvola group", "lagos", "enterprise software", "about csl"],
+    description: "Enterprise software & regulatory middleware division of CittaNuvola. Architecting CittaEFS, CittaMatrix, CittaHospitalityX, CittaPlannerX, and CittaNexus.",
+    keywords: ["cittasl", "csl", "citta erp", "citta erp solutions", "citta erp solutions limited", "cittasl limited", "cittanuvola", "lagos", "enterprise software", "about csl"],
     pageId: "why-we-exist",
     scrollId: "why-we-exist"
   },
@@ -194,15 +194,15 @@ export const SEARCH_INDEX: SearchItem[] = [
     title: "Why We Exist - CSL Purpose & Vision",
     category: "Company",
     description: "Closing the gap between complex enterprise ERP ledgers and evolving national fiscal compliance demands.",
-    keywords: ["why we exist", "purpose", "vision", "csl history", "cittanuvola group", "mission", "core values"],
+    keywords: ["why we exist", "purpose", "vision", "csl history", "cittanuvola", "mission", "core values"],
     pageId: "why-we-exist",
     scrollId: "why-we-exist"
   },
   {
-    title: "CittaNuvola Group Backing & Corporate Profile",
+    title: "CittaNuvola Institutional Backing & Corporate Profile",
     category: "Company",
-    description: "Backing of a premier software conglomerate providing deep technological reserves, financial stability, and governance.",
-    keywords: ["cittanuvola group", "corporate profile", "csl profile", "financial backing", "enterprise software"],
+    description: "Backing of a premier software enterprise providing deep technological reserves, financial stability, and governance.",
+    keywords: ["cittanuvola", "corporate profile", "csl profile", "financial backing", "enterprise software"],
     pageId: "about",
     scrollId: "about"
   },

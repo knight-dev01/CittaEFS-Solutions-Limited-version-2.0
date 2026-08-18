@@ -78,22 +78,22 @@ export function TiltCard3D({
         transition={{ duration: 0.2 }}
         className="relative w-full h-full"
       >
-        {/* Child content rendered in 3D space */}
-        <div style={{ transform: 'translateZ(10px)' }} className="w-full h-full">
-          {children}
-        </div>
-
-        {/* Dynamic Holographic Glare Flare */}
+        {/* Dynamic Holographic Glare Flare - rendered behind children to avoid washing out text */}
         {glareEffect && (
           <motion.div
             animate={{ opacity: glarePosition.opacity }}
             transition={{ duration: 0.2 }}
             style={{
-              background: `radial-gradient(circle 240px at ${glarePosition.x}% ${glarePosition.y}%, rgba(255,255,255,0.75), transparent 70%)`,
+              background: `radial-gradient(circle 280px at ${glarePosition.x}% ${glarePosition.y}%, rgba(37,130,255,0.08), transparent 70%)`,
             }}
-            className="pointer-events-none absolute inset-0 mix-blend-overlay z-20 rounded-2xl"
+            className="pointer-events-none absolute inset-0 z-0 rounded-2xl transition-opacity duration-200"
           />
         )}
+
+        {/* Child content rendered in 3D space on top of glare */}
+        <div style={{ transform: 'translateZ(10px)' }} className="relative z-10 w-full h-full">
+          {children}
+        </div>
       </motion.div>
     </div>
   );

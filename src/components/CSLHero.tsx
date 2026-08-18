@@ -197,11 +197,11 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-3.5 sm:px-5 py-2 sm:py-2 bg-slate-900/5 border border-slate-200/80 rounded-2xl sm:rounded-full text-xs font-mono text-slate-800 shadow-2xs backdrop-blur-xs mx-auto max-w-full"
+            className="inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-white border border-slate-200/90 rounded-2xl sm:rounded-full text-xs font-mono text-slate-800 shadow-xs mx-auto max-w-full"
           >
             <div className="flex items-center space-x-2">
               <img src={cslLogo} alt="CSL Logo" className="h-4 sm:h-5 w-auto object-contain shrink-0" />
-              <span className="font-extrabold text-slate-900 tracking-tight text-xs">CittaSL</span>
+              <span className="font-extrabold text-slate-900 tracking-tight text-xs">CSL</span>
             </div>
             <span className="text-slate-300 hidden sm:inline">•</span>
             <a 
@@ -210,8 +210,8 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
               rel="noopener noreferrer" 
               className="flex items-center space-x-2 hover:text-[#2582ff] transition-colors group text-center"
             >
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider group-hover:text-[#2582ff] leading-tight">
-                An Enterprise Member of CittaNuvola Group
+              <span className="text-[10px] sm:text-xs text-slate-600 font-semibold group-hover:text-[#2582ff] leading-tight">
+                Enterprise Division of <strong className="text-slate-900 font-bold group-hover:text-[#2582ff]">CittaNuvola</strong> (Parent Entity)
               </span>
               <img 
                 src="https://cittanuvola.com/images/Cittanuvola%20logo.png" 
@@ -226,9 +226,6 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
                   }
                 }}
               />
-              <span className="hidden text-[9px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">
-                Group ↗
-              </span>
             </a>
           </motion.div>
 
@@ -327,32 +324,32 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 sm:mt-24 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-left"
         >
-          <TiltCard3D maxTilt={12} scaleHover={1.03} className="p-5 bg-white/90 border border-slate-200/90 rounded-2xl backdrop-blur-md shadow-lg shadow-slate-100/70 h-full">
+          <TiltCard3D maxTilt={6} scaleHover={1.02} className="p-5 bg-white border border-slate-200 rounded-2xl shadow-md h-full">
             <div className="space-y-1.5">
               <span className="text-[10px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold">01. COMPLIANCE</span>
-              <h4 className="font-extrabold text-sm text-slate-800">Regulatory Shield</h4>
-              <p className="text-[11px] text-slate-500 leading-relaxed">Secure real-time transaction clearing &amp; ledger protection.</p>
+              <h4 className="font-extrabold text-sm text-slate-900">Regulatory Shield</h4>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">Secure real-time transaction clearing &amp; ledger protection.</p>
             </div>
           </TiltCard3D>
-          <TiltCard3D maxTilt={12} scaleHover={1.03} className="p-5 bg-white/90 border border-slate-200/90 rounded-2xl backdrop-blur-md shadow-lg shadow-slate-100/70 h-full">
+          <TiltCard3D maxTilt={6} scaleHover={1.02} className="p-5 bg-white border border-slate-200 rounded-2xl shadow-md h-full">
             <div className="space-y-1.5">
               <span className="text-[10px] font-mono text-[#ff8e1a] uppercase tracking-widest font-extrabold">02. PERFORMANCE</span>
-              <h4 className="font-extrabold text-sm text-slate-800">High-Velocity</h4>
-              <p className="text-[11px] text-slate-500 leading-relaxed">Real-time end-to-end data validation &amp; sub-240ms transit.</p>
+              <h4 className="font-extrabold text-sm text-slate-900">High-Velocity</h4>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">Real-time end-to-end data validation &amp; sub-240ms transit.</p>
             </div>
           </TiltCard3D>
-          <TiltCard3D maxTilt={12} scaleHover={1.03} className="p-5 bg-white/90 border border-slate-200/90 rounded-2xl backdrop-blur-md shadow-lg shadow-slate-100/70 h-full">
+          <TiltCard3D maxTilt={6} scaleHover={1.02} className="p-5 bg-white border border-slate-200 rounded-2xl shadow-md h-full">
             <div className="space-y-1.5">
               <span className="text-[10px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold">03. ARCHITECTURE</span>
-              <h4 className="font-extrabold text-sm text-slate-800">Modular ERP</h4>
-              <p className="text-[11px] text-slate-500 leading-relaxed">Attach seamlessly to SAP, Oracle, Odoo, and Dynamics.</p>
+              <h4 className="font-extrabold text-sm text-slate-900">Modular ERP</h4>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">Attach seamlessly to SAP, Oracle, Odoo, and Dynamics.</p>
             </div>
           </TiltCard3D>
-          <TiltCard3D maxTilt={12} scaleHover={1.03} className="p-5 bg-white/90 border border-slate-200/90 rounded-2xl backdrop-blur-md shadow-lg shadow-slate-100/70 h-full">
+          <TiltCard3D maxTilt={6} scaleHover={1.02} className="p-5 bg-white border border-slate-200 rounded-2xl shadow-md h-full">
             <div className="space-y-1.5">
               <span className="text-[10px] font-mono text-[#ff8e1a] uppercase tracking-widest font-extrabold">04. AI AUTOMATION</span>
-              <h4 className="font-extrabold text-sm text-slate-800">Forecasting Core</h4>
-              <p className="text-[11px] text-slate-500 leading-relaxed">Simulate financial cash flows, supply schedules, and stock.</p>
+              <h4 className="font-extrabold text-sm text-slate-900">Forecasting Core</h4>
+              <p className="text-xs text-slate-600 leading-relaxed font-medium">Simulate financial cash flows, supply schedules, and stock.</p>
             </div>
           </TiltCard3D>
         </motion.div>

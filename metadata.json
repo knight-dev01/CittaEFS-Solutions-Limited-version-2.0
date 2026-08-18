@@ -1,6 +1,6 @@
 {
   "name": "CittaSL",
-  "description": "Enterprise software ecosystem, intelligent electronic fiscal systems (CittaEFS) and regulatory middleware by CittaSL (CittaNuvola Group).",
+  "description": "Enterprise software ecosystem, intelligent electronic fiscal systems (CittaEFS) and regulatory middleware by CittaSL (CittaNuvola).",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

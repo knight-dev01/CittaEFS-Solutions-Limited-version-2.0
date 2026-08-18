@@ -7,8 +7,8 @@ import execBoardImg from '../assets/images/csl_exec_board_1786930410286.jpg';
 export default function WhyChooseCSL() {
   const points = [
     {
-      title: "CittaNuvola Group Backing",
-      desc: "Backed by the formidable global conglomerate CittaNuvola Group, CSL combines limitless financial stability, world-class R&D reserves, and elite compliance governance to power mission-critical enterprise systems without compromise.",
+      title: "CittaNuvola Institutional Backing",
+      desc: "Backed by the formidable global entity CittaNuvola, CSL combines limitless financial stability, world-class R&D reserves, and elite compliance governance to power mission-critical enterprise systems without compromise.",
       icon: Shield
     },
     {
@@ -77,7 +77,7 @@ export default function WhyChooseCSL() {
                 Trusted by Boardrooms, CFOs, and Chief Technology Officers
               </h3>
               <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Enterprise technology decisions require unwavering institutional stability. With CittaNuvola Group backing and certified regulatory compliance, CSL delivers zero-compromise peace of mind to enterprise leadership.
+                Enterprise technology decisions require unwavering institutional stability. With CittaNuvola institutional backing and certified regulatory compliance, CSL delivers zero-compromise peace of mind to enterprise leadership.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-4 text-left">

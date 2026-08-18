@@ -315,13 +315,13 @@ export function ProductCard({
             : 'bg-white text-slate-800 border-slate-200 shadow-sm ' + borderHoverClass
         }`}
       >
-        {/* Holographic light glare */}
+        {/* Holographic ambient light glare behind content */}
         <div
           style={{
-            background: `radial-gradient(circle 260px at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.7), transparent 70%)`,
+            background: `radial-gradient(circle 260px at ${glare.x}% ${glare.y}%, ${isBlue ? 'rgba(37,130,255,0.08)' : 'rgba(255,142,26,0.08)'}, transparent 70%)`,
             opacity: glare.opacity,
           }}
-          className="pointer-events-none absolute inset-0 mix-blend-overlay z-20 transition-opacity duration-200"
+          className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-200"
         />
 
         <div style={{ transform: 'translateZ(24px)' }} className="space-y-4 relative z-10">

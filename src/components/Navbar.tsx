@@ -69,7 +69,7 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
                 CittaSL
               </span>
               <span className="block text-[8px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold mt-0.5">
-                CITTANUVOLA GROUP
+                CITTANUVOLA
               </span>
             </div>
           </div>

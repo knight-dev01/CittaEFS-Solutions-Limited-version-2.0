@@ -23,7 +23,7 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
         'Citta ERP Solutions',
         'Citta ERP',
         'CittaSL Solutions',
-        'CittaNuvola Group Enterprise Division'
+        'CittaNuvola Enterprise Division'
       ],
       'url': siteUrl,
       'logo': {
@@ -35,7 +35,7 @@ export default function SEOStructuredData({ currentPage }: SEOStructuredDataProp
       'image': {
         '@id': `${siteUrl}/#logo`
       },
-      'description': 'CittaSL (CSL), also operating as Citta ERP Solutions Limited under CittaNuvola Group, architects high-capacity enterprise software suites, secure middleware bridges (CittaEFS), ERP connectors, and advanced planning systems.',
+      'description': 'CittaSL (CSL), also operating as Citta ERP Solutions Limited under CittaNuvola, architects high-capacity enterprise software suites, secure middleware bridges (CittaEFS), ERP connectors, and advanced planning systems.',
       'contactPoint': {
         '@type': 'ContactPoint',
         'telephone': '0813-424-8104',
