@@ -272,18 +272,20 @@ export function ProductCard({
   const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
 
   const highlightTextColor = isBlue ? 'text-emerald-600' : 'text-teal-600';
-  const borderHoverClass = isBlue ? 'hover:border-[#2582ff]/40 hover:shadow-[0_20px_40px_rgba(37,130,255,0.12)]' : 'hover:border-[#ff8e1a]/40 hover:shadow-[0_20px_40px_rgba(255,142,26,0.12)]';
+  const borderHoverClass = isBlue 
+    ? 'hover:border-[#2582ff]/50 hover:shadow-[0_20px_40px_rgba(37,130,255,0.1)]' 
+    : 'hover:border-[#ff8e1a]/50 hover:shadow-[0_20px_40px_rgba(255,142,26,0.1)]';
   
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const rotX = -((y - rect.height / 2) / (rect.height / 2)) * 7;
-    const rotY = ((x - rect.width / 2) / (rect.width / 2)) * 7;
+    const rotX = -((y - rect.height / 2) / (rect.height / 2)) * 6;
+    const rotY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
     setRotateX(rotX);
     setRotateY(rotY);
-    setGlare({ x: (x / rect.width) * 100, y: (y / rect.height) * 100, opacity: 0.12 });
+    setGlare({ x: (x / rect.width) * 100, y: (y / rect.height) * 100, opacity: 0.1 });
   };
 
   const handleMouseLeave = () => {
@@ -306,27 +308,27 @@ export function ProductCard({
           rotateY,
           transformStyle: 'preserve-3d',
         }}
-        whileHover={{ y: -8, scale: 1.02 }}
-        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        whileHover={{ y: -6, scale: 1.015 }}
+        transition={{ duration: 0.35, delay: 0.05, ease: [0.25, 1, 0.5, 1] }}
         {...extraProps}
-        className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl border transition-all cursor-pointer flex flex-col justify-between text-left h-full group ${
+        className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl border transition-all duration-300 delay-75 ease-out cursor-pointer flex flex-col justify-between text-left h-full group ${
           isFeatured 
             ? `bg-slate-900 text-white border-slate-800 ${isBlue ? 'ring-1 ring-emerald-500/20' : 'ring-1 ring-teal-500/20'} md:col-span-2 shadow-2xl` 
             : 'bg-white text-slate-800 border-slate-200 shadow-sm ' + borderHoverClass
         }`}
       >
-        {/* Holographic ambient light glare behind content */}
+        {/* Holographic ambient light glare behind content with subtle delayed ease-out */}
         <div
           style={{
             background: `radial-gradient(circle 260px at ${glare.x}% ${glare.y}%, ${isBlue ? 'rgba(37,130,255,0.08)' : 'rgba(255,142,26,0.08)'}, transparent 70%)`,
             opacity: glare.opacity,
           }}
-          className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-200"
+          className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500 delay-100 ease-out"
         />
 
         <div style={{ transform: 'translateZ(24px)' }} className="space-y-4 relative z-10">
           <div className="flex items-center justify-between">
-            <span className={`text-[10px] font-mono uppercase tracking-widest font-bold px-3 py-1 rounded-full border ${
+            <span className={`text-[10px] font-mono uppercase tracking-widest font-bold px-3 py-1 rounded-full border transition-colors duration-300 delay-75 ${
               isFeatured 
                 ? 'text-white bg-white/10 border-white/10' 
                 : isBlue 
@@ -335,11 +337,11 @@ export function ProductCard({
             }`}>
               {badge}
             </span>
-            <ArrowUpRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 ${isFeatured ? 'text-slate-400' : 'text-slate-400 group-hover:text-slate-700'}`} />
+            <ArrowUpRight className={`w-5 h-5 transition-transform duration-300 delay-75 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 ${isFeatured ? 'text-slate-400' : 'text-slate-400 group-hover:text-slate-700'}`} />
           </div>
 
           <div className="flex items-center space-x-3.5">
-            <div className={`p-3 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110 ${
+            <div className={`p-3 rounded-2xl shrink-0 transition-transform duration-300 delay-75 ease-out group-hover:scale-110 ${
               isFeatured 
                 ? 'bg-white/10 text-[#2582ff]' 
                 : isBlue 

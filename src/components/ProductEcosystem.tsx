@@ -38,13 +38,13 @@ export default function ProductEcosystem({ setCurrentPage }: ProductEcosystemPro
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            whileHover={{ y: -6, scale: 1.01 }}
+            whileHover={{ y: -5, scale: 1.01 }}
+            transition={{ duration: 0.35, delay: 0.05, ease: [0.25, 1, 0.5, 1] }}
             onClick={() => {
               const el = document.getElementById('contact');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="p-8 sm:p-10 rounded-3xl bg-slate-950 text-white border border-slate-800 lg:col-span-2 flex flex-col justify-between shadow-2xl relative select-none cursor-pointer group text-left"
+            className="p-8 sm:p-10 rounded-3xl bg-slate-950 text-white border border-slate-800 lg:col-span-2 flex flex-col justify-between shadow-2xl relative select-none cursor-pointer group text-left transition-all duration-300 delay-75 ease-out hover:border-[#2582ff]/40"
           >
             {/* Pulsing indicator */}
             <div className="absolute top-6 right-6 flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">

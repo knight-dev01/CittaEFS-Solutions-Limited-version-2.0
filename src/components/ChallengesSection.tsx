@@ -1,240 +1,660 @@
-import React, { useState, useRef } from 'react';
-import { motion, useSpring, useMotionValue } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Building2, Shuffle, ShieldAlert, Cpu, FileClock, CheckCircle2, ArrowRight,
-  Database, ShieldCheck, Zap, Layers, Server, RefreshCcw, Move3d
+  Database, ShieldCheck, Zap, Layers, Server, RefreshCcw, Activity, Check, Sparkles
 } from 'lucide-react';
 
 /**
- * Scalable Interactive 3D Architecture Stack
- * Perfectly responsive on all screen sizes (mobile 320px up to 4K displays).
- * Supports mouse drag, touch drag, and layer expansion with zero overflow.
+ * Interactive, Responsive 3D-Style SVG Architecture Animation
+ * Scales smoothly across all viewports with zero overflow and pure vector sharpness.
  */
-function Interactive3DMiddlewareStack() {
-  const [isExploded, setIsExploded] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+function Interactive3DSvgMiddlewareHighway() {
+  const [selectedSource, setSelectedSource] = useState<'all' | 'sap' | 'oracle' | 'dynamics'>('all');
+  const [speedMultiplier, setSpeedMultiplier] = useState<number>(1);
+  const [activePacketsCount, setActivePacketsCount] = useState<number>(24);
 
-  // 3D Rotation with smooth spring physics
-  const rotateXVal = useMotionValue(-15);
-  const rotateYVal = useMotionValue(25);
-  const springConfig = { damping: 25, stiffness: 200 };
-  const smoothRotateX = useSpring(rotateXVal, springConfig);
-  const smoothRotateY = useSpring(rotateYVal, springConfig);
+  // Deliberate, executive-grade animation duration multiplier (calm, slower flow)
+  const baseDurationIn = 6.2 / speedMultiplier;
+  const baseDurationOut = 5.4 / speedMultiplier;
 
-  const isDragging = useRef(false);
-  const startPos = useRef({ x: 0, y: 0 });
-  const startRot = useRef({ x: -15, y: 25 });
+  const sources = [
+    { id: 'sap', name: 'SAP S/4HANA', type: 'Core ERP', color: '#2582ff', y: 100 },
+    { id: 'oracle', name: 'Oracle Cloud', type: 'Financials', color: '#ff8e1a', y: 240 },
+    { id: 'dynamics', name: 'MS Dynamics / Odoo', type: 'Operations', color: '#a855f7', y: 380 },
+  ];
 
-  const handlePointerDown = (e: React.PointerEvent) => {
-    isDragging.current = true;
-    startPos.current = { x: e.clientX, y: e.clientY };
-    startRot.current = { x: rotateXVal.get(), y: rotateYVal.get() };
-    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
-  };
-
-  const handlePointerMove = (e: React.PointerEvent) => {
-    if (!isDragging.current) return;
-    const deltaX = e.clientX - startPos.current.x;
-    const deltaY = e.clientY - startPos.current.y;
-    
-    // Clamp rotation angles for pleasing isometric perspective
-    const newRotY = Math.max(-60, Math.min(60, startRot.current.y + deltaX * 0.4));
-    const newRotX = Math.max(-40, Math.min(10, startRot.current.x - deltaY * 0.4));
-    
-    rotateYVal.set(newRotY);
-    rotateXVal.set(newRotX);
-  };
-
-  const handlePointerUp = () => {
-    isDragging.current = false;
-  };
-
-  const resetRotation = () => {
-    rotateXVal.set(-15);
-    rotateYVal.set(25);
-  };
+  const targets = [
+    { id: 'ntaa', name: 'National Tax Gateway', rule: 'NTAA Sec 23', color: '#10b981', y: 100 },
+    { id: 'vault', name: 'Fiscal Audit Vault', rule: 'SHA-256 Sealed', color: '#06b6d4', y: 240 },
+    { id: 'bi', name: 'Enterprise BI Ledger', rule: 'Real-Time Sync', color: '#818cf8', y: 380 },
+  ];
 
   return (
     <div className="w-full max-w-full flex flex-col items-center select-none">
       
-      {/* 3D Stage Controls */}
-      <div className="w-full flex items-center justify-between px-2 mb-3 sm:mb-4">
-        <div className="flex items-center space-x-1.5 text-slate-400 font-mono text-[10px] sm:text-xs">
-          <Move3d className="w-3.5 h-3.5 text-[#2582ff]" />
-          <span className="hidden xs:inline">Drag to Rotate in 3D</span>
-          <span className="xs:hidden">3D Interactive</span>
+      {/* Interactive Top Control Bar */}
+      <div className="w-full flex flex-wrap items-center justify-between gap-2.5 px-1 sm:px-2 mb-3 sm:mb-4">
+        
+        {/* Source System Filter Tabs */}
+        <div className="flex items-center space-x-1 sm:space-x-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-[10px] sm:text-xs font-mono">
+          <span className="text-slate-400 px-1.5 hidden sm:inline">Source:</span>
+          {(['all', 'sap', 'oracle', 'dynamics'] as const).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setSelectedSource(tab)}
+              className={`px-2 sm:px-2.5 py-1 rounded-lg font-bold transition-all ${
+                selectedSource === tab
+                  ? 'bg-[#2582ff] text-white shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              {tab === 'all' ? 'All Channels' : tab === 'sap' ? 'SAP' : tab === 'oracle' ? 'Oracle' : 'Dynamics'}
+            </button>
+          ))}
         </div>
 
+        {/* Speed & Live Status Badge */}
         <div className="flex items-center space-x-2">
           <button
-            onClick={() => setIsExploded(!isExploded)}
-            className={`px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-mono font-bold transition-all border ${
-              isExploded 
-                ? 'bg-[#2582ff] text-white border-[#2582ff] shadow-sm' 
-                : 'bg-slate-800 text-slate-300 border-slate-700 hover:text-white'
-            }`}
+            onClick={() => setSpeedMultiplier(prev => prev === 1 ? 2 : 1)}
+            className="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-[10px] sm:text-xs font-mono font-bold flex items-center space-x-1 transition-all"
           >
-            {isExploded ? 'Collapse Stack' : 'Explode Layers'}
+            <Activity className="w-3 h-3 text-[#ff8e1a]" />
+            <span>Speed: {speedMultiplier}x</span>
           </button>
-          
-          <button
-            onClick={resetRotation}
-            title="Reset Angle"
-            className="p-1 rounded-lg bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition-all"
-          >
-            <RefreshCcw className="w-3.5 h-3.5" />
-          </button>
+
+          <div className="hidden xs:flex items-center space-x-1.5 px-2.5 py-1 rounded-xl bg-emerald-950/60 border border-emerald-800/60 text-emerald-400 font-mono text-[10px] sm:text-xs font-bold">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Real-Time Flow</span>
+          </div>
         </div>
+
       </div>
 
-      {/* 3D Viewport Box */}
-      <div 
-        ref={containerRef}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={handlePointerUp}
-        style={{ perspective: 1200 }}
-        className="w-full aspect-square max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[380px] rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-slate-800/80 p-4 flex items-center justify-center cursor-grab active:cursor-grabbing relative overflow-hidden touch-none shadow-inner"
-      >
-        {/* Subtle background radial glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,130,255,0.12),transparent_70%)] pointer-events-none" />
+      {/* SVG Canvas Container with Viewport Scaling */}
+      <div className="w-full relative rounded-2xl bg-gradient-to-b from-slate-900/95 to-slate-950/98 border border-slate-800/90 shadow-2xl p-2 sm:p-4 overflow-hidden">
+        
+        {/* Subtle Ambient Radial Glows */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-[#2582ff]/10 blur-[80px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
 
-        {/* 3D Scene Root */}
-        <motion.div
-          style={{
-            rotateX: smoothRotateX,
-            rotateY: smoothRotateY,
-            transformStyle: 'preserve-3d',
-          }}
-          className="w-40 h-40 sm:w-48 sm:h-48 relative flex items-center justify-center"
+        <svg
+          viewBox="0 0 880 480"
+          className="w-full h-auto max-h-[460px] overflow-visible"
+          preserveAspectRatio="xMidYMid meet"
         >
+          <defs>
+            {/* Glow Filters */}
+            <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+            <filter id="glow-emerald" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+            <filter id="glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+            <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
 
-          {/* LAYER 1 (Top / Clearance Gateway): Translates up */}
-          <motion.div
-            animate={{
-              y: isExploded ? -68 : -32,
-              opacity: 1,
-            }}
-            transition={{ type: 'spring', damping: 20, stiffness: 180 }}
-            style={{ transformStyle: 'preserve-3d' }}
-            className="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-gradient-to-br from-emerald-950/90 to-slate-900/95 border-2 border-emerald-500/60 shadow-[0_0_20px_rgba(16,185,129,0.3)] p-3 flex flex-col justify-between"
+            {/* Linear Gradients for 3D Isometric Node Plates */}
+            <linearGradient id="grad-sap" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#1e3a8a" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#0f172a" stopOpacity="0.95" />
+            </linearGradient>
+
+            <linearGradient id="grad-oracle" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#7c2d12" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#0f172a" stopOpacity="0.95" />
+            </linearGradient>
+
+            <linearGradient id="grad-dynamics" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#581c87" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#0f172a" stopOpacity="0.95" />
+            </linearGradient>
+
+            <linearGradient id="grad-csl-core" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0284c7" />
+              <stop offset="50%" stopColor="#2582ff" />
+              <stop offset="100%" stopColor="#1d4ed8" />
+            </linearGradient>
+
+            <linearGradient id="grad-target-ntaa" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#064e3b" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#0f172a" stopOpacity="0.95" />
+            </linearGradient>
+
+            <linearGradient id="grad-target-vault" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#155e75" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#0f172a" stopOpacity="0.95" />
+            </linearGradient>
+
+            <linearGradient id="grad-target-bi" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#312e81" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#0f172a" stopOpacity="0.95" />
+            </linearGradient>
+          </defs>
+
+          {/* 3D Grid / Isometric Floor Perspective Lines */}
+          <g opacity="0.12" stroke="#64748b" strokeWidth="1">
+            <line x1="60" y1="440" x2="820" y2="440" />
+            <line x1="120" y1="410" x2="760" y2="410" />
+            <line x1="180" y1="380" x2="700" y2="380" />
+            <line x1="60" y1="440" x2="220" y2="350" />
+            <line x1="820" y1="440" x2="660" y2="350" />
+            <line x1="440" y1="440" x2="440" y2="370" />
+          </g>
+
+          {/* ========================================================
+              CONNECTING BEZIER HIGHWAY TRACKS (SOURCE -> CORE -> TARGET)
+             ======================================================== */}
+          {/* Inbound Track: SAP -> Core */}
+          <path
+            id="path-sap-core"
+            d="M 210 100 C 330 100, 330 225, 380 232"
+            fill="none"
+            stroke="#2582ff"
+            strokeWidth={selectedSource === 'all' || selectedSource === 'sap' ? '2.5' : '1'}
+            strokeOpacity={selectedSource === 'all' || selectedSource === 'sap' ? '0.6' : '0.15'}
+            strokeDasharray="4 4"
+          />
+
+          {/* Inbound Track: Oracle -> Core */}
+          <path
+            id="path-oracle-core"
+            d="M 210 240 C 310 240, 330 240, 380 240"
+            fill="none"
+            stroke="#ff8e1a"
+            strokeWidth={selectedSource === 'all' || selectedSource === 'oracle' ? '2.5' : '1'}
+            strokeOpacity={selectedSource === 'all' || selectedSource === 'oracle' ? '0.6' : '0.15'}
+            strokeDasharray="4 4"
+          />
+
+          {/* Inbound Track: Dynamics -> Core */}
+          <path
+            id="path-dynamics-core"
+            d="M 210 380 C 330 380, 330 255, 380 248"
+            fill="none"
+            stroke="#a855f7"
+            strokeWidth={selectedSource === 'all' || selectedSource === 'dynamics' ? '2.5' : '1'}
+            strokeOpacity={selectedSource === 'all' || selectedSource === 'dynamics' ? '0.6' : '0.15'}
+            strokeDasharray="4 4"
+          />
+
+          {/* Outbound Track: Core -> NTAA */}
+          <path
+            id="path-core-ntaa"
+            d="M 500 232 C 550 225, 550 100, 670 100"
+            fill="none"
+            stroke="#10b981"
+            strokeWidth="2.5"
+            strokeOpacity="0.6"
+            strokeDasharray="4 4"
+          />
+
+          {/* Outbound Track: Core -> Vault */}
+          <path
+            id="path-core-vault"
+            d="M 500 240 C 550 240, 570 240, 670 240"
+            fill="none"
+            stroke="#06b6d4"
+            strokeWidth="2.5"
+            strokeOpacity="0.6"
+            strokeDasharray="4 4"
+          />
+
+          {/* Outbound Track: Core -> BI */}
+          <path
+            id="path-core-bi"
+            d="M 500 248 C 550 255, 550 380, 670 380"
+            fill="none"
+            stroke="#818cf8"
+            strokeWidth="2.5"
+            strokeOpacity="0.6"
+            strokeDasharray="4 4"
+          />
+
+          {/* ========================================================
+              ANIMATED PACKETS (FRAMER MOTION TRAVELING PARTICLES)
+             ======================================================== */}
+          {/* SAP Data Packets */}
+          {(selectedSource === 'all' || selectedSource === 'sap') && (
+            <>
+              {[0, 2.0, 4.0].map((delayOffset, idx) => (
+                <motion.g
+                  key={`sap-pkt-${idx}`}
+                  animate={{
+                    offsetDistance: ['0%', '100%'],
+                  }}
+                  transition={{
+                    duration: baseDurationIn,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: delayOffset / speedMultiplier,
+                  }}
+                  style={{
+                    offsetPath: 'path("M 210 100 C 330 100, 330 225, 380 232")',
+                  }}
+                >
+                  <circle r="5.5" fill="#60a5fa" filter="url(#glow-blue)" />
+                  <circle r="2.5" fill="#ffffff" />
+                </motion.g>
+              ))}
+            </>
+          )}
+
+          {/* Oracle Data Packets */}
+          {(selectedSource === 'all' || selectedSource === 'oracle') && (
+            <>
+              {[0.7, 2.7, 4.7].map((delayOffset, idx) => (
+                <motion.g
+                  key={`oracle-pkt-${idx}`}
+                  animate={{
+                    offsetDistance: ['0%', '100%'],
+                  }}
+                  transition={{
+                    duration: baseDurationIn * 0.95,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: delayOffset / speedMultiplier,
+                  }}
+                  style={{
+                    offsetPath: 'path("M 210 240 C 310 240, 330 240, 380 240")',
+                  }}
+                >
+                  <circle r="5.5" fill="#fb923c" filter="url(#glow-orange)" />
+                  <circle r="2.5" fill="#ffffff" />
+                </motion.g>
+              ))}
+            </>
+          )}
+
+          {/* Dynamics Data Packets */}
+          {(selectedSource === 'all' || selectedSource === 'dynamics') && (
+            <>
+              {[1.4, 3.4, 5.4].map((delayOffset, idx) => (
+                <motion.g
+                  key={`dyn-pkt-${idx}`}
+                  animate={{
+                    offsetDistance: ['0%', '100%'],
+                  }}
+                  transition={{
+                    duration: baseDurationIn,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: delayOffset / speedMultiplier,
+                  }}
+                  style={{
+                    offsetPath: 'path("M 210 380 C 330 380, 330 255, 380 248")',
+                  }}
+                >
+                  <circle r="5.5" fill="#c084fc" filter="url(#glow-purple)" />
+                  <circle r="2.5" fill="#ffffff" />
+                </motion.g>
+              ))}
+            </>
+          )}
+
+          {/* Outbound Verified Packets: Core -> NTAA Gateway (Emerald) */}
+          {[0.5, 2.3, 4.1].map((delayOffset, idx) => (
+            <motion.g
+              key={`ntaa-pkt-${idx}`}
+              animate={{
+                offsetDistance: ['0%', '100%'],
+              }}
+              transition={{
+                duration: baseDurationOut,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: delayOffset / speedMultiplier,
+              }}
+              style={{
+                offsetPath: 'path("M 500 232 C 550 225, 550 100, 670 100")',
+              }}
+            >
+              <circle r="6" fill="#34d399" filter="url(#glow-emerald)" />
+              <circle r="2.5" fill="#ffffff" />
+            </motion.g>
+          ))}
+
+          {/* Outbound Verified Packets: Core -> Vault (Cyan) */}
+          {[1.1, 2.9, 4.7].map((delayOffset, idx) => (
+            <motion.g
+              key={`vault-pkt-${idx}`}
+              animate={{
+                offsetDistance: ['0%', '100%'],
+              }}
+              transition={{
+                duration: baseDurationOut * 0.95,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: delayOffset / speedMultiplier,
+              }}
+              style={{
+                offsetPath: 'path("M 500 240 C 550 240, 570 240, 670 240")',
+              }}
+            >
+              <circle r="5.5" fill="#22d3ee" filter="url(#glow-blue)" />
+              <circle r="2.5" fill="#ffffff" />
+            </motion.g>
+          ))}
+
+          {/* Outbound Verified Packets: Core -> BI Ledger (Indigo) */}
+          {[1.7, 3.5, 5.3].map((delayOffset, idx) => (
+            <motion.g
+              key={`bi-pkt-${idx}`}
+              animate={{
+                offsetDistance: ['0%', '100%'],
+              }}
+              transition={{
+                duration: baseDurationOut,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: delayOffset / speedMultiplier,
+              }}
+              style={{
+                offsetPath: 'path("M 500 248 C 550 255, 550 380, 670 380")',
+              }}
+            >
+              <circle r="5.5" fill="#a5b4fc" filter="url(#glow-purple)" />
+              <circle r="2.5" fill="#ffffff" />
+            </motion.g>
+          ))}
+
+          {/* ========================================================
+              LEFT COLUMN: 3 SOURCE SYSTEM 3D ISOMETRIC NODES
+             ======================================================== */}
+          {/* Header Label Left */}
+          <text x="110" y="44" fill="#94a3b8" fontSize="11" fontFamily="monospace" fontWeight="bold" letterSpacing="1">
+            SOURCE SYSTEMS (ERPs)
+          </text>
+
+          {/* Node 1: SAP S/4HANA */}
+          <g
+            onClick={() => setSelectedSource('sap')}
+            className="cursor-pointer transition-transform hover:scale-[1.02]"
+            transform="translate(10, 65)"
           >
-            <div className="flex justify-between items-center text-[9px] font-mono text-emerald-400 font-bold">
-              <span className="flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                LAYER 03
-              </span>
-              <span className="bg-emerald-900/60 px-1.5 py-0.5 rounded text-[8px] border border-emerald-700/50">
-                NTAA VERIFIED
-              </span>
-            </div>
-            
-            <div className="text-center space-y-0.5">
-              <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-emerald-400 mx-auto" />
-              <div className="font-display text-xs sm:text-sm font-bold text-white tracking-tight">
-                Tax &amp; Fiscal Gateway
-              </div>
-              <div className="text-[8px] sm:text-[9px] font-mono text-slate-300">
-                Automatic Pre-Clearance
-              </div>
-            </div>
+            {/* 3D Isometric Plate Shadow & Base */}
+            <rect x="10" y="6" width="190" height="60" rx="14" fill="#091326" />
+            <rect
+              x="10"
+              y="0"
+              width="190"
+              height="60"
+              rx="14"
+              fill="url(#grad-sap)"
+              stroke="#2582ff"
+              strokeWidth={selectedSource === 'sap' ? '2.5' : '1.5'}
+              strokeOpacity={selectedSource === 'sap' || selectedSource === 'all' ? '0.9' : '0.4'}
+            />
+            {/* Indicator Light */}
+            <circle cx="32" cy="30" r="10" fill="#1e3a8a" stroke="#3b82f6" strokeWidth="1.5" />
+            <circle cx="32" cy="30" r="4" fill="#60a5fa" />
+            <text x="50" y="27" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              SAP S/4HANA
+            </text>
+            <text x="50" y="44" fill="#93c5fd" fontSize="10" fontFamily="monospace">
+              Financial Core • Ingestion
+            </text>
+            <circle cx="185" cy="30" r="4" fill="#3b82f6" />
+          </g>
 
-            <div className="flex justify-between items-center text-[8px] font-mono text-emerald-300/80 pt-1 border-t border-emerald-900/50">
-              <span>NTAA SEC 23</span>
-              <span>100% VALIDATED</span>
-            </div>
-          </motion.div>
-
-
-          {/* LAYER 2 (Middle / CSL Unified Middleware Engine) */}
-          <motion.div
-            animate={{
-              y: 0,
-              scale: isExploded ? 1.05 : 1,
-            }}
-            transition={{ type: 'spring', damping: 20, stiffness: 180 }}
-            style={{ transformStyle: 'preserve-3d' }}
-            className="absolute w-40 h-40 sm:w-48 sm:h-48 rounded-2xl bg-gradient-to-br from-[#0c2a5e]/95 to-slate-950/98 border-2 border-[#2582ff] shadow-[0_0_30px_rgba(37,130,255,0.4)] p-3.5 flex flex-col justify-between z-10"
+          {/* Node 2: Oracle Cloud */}
+          <g
+            onClick={() => setSelectedSource('oracle')}
+            className="cursor-pointer transition-transform hover:scale-[1.02]"
+            transform="translate(10, 205)"
           >
-            <div className="flex justify-between items-center text-[9px] font-mono text-[#2582ff] font-bold">
-              <span className="flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2582ff] animate-ping" />
-                LAYER 02
-              </span>
-              <span className="bg-blue-900/70 text-blue-200 px-1.5 py-0.5 rounded text-[8px] border border-blue-600/50">
-                CSL CORE
-              </span>
-            </div>
+            {/* 3D Isometric Plate Base */}
+            <rect x="10" y="6" width="190" height="60" rx="14" fill="#1c0e08" />
+            <rect
+              x="10"
+              y="0"
+              width="190"
+              height="60"
+              rx="14"
+              fill="url(#grad-oracle)"
+              stroke="#ff8e1a"
+              strokeWidth={selectedSource === 'oracle' ? '2.5' : '1.5'}
+              strokeOpacity={selectedSource === 'oracle' || selectedSource === 'all' ? '0.9' : '0.4'}
+            />
+            <circle cx="32" cy="30" r="10" fill="#7c2d12" stroke="#fb923c" strokeWidth="1.5" />
+            <circle cx="32" cy="30" r="4" fill="#fdba74" />
+            <text x="50" y="27" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              Oracle Cloud
+            </text>
+            <text x="50" y="44" fill="#fdba74" fontSize="10" fontFamily="monospace">
+              GL Ledgers • Ingestion
+            </text>
+            <circle cx="185" cy="30" r="4" fill="#fb923c" />
+          </g>
 
-            <div className="text-center space-y-1">
-              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#2582ff] text-white flex items-center justify-center mx-auto shadow-md">
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-              <div className="font-display text-xs sm:text-sm font-extrabold text-white tracking-tight">
-                CSL Unified Middleware
-              </div>
-              <div className="text-[8px] sm:text-[9px] font-mono text-blue-200">
-                TLS 1.3 • Real-Time Hashing
-              </div>
-            </div>
-
-            <div className="flex justify-between items-center text-[8px] font-mono text-blue-300 pt-1 border-t border-blue-900/60">
-              <span>LATENCY: &lt;150ms</span>
-              <span>ZERO DISRUPTION</span>
-            </div>
-          </motion.div>
-
-
-          {/* LAYER 3 (Bottom / Enterprise ERPs & Systems): Translates down */}
-          <motion.div
-            animate={{
-              y: isExploded ? 68 : 32,
-              opacity: 1,
-            }}
-            transition={{ type: 'spring', damping: 20, stiffness: 180 }}
-            style={{ transformStyle: 'preserve-3d' }}
-            className="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-gradient-to-br from-slate-900/95 to-slate-950/98 border-2 border-slate-700/80 shadow-[0_0_20px_rgba(0,0,0,0.5)] p-3 flex flex-col justify-between"
+          {/* Node 3: MS Dynamics / Odoo */}
+          <g
+            onClick={() => setSelectedSource('dynamics')}
+            className="cursor-pointer transition-transform hover:scale-[1.02]"
+            transform="translate(10, 345)"
           >
-            <div className="flex justify-between items-center text-[9px] font-mono text-slate-400 font-bold">
-              <span>LAYER 01</span>
-              <span className="bg-slate-800 text-slate-300 px-1.5 py-0.5 rounded text-[8px]">
-                SOURCE ERPs
-              </span>
-            </div>
+            {/* 3D Isometric Plate Base */}
+            <rect x="10" y="6" width="190" height="60" rx="14" fill="#160826" />
+            <rect
+              x="10"
+              y="0"
+              width="190"
+              height="60"
+              rx="14"
+              fill="url(#grad-dynamics)"
+              stroke="#a855f7"
+              strokeWidth={selectedSource === 'dynamics' ? '2.5' : '1.5'}
+              strokeOpacity={selectedSource === 'dynamics' || selectedSource === 'all' ? '0.9' : '0.4'}
+            />
+            <circle cx="32" cy="30" r="10" fill="#581c87" stroke="#c084fc" strokeWidth="1.5" />
+            <circle cx="32" cy="30" r="4" fill="#e9d5ff" />
+            <text x="50" y="27" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              MS Dynamics / Odoo
+            </text>
+            <text x="50" y="44" fill="#d8b4fe" fontSize="10" fontFamily="monospace">
+              Operations • Ingestion
+            </text>
+            <circle cx="185" cy="30" r="4" fill="#c084fc" />
+          </g>
 
-            <div className="text-center space-y-0.5">
-              <Database className="w-6 h-6 sm:w-7 sm:h-7 text-[#ff8e1a] mx-auto" />
-              <div className="font-display text-xs sm:text-sm font-bold text-white tracking-tight">
-                Enterprise Core Ledgers
-              </div>
-              <div className="text-[8px] sm:text-[9px] font-mono text-slate-400">
-                SAP • Oracle • MS Dynamics • Odoo
-              </div>
-            </div>
 
-            <div className="flex justify-between items-center text-[8px] font-mono text-slate-400 pt-1 border-t border-slate-800">
-              <span>HOSTED LEDGER</span>
-              <span>100% PRESERVED</span>
-            </div>
-          </motion.div>
+          {/* ========================================================
+              CENTER SECTION: CSL UNIFIED MIDDLEWARE 3D CORE ENGINE
+             ======================================================== */}
+          {/* Header Label Center */}
+          <text x="440" y="44" textAnchor="middle" fill="#38bdf8" fontSize="11" fontFamily="monospace" fontWeight="bold" letterSpacing="1">
+            CSL MIDDLEWARE CORE
+          </text>
 
-        </motion.div>
+          {/* Core Outer Rotating 3D Rings */}
+          <g transform="translate(440, 240)">
+            {/* Pulsing Back Glow */}
+            <circle r="72" fill="#2582ff" fillOpacity="0.08" />
+
+            {/* Rotating Outer Dashed Circuit Ring - Calm, deliberate rotation */}
+            <motion.circle
+              r="68"
+              fill="none"
+              stroke="#0284c7"
+              strokeWidth="2"
+              strokeDasharray="8 6"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 36, repeat: Infinity, ease: 'linear' }}
+            />
+
+            {/* Counter-rotating Inner Hex Ring - Slower rotation */}
+            <motion.polygon
+              points="0,-52 45,-26 45,26 0,52 -45,26 -45,-26"
+              fill="none"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              strokeOpacity="0.5"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 44, repeat: Infinity, ease: 'linear' }}
+            />
+
+            {/* 3D Center Core Capsule */}
+            <rect
+              x="-46"
+              y="-46"
+              width="92"
+              height="92"
+              rx="22"
+              fill="url(#grad-csl-core)"
+              filter="url(#glow-blue)"
+              stroke="#93c5fd"
+              strokeWidth="2"
+            />
+
+            {/* Zap Icon Symbol */}
+            <path
+              d="M 2 -20 L -14 2 L -2 2 L -6 20 L 14 -2 L 2 -2 Z"
+              fill="#ffffff"
+              filter="url(#glow-blue)"
+            />
+
+            {/* Core Status Overlay Text */}
+            <text y="32" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold" fontFamily="monospace" letterSpacing="0.5">
+              TLS 1.3 | &lt;150ms
+            </text>
+          </g>
+
+          {/* Sub-label under Core */}
+          <text x="440" y="340" textAnchor="middle" fill="#94a3b8" fontSize="10" fontFamily="monospace" fontWeight="bold">
+            Real-Time Pre-Clearance Matrix
+          </text>
+          <text x="440" y="356" textAnchor="middle" fill="#38bdf8" fontSize="9" fontFamily="monospace">
+            Zero Ledger Disruption Guarantee
+          </text>
+
+
+          {/* ========================================================
+              RIGHT COLUMN: 3 VERIFIED TARGET 3D ISOMETRIC NODES
+             ======================================================== */}
+          {/* Header Label Right */}
+          <text x="770" y="44" textAnchor="end" fill="#34d399" fontSize="11" fontFamily="monospace" fontWeight="bold" letterSpacing="1">
+            VERIFIED TARGETS
+          </text>
+
+          {/* Target 1: National Tax Authority (NTAA Sec 23) */}
+          <g transform="translate(670, 65)">
+            <rect x="10" y="6" width="190" height="60" rx="14" fill="#04231a" />
+            <rect
+              x="10"
+              y="0"
+              width="190"
+              height="60"
+              rx="14"
+              fill="url(#grad-target-ntaa)"
+              stroke="#10b981"
+              strokeWidth="2"
+              strokeOpacity="0.9"
+            />
+            <circle cx="32" cy="30" r="10" fill="#064e3b" stroke="#34d399" strokeWidth="1.5" />
+            <circle cx="32" cy="30" r="4" fill="#6ee7b7" />
+            <text x="50" y="27" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              National Tax Gateway
+            </text>
+            <text x="50" y="44" fill="#6ee7b7" fontSize="10" fontFamily="monospace">
+              NTAA Sec 23 • Validated
+            </text>
+            <circle cx="185" cy="30" r="4" fill="#34d399" />
+          </g>
+
+          {/* Target 2: Certified Fiscal Audit Vault */}
+          <g transform="translate(670, 205)">
+            <rect x="10" y="6" width="190" height="60" rx="14" fill="#082530" />
+            <rect
+              x="10"
+              y="0"
+              width="190"
+              height="60"
+              rx="14"
+              fill="url(#grad-target-vault)"
+              stroke="#06b6d4"
+              strokeWidth="2"
+              strokeOpacity="0.9"
+            />
+            <circle cx="32" cy="30" r="10" fill="#155e75" stroke="#22d3ee" strokeWidth="1.5" />
+            <circle cx="32" cy="30" r="4" fill="#67e8f9" />
+            <text x="50" y="27" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              Fiscal Audit Vault
+            </text>
+            <text x="50" y="44" fill="#67e8f9" fontSize="10" fontFamily="monospace">
+              SHA-256 Sealed Record
+            </text>
+            <circle cx="185" cy="30" r="4" fill="#22d3ee" />
+          </g>
+
+          {/* Target 3: Enterprise BI Ledger */}
+          <g transform="translate(670, 345)">
+            <rect x="10" y="6" width="190" height="60" rx="14" fill="#12102b" />
+            <rect
+              x="10"
+              y="0"
+              width="190"
+              height="60"
+              rx="14"
+              fill="url(#grad-target-bi)"
+              stroke="#818cf8"
+              strokeWidth="2"
+              strokeOpacity="0.9"
+            />
+            <circle cx="32" cy="30" r="10" fill="#312e81" stroke="#a5b4fc" strokeWidth="1.5" />
+            <circle cx="32" cy="30" r="4" fill="#c7d2fe" />
+            <text x="50" y="27" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              Enterprise BI Ledger
+            </text>
+            <text x="50" y="44" fill="#c7d2fe" fontSize="10" fontFamily="monospace">
+              Executive Analytics Stream
+            </text>
+            <circle cx="185" cy="30" r="4" fill="#818cf8" />
+          </g>
+
+        </svg>
       </div>
 
-      {/* Layer legend beneath visualizer for mobile clarity */}
-      <div className="grid grid-cols-3 gap-2 w-full max-w-[380px] mt-3 text-center">
-        <div className="p-1.5 rounded-lg bg-slate-900/70 border border-slate-800">
-          <span className="block text-[8px] font-mono text-slate-400 font-bold">01. ERPs</span>
-          <span className="block text-[9px] text-slate-300 truncate">Protected</span>
+      {/* Bottom Live Metrics Strip */}
+      <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mt-3 sm:mt-4 text-left font-mono">
+        <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center space-x-2">
+          <div className="w-2 h-2 rounded-full bg-[#2582ff]" />
+          <div>
+            <span className="text-[8px] text-slate-400 block">ENCRYPTION</span>
+            <span className="text-[10px] sm:text-xs font-bold text-slate-200">TLS 1.3 &amp; AES-256</span>
+          </div>
         </div>
-        <div className="p-1.5 rounded-lg bg-blue-950/40 border border-blue-900/60">
-          <span className="block text-[8px] font-mono text-[#2582ff] font-bold">02. CSL Hub</span>
-          <span className="block text-[9px] text-blue-200 truncate">Middleware</span>
+
+        <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center space-x-2">
+          <div className="w-2 h-2 rounded-full bg-emerald-400" />
+          <div>
+            <span className="text-[8px] text-slate-400 block">PRE-CLEARANCE</span>
+            <span className="text-[10px] sm:text-xs font-bold text-emerald-400">100% NTAA Ready</span>
+          </div>
         </div>
-        <div className="p-1.5 rounded-lg bg-emerald-950/40 border border-emerald-900/60">
-          <span className="block text-[8px] font-mono text-emerald-400 font-bold">03. NTAA</span>
-          <span className="block text-[9px] text-emerald-300 truncate">Compliant</span>
+
+        <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center space-x-2">
+          <div className="w-2 h-2 rounded-full bg-[#ff8e1a]" />
+          <div>
+            <span className="text-[8px] text-slate-400 block">PROCESSING TIME</span>
+            <span className="text-[10px] sm:text-xs font-bold text-[#ff8e1a]">&lt; 150ms Average</span>
+          </div>
+        </div>
+
+        <div className="p-2 sm:p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center space-x-2">
+          <div className="w-2 h-2 rounded-full bg-purple-400" />
+          <div>
+            <span className="text-[8px] text-slate-400 block">ERP RETENTION</span>
+            <span className="text-[10px] sm:text-xs font-bold text-purple-300">Zero Replacement</span>
+          </div>
         </div>
       </div>
 
@@ -327,7 +747,7 @@ export default function ChallengesSection() {
               <motion.div
                 key={ch.id}
                 initial={{ opacity: 1, y: 0 }}
-                className={`p-5 sm:p-6 bg-slate-50 border border-slate-200/90 hover:border-[#2582ff]/60 hover:bg-white rounded-2xl transition-all duration-200 group text-left shadow-xs hover:shadow-md flex flex-col justify-between ${
+                className={`p-5 sm:p-6 bg-slate-50 border border-slate-200/90 hover:border-[#2582ff]/60 hover:bg-white rounded-2xl transition-all duration-300 delay-75 ease-out group text-left shadow-xs hover:shadow-md flex flex-col justify-between ${
                   isLastOnDesktop ? 'md:col-span-2 lg:col-span-2' : ''
                 }`}
               >
@@ -343,11 +763,11 @@ export default function ChallengesSection() {
                   </div>
 
                   <div className="flex items-start space-x-3 pt-1">
-                    <div className={`p-2.5 rounded-xl border shrink-0 group-hover:bg-[#2582ff] group-hover:text-white group-hover:border-[#2582ff] transition-colors ${ch.accent}`}>
+                    <div className={`p-2.5 rounded-xl border shrink-0 group-hover:bg-[#2582ff] group-hover:text-white group-hover:border-[#2582ff] transition-all duration-300 delay-75 ease-out ${ch.accent}`}>
                       <Icon className="w-5 h-5" />
                     </div>
                     <div className="space-y-1 flex-1 min-w-0">
-                      <h3 className="font-display font-bold text-base sm:text-lg text-slate-900 group-hover:text-[#2582ff] transition-colors break-words">
+                      <h3 className="font-display font-bold text-base sm:text-lg text-slate-900 group-hover:text-[#2582ff] transition-colors duration-300 delay-75 ease-out break-words">
                         {ch.title}
                       </h3>
                       <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
@@ -397,7 +817,7 @@ export default function ChallengesSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10 w-full max-w-full">
             
             {/* Left side: Strategic Narrative & Assurances */}
-            <div className="lg:col-span-6 text-left space-y-4 sm:space-y-5 w-full">
+            <div className="lg:col-span-5 text-left space-y-4 sm:space-y-5 w-full">
               <span className="inline-flex items-center space-x-2 text-[10px] font-mono text-[#ff8e1a] uppercase tracking-widest font-extrabold px-3 py-1 bg-white/5 border border-white/10 rounded-full">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#ff8e1a] animate-pulse" />
                 <span>Unified Middleware Strategy</span>
@@ -442,9 +862,9 @@ export default function ChallengesSection() {
               </div>
             </div>
 
-            {/* Right side: Scalable Interactive 3D Architecture Visualizer */}
-            <div className="lg:col-span-6 w-full flex justify-center items-center overflow-hidden">
-              <Interactive3DMiddlewareStack />
+            {/* Right side: Interactive, Responsive 3D-Style SVG Architecture Animation */}
+            <div className="lg:col-span-7 w-full flex justify-center items-center overflow-hidden">
+              <Interactive3DSvgMiddlewareHighway />
             </div>
 
           </div>

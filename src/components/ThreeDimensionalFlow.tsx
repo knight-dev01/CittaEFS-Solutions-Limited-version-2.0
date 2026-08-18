@@ -75,18 +75,18 @@ export function TiltCard3D({
           transformStyle: 'preserve-3d',
         }}
         whileHover={{ scale: scaleHover }}
-        transition={{ duration: 0.2 }}
-        className="relative w-full h-full"
+        transition={{ duration: 0.35, delay: 0.05, ease: [0.25, 1, 0.5, 1] }}
+        className="relative w-full h-full transition-all duration-300 delay-75 ease-out"
       >
         {/* Dynamic Holographic Glare Flare - rendered behind children to avoid washing out text */}
         {glareEffect && (
           <motion.div
             animate={{ opacity: glarePosition.opacity }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
             style={{
-              background: `radial-gradient(circle 280px at ${glarePosition.x}% ${glarePosition.y}%, rgba(37,130,255,0.08), transparent 70%)`,
+              background: `radial-gradient(circle 280px at ${glarePosition.x}% ${glarePosition.y}%, rgba(37,130,255,0.06), transparent 70%)`,
             }}
-            className="pointer-events-none absolute inset-0 z-0 rounded-2xl transition-opacity duration-200"
+            className="pointer-events-none absolute inset-0 z-0 rounded-2xl transition-opacity duration-500 delay-100 ease-out"
           />
         )}
 
