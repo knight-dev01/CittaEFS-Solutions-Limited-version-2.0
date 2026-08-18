@@ -1,6 +1,7 @@
-import { ArrowRight, ChevronRight, Cpu, Database, Landmark, Layers, Calendar, Link2 } from 'lucide-react';
+import { ArrowRight, ChevronRight, Cpu, Database, Landmark, Layers, Calendar, Link2, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 import cslLogo from '../logo.png';
+import { FluidCanvasBackground, Floating3DObjects, TiltCard3D } from './ThreeDimensionalFlow';
 
 interface CSLHeroProps {
   onExploreEcosystem: () => void;
@@ -12,6 +13,12 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
   return (
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-36 bg-white text-slate-800 overflow-hidden border-b border-slate-200">
       
+      {/* Dynamic Fluid Canvas & Wave Mesh Flow */}
+      <FluidCanvasBackground className="opacity-90" />
+
+      {/* 3D Floating Geometric Objects */}
+      <Floating3DObjects />
+
       {/* 1. Clean blueprint grid overlay for a high-end engineering feel */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-[0.05]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:4rem_4rem]" />
@@ -313,33 +320,41 @@ export default function CSLHero({ onExploreEcosystem, onExploreEFS, onRequestDem
 
         </div>
 
-        {/* Floating Quick Feature Strip */}
+        {/* Floating Quick Feature Strip with 3D Tilt Flow */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 sm:mt-24 max-w-5xl mx-auto p-4 sm:p-6 bg-white/80 border border-slate-200/80 rounded-3xl backdrop-blur-md grid grid-cols-2 md:grid-cols-4 gap-6 text-left shadow-xl shadow-slate-100/70"
+          className="mt-16 sm:mt-24 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-left"
         >
-          <div className="space-y-1">
-            <span className="text-[10px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold">01. COMPLIANCE</span>
-            <h4 className="font-extrabold text-sm text-slate-800">Regulatory Shield</h4>
-            <p className="text-[11px] text-slate-500">Secure real-time transaction clearing & ledger protection.</p>
-          </div>
-          <div className="space-y-1">
-            <span className="text-[10px] font-mono text-[#ff8e1a] uppercase tracking-widest font-extrabold">02. PERFORMANCE</span>
-            <h4 className="font-extrabold text-sm text-slate-800">High-Velocity</h4>
-            <p className="text-[11px] text-slate-500">Real-time end-to-end data validation & transit.</p>
-          </div>
-          <div className="space-y-1">
-            <span className="text-[10px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold">03. ARCHITECTURE</span>
-            <h4 className="font-extrabold text-sm text-slate-800">Modular ERP</h4>
-            <p className="text-[11px] text-slate-500">Attach seamlessly to SAP, Oracle, and Dynamics.</p>
-          </div>
-          <div className="space-y-1">
-            <span className="text-[10px] font-mono text-[#ff8e1a] uppercase tracking-widest font-extrabold">04. AI AUTOMATION</span>
-            <h4 className="font-extrabold text-sm text-slate-800">Forecasting Core</h4>
-            <p className="text-[11px] text-slate-500">Simulate financial cash flows and stock levels.</p>
-          </div>
+          <TiltCard3D maxTilt={12} scaleHover={1.03} className="p-5 bg-white/90 border border-slate-200/90 rounded-2xl backdrop-blur-md shadow-lg shadow-slate-100/70 h-full">
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold">01. COMPLIANCE</span>
+              <h4 className="font-extrabold text-sm text-slate-800">Regulatory Shield</h4>
+              <p className="text-[11px] text-slate-500 leading-relaxed">Secure real-time transaction clearing &amp; ledger protection.</p>
+            </div>
+          </TiltCard3D>
+          <TiltCard3D maxTilt={12} scaleHover={1.03} className="p-5 bg-white/90 border border-slate-200/90 rounded-2xl backdrop-blur-md shadow-lg shadow-slate-100/70 h-full">
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-mono text-[#ff8e1a] uppercase tracking-widest font-extrabold">02. PERFORMANCE</span>
+              <h4 className="font-extrabold text-sm text-slate-800">High-Velocity</h4>
+              <p className="text-[11px] text-slate-500 leading-relaxed">Real-time end-to-end data validation &amp; sub-240ms transit.</p>
+            </div>
+          </TiltCard3D>
+          <TiltCard3D maxTilt={12} scaleHover={1.03} className="p-5 bg-white/90 border border-slate-200/90 rounded-2xl backdrop-blur-md shadow-lg shadow-slate-100/70 h-full">
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold">03. ARCHITECTURE</span>
+              <h4 className="font-extrabold text-sm text-slate-800">Modular ERP</h4>
+              <p className="text-[11px] text-slate-500 leading-relaxed">Attach seamlessly to SAP, Oracle, Odoo, and Dynamics.</p>
+            </div>
+          </TiltCard3D>
+          <TiltCard3D maxTilt={12} scaleHover={1.03} className="p-5 bg-white/90 border border-slate-200/90 rounded-2xl backdrop-blur-md shadow-lg shadow-slate-100/70 h-full">
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-mono text-[#ff8e1a] uppercase tracking-widest font-extrabold">04. AI AUTOMATION</span>
+              <h4 className="font-extrabold text-sm text-slate-800">Forecasting Core</h4>
+              <p className="text-[11px] text-slate-500 leading-relaxed">Simulate financial cash flows, supply schedules, and stock.</p>
+            </div>
+          </TiltCard3D>
         </motion.div>
 
       </div>

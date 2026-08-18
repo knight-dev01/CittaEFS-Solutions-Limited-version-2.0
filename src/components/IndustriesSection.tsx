@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import industryLeadImg from '../assets/images/csl_industry_lead_1786930437006.jpg';
+import { TiltCard3D } from './ThreeDimensionalFlow';
 
 export default function IndustriesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -189,88 +190,92 @@ export default function IndustriesSection() {
           </div>
         </motion.div>
 
-        {/* Bento Grid Layout */}
+        {/* Bento Grid Layout with 3D Tilt Flow */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {industries.map((ind, idx) => {
             const Icon = ind.icon;
             const isHovered = hoveredIndex === idx;
             
             return (
-              <div
-                key={idx}
-                id={`ind-card-${idx}`}
-                onMouseEnter={() => setHoveredIndex(idx)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className={`relative group bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-lg hover:border-emerald-300 hover:-translate-y-1 ${
-                  ind.gridSpan
-                }`}
+              <TiltCard3D 
+                key={idx} 
+                maxTilt={8} 
+                scaleHover={1.02} 
+                className={`h-full rounded-3xl ${ind.gridSpan}`}
               >
-                {/* Subtle Illustration background element representing standard industry grid pattern */}
-                <div className="absolute right-0 top-0 w-28 h-28 opacity-[0.03] group-hover:opacity-[0.07] transition-all duration-500 pointer-events-none">
-                  {idx % 3 === 0 ? (
-                    /* Tech Concentric Rings illustration */
-                    <svg className="w-full h-full" viewBox="0 0 100 100">
-                      <circle cx="100" cy="0" r="30" stroke="currentColor" strokeWidth="2" fill="none" />
-                      <circle cx="100" cy="0" r="50" stroke="currentColor" strokeWidth="2" fill="none" />
-                      <circle cx="100" cy="0" r="70" stroke="currentColor" strokeWidth="2" fill="none" />
-                      <circle cx="100" cy="0" r="90" stroke="currentColor" strokeWidth="2" fill="none" />
-                    </svg>
-                  ) : idx % 3 === 1 ? (
-                    /* Dotted Matrix illustration */
-                    <svg className="w-full h-full" viewBox="0 0 100 100">
-                      <defs>
-                        <pattern id={`dotPattern-${idx}`} x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
-                          <circle cx="3" cy="3" r="1.5" fill="currentColor" />
-                        </pattern>
-                      </defs>
-                      <rect width="100" height="100" fill={`url(#dotPattern-${idx})`} />
-                    </svg>
-                  ) : (
-                    /* Isometric Grid Lines illustration */
-                    <svg className="w-full h-full" viewBox="0 0 100 100">
-                      <line x1="0" y1="20" x2="100" y2="20" stroke="currentColor" strokeWidth="1" />
-                      <line x1="0" y1="40" x2="100" y2="40" stroke="currentColor" strokeWidth="1" />
-                      <line x1="0" y1="60" x2="100" y2="60" stroke="currentColor" strokeWidth="1" />
-                      <line x1="0" y1="80" x2="100" y2="80" stroke="currentColor" strokeWidth="1" />
-                      <line x1="20" y1="0" x2="20" y2="100" stroke="currentColor" strokeWidth="1" />
-                      <line x1="40" y1="0" x2="40" y2="100" stroke="currentColor" strokeWidth="1" />
-                      <line x1="60" y1="0" x2="60" y2="100" stroke="currentColor" strokeWidth="1" />
-                      <line x1="80" y1="0" x2="80" y2="100" stroke="currentColor" strokeWidth="1" />
-                    </svg>
-                  )}
-                </div>
-
-                {/* Subtle visual glow accent based on industry color */}
-                <div className={`absolute -right-10 -top-10 w-24 h-24 bg-gradient-to-br ${ind.color} blur-2xl rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500`} />
-
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`p-3 rounded-2xl transition-all duration-300 ${ind.accent}`}>
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-1 rounded-lg">
-                      {ind.metric}
-                    </span>
+                <div
+                  id={`ind-card-${idx}`}
+                  onMouseEnter={() => setHoveredIndex(idx)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  className="relative group bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xs hover:shadow-xl hover:border-emerald-300 h-full"
+                >
+                  {/* Subtle Illustration background element representing standard industry grid pattern */}
+                  <div className="absolute right-0 top-0 w-28 h-28 opacity-[0.03] group-hover:opacity-[0.07] transition-all duration-500 pointer-events-none">
+                    {idx % 3 === 0 ? (
+                      /* Tech Concentric Rings illustration */
+                      <svg className="w-full h-full" viewBox="0 0 100 100">
+                        <circle cx="100" cy="0" r="30" stroke="currentColor" strokeWidth="2" fill="none" />
+                        <circle cx="100" cy="0" r="50" stroke="currentColor" strokeWidth="2" fill="none" />
+                        <circle cx="100" cy="0" r="70" stroke="currentColor" strokeWidth="2" fill="none" />
+                        <circle cx="100" cy="0" r="90" stroke="currentColor" strokeWidth="2" fill="none" />
+                      </svg>
+                    ) : idx % 3 === 1 ? (
+                      /* Dotted Matrix illustration */
+                      <svg className="w-full h-full" viewBox="0 0 100 100">
+                        <defs>
+                          <pattern id={`dotPattern-${idx}`} x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+                            <circle cx="3" cy="3" r="1.5" fill="currentColor" />
+                          </pattern>
+                        </defs>
+                        <rect width="100" height="100" fill={`url(#dotPattern-${idx})`} />
+                      </svg>
+                    ) : (
+                      /* Isometric Grid Lines illustration */
+                      <svg className="w-full h-full" viewBox="0 0 100 100">
+                        <line x1="0" y1="20" x2="100" y2="20" stroke="currentColor" strokeWidth="1" />
+                        <line x1="0" y1="40" x2="100" y2="40" stroke="currentColor" strokeWidth="1" />
+                        <line x1="0" y1="60" x2="100" y2="60" stroke="currentColor" strokeWidth="1" />
+                        <line x1="0" y1="80" x2="100" y2="80" stroke="currentColor" strokeWidth="1" />
+                        <line x1="20" y1="0" x2="20" y2="100" stroke="currentColor" strokeWidth="1" />
+                        <line x1="40" y1="0" x2="40" y2="100" stroke="currentColor" strokeWidth="1" />
+                        <line x1="60" y1="0" x2="60" y2="100" stroke="currentColor" strokeWidth="1" />
+                        <line x1="80" y1="0" x2="80" y2="100" stroke="currentColor" strokeWidth="1" />
+                      </svg>
+                    )}
                   </div>
 
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-1">
-                    {ind.sub}
-                  </span>
-                  
-                  <h3 className="font-display text-lg font-bold text-slate-900 mb-2 leading-snug group-hover:text-emerald-800 transition-colors">
-                    {ind.title}
-                  </h3>
+                  {/* Subtle visual glow accent based on industry color */}
+                  <div className={`absolute -right-10 -top-10 w-24 h-24 bg-gradient-to-br ${ind.color} blur-2xl rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500`} />
 
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
-                    {ind.desc}
-                  </p>
-                </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`p-3 rounded-2xl transition-all duration-300 ${ind.accent}`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-50 border border-slate-100 px-2 py-1 rounded-lg">
+                        {ind.metric}
+                      </span>
+                    </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-emerald-700 transition-colors">
-                  <span>{ind.highlight}</span>
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-200" />
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-1">
+                      {ind.sub}
+                    </span>
+                    
+                    <h3 className="font-display text-lg font-bold text-slate-900 mb-2 leading-snug group-hover:text-emerald-800 transition-colors">
+                      {ind.title}
+                    </h3>
+
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                      {ind.desc}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-emerald-700 transition-colors">
+                    <span>{ind.highlight}</span>
+                    <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-200" />
+                  </div>
                 </div>
-              </div>
+              </TiltCard3D>
             );
           })}
         </div>

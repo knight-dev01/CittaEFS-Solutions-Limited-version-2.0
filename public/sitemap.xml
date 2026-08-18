@@ -1,12 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+  
+  <!-- Primary Homepage & Master Portal -->
   <url>
     <loc>https://www.cittasl.com/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.cittasl.com/logo.png</image:loc>
+      <image:title>CittaSL (CSL) Enterprise Software &amp; Middleware Logo</image:title>
+      <image:caption>Official emblem of Citta Software Limited (Citta ERP Solutions Limited, CittaNuvola Group) — developers of CittaEFS, CittaMatrix, CittaHospitalityX, and CittaPlannerX.</image:caption>
+      <image:geo_location>Lagos, Nigeria</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cittasl.com/apple-touch-icon.png</image:loc>
+      <image:title>CittaSL Brand Icon</image:title>
+      <image:caption>High resolution brand icon for CittaSL enterprise platforms.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.cittasl.com/favicon.png</image:loc>
+      <image:title>CittaSL Favicon</image:title>
+      <image:caption>CittaSL Web Favicon Icon.</image:caption>
+    </image:image>
   </url>
-</urlset>
 
+  <!-- CittaEFS Electronic Fiscal System & Regulatory Compliance -->
+  <url>
+    <loc>https://www.cittasl.com/#products</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.cittasl.com/logo.png</image:loc>
+      <image:title>CittaEFS Electronic Fiscal System Middleware</image:title>
+      <image:caption>Intelligent non-intrusive tax pre-clearance and statutory compliance middleware for National Revenue Service (NRS) e-invoicing.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- CittaMatrix Core Enterprise ERP & Unified Ledger -->
+  <url>
+    <loc>https://www.cittasl.com/#cittamatrix</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.cittasl.com/logo.png</image:loc>
+      <image:title>CittaMatrix Enterprise ERP &amp; General Ledger</image:title>
+      <image:caption>Unified financial engine, multi-currency ledger, inventory management, and transaction routing.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- CittaHospitalityX Hotel PMS & Guest Experience Engine -->
+  <url>
+    <loc>https://www.cittasl.com/#cittahospitalityx</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.cittasl.com/logo.png</image:loc>
+      <image:title>CittaHospitalityX Property Management System (PMS)</image:title>
+      <image:caption>Hospitality PMS for hotels, resorts, multi-point folio billing, and guest reservation management.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- CittaPlannerX Resource Scheduling & Gantt Timeline Canvas -->
+  <url>
+    <loc>https://www.cittasl.com/#cittaplannerx</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.cittasl.com/logo.png</image:loc>
+      <image:title>CittaPlannerX Gantt Project &amp; Resource Scheduler</image:title>
+      <image:caption>Critical path analysis, interactive Gantt canvas, and heavy resource leveling engine.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- CittaNexus API Gateway & Webhook Mesh -->
+  <url>
+    <loc>https://www.cittasl.com/#cittanexus</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.cittasl.com/logo.png</image:loc>
+      <image:title>CittaNexus API Gateway &amp; Mesh Router</image:title>
+      <image:caption>High-throughput microservices router, cryptographic data hashing, and circuit breaker resilience.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Statutory Regulatory Compliance Architecture -->
+  <url>
+    <loc>https://www.cittasl.com/#compliance</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Enterprise ERP Integration Roadmap -->
+  <url>
+    <loc>https://www.cittasl.com/#roadmap</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Target Industry Vertical Solutions -->
+  <url>
+    <loc>https://www.cittasl.com/#industries</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Technical FAQ & Knowledgebase -->
+  <url>
+    <loc>https://www.cittasl.com/#faq</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Corporate Engagement, Office Location & Contact Desk -->
+  <url>
+    <loc>https://www.cittasl.com/#contact</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.cittasl.com/logo.png</image:loc>
+      <image:title>CittaSL Corporate Office &amp; Engineering HQ</image:title>
+      <image:caption>5, Sadiku Street, Agidingbi, Ikeja, Lagos, Nigeria.</image:caption>
+      <image:geo_location>Ikeja, Lagos, Nigeria</image:geo_location>
+    </image:image>
+  </url>
+
+</urlset>

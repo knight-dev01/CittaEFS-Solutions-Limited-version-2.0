@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Sparkles, ShieldCheck, Database, Layers, ArrowUpRight } from 'lucide-react';
 import { useCountUp } from '../hooks/useCountUp';
@@ -250,7 +250,7 @@ export function SVGDivider({ type = 'wave', colorTheme = 'blue' }: { type?: 'wav
   );
 }
 
-// Interactive Product Ecosystem Card
+// Interactive Product Ecosystem Card with 3D Tilt Perspective and Fluid Hover Glare
 export function ProductCard({ 
   name, tagline, description, businessValue, badge, capability, icon: Icon, onClick, isFeatured = false, isBlue = true, href
 }: {
@@ -266,81 +266,122 @@ export function ProductCard({
   isBlue?: boolean;
   href?: string;
 }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
+
   const highlightTextColor = isBlue ? 'text-emerald-600' : 'text-teal-600';
-  const highlightBg = isBlue ? 'bg-emerald-50 border-emerald-200' : 'bg-teal-50 border-teal-200';
-  const borderHoverClass = isBlue ? 'hover:border-emerald-500/30 hover:shadow-emerald-500/5' : 'hover:border-teal-500/30 hover:shadow-teal-500/5';
+  const borderHoverClass = isBlue ? 'hover:border-[#2582ff]/40 hover:shadow-[0_20px_40px_rgba(37,130,255,0.12)]' : 'hover:border-[#ff8e1a]/40 hover:shadow-[0_20px_40px_rgba(255,142,26,0.12)]';
   
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotX = -((y - rect.height / 2) / (rect.height / 2)) * 7;
+    const rotY = ((x - rect.width / 2) / (rect.width / 2)) * 7;
+    setRotateX(rotX);
+    setRotateY(rotY);
+    setGlare({ x: (x / rect.width) * 100, y: (y / rect.height) * 100, opacity: 0.12 });
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+    setGlare((prev) => ({ ...prev, opacity: 0 }));
+  };
+
   const Component = href ? motion.a : motion.div;
   const extraProps = href ? { href, target: "_blank", rel: "noopener noreferrer" } : { onClick };
 
   return (
-    <Component
-      whileHover={{ y: -6, scale: 1.01 }}
-      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      {...extraProps}
-      className={`p-6 sm:p-8 rounded-3xl border transition-all cursor-pointer flex flex-col justify-between text-left h-full group ${
-        isFeatured 
-          ? `bg-slate-900 text-white border-slate-800 ${isBlue ? 'ring-1 ring-emerald-500/20' : 'ring-1 ring-teal-500/20'} md:col-span-2 shadow-xl` 
-          : 'bg-white text-slate-800 border-slate-200 hover:shadow-xl ' + borderHoverClass
-      }`}
-    >
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <span className={`text-[10px] font-mono uppercase tracking-widest font-bold px-3 py-1 rounded-full border ${
-            isFeatured 
-              ? 'text-white bg-white/10 border-white/10' 
-              : isBlue 
-                ? 'text-emerald-800 bg-emerald-50 border-emerald-100' 
-                : 'text-teal-800 bg-teal-50 border-teal-100'
-          }`}>
-            {badge}
-          </span>
-          <ArrowUpRight className={`w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${isFeatured ? 'text-slate-400' : 'text-slate-400 group-hover:text-slate-700'}`} />
-        </div>
+    <div style={{ perspective: '1100px' }} className="h-full">
+      <Component
+        ref={cardRef as any}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: 'preserve-3d',
+        }}
+        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        {...extraProps}
+        className={`relative overflow-hidden p-6 sm:p-8 rounded-3xl border transition-all cursor-pointer flex flex-col justify-between text-left h-full group ${
+          isFeatured 
+            ? `bg-slate-900 text-white border-slate-800 ${isBlue ? 'ring-1 ring-emerald-500/20' : 'ring-1 ring-teal-500/20'} md:col-span-2 shadow-2xl` 
+            : 'bg-white text-slate-800 border-slate-200 shadow-sm ' + borderHoverClass
+        }`}
+      >
+        {/* Holographic light glare */}
+        <div
+          style={{
+            background: `radial-gradient(circle 260px at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.7), transparent 70%)`,
+            opacity: glare.opacity,
+          }}
+          className="pointer-events-none absolute inset-0 mix-blend-overlay z-20 transition-opacity duration-200"
+        />
 
-        <div className="flex items-center space-x-3.5">
-          <div className={`p-3 rounded-2xl shrink-0 ${
-            isFeatured 
-              ? 'bg-white/10 text-[#2582ff]' 
-              : isBlue 
-                ? 'bg-emerald-50 text-emerald-600' 
-                : 'bg-teal-50 text-teal-600'
-          }`}>
-            <Icon className="w-6 h-6" />
-          </div>
-          <div>
-            <h3 className="font-display font-bold text-lg sm:text-xl text-slate-900">
-              {name}
-            </h3>
-            <span className={`block text-[10px] font-mono tracking-wider uppercase opacity-80 ${isFeatured ? 'text-slate-400' : 'text-slate-500'}`}>
-              {capability}
+        <div style={{ transform: 'translateZ(24px)' }} className="space-y-4 relative z-10">
+          <div className="flex items-center justify-between">
+            <span className={`text-[10px] font-mono uppercase tracking-widest font-bold px-3 py-1 rounded-full border ${
+              isFeatured 
+                ? 'text-white bg-white/10 border-white/10' 
+                : isBlue 
+                  ? 'text-emerald-800 bg-emerald-50 border-emerald-100' 
+                  : 'text-teal-800 bg-teal-50 border-teal-100'
+            }`}>
+              {badge}
             </span>
+            <ArrowUpRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 ${isFeatured ? 'text-slate-400' : 'text-slate-400 group-hover:text-slate-700'}`} />
           </div>
+
+          <div className="flex items-center space-x-3.5">
+            <div className={`p-3 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110 ${
+              isFeatured 
+                ? 'bg-white/10 text-[#2582ff]' 
+                : isBlue 
+                  ? 'bg-emerald-50 text-emerald-600' 
+                  : 'bg-teal-50 text-teal-600'
+            }`}>
+              <Icon className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="font-display font-bold text-lg sm:text-xl text-slate-900">
+                {name}
+              </h3>
+              <span className={`block text-[10px] font-mono tracking-wider uppercase opacity-80 ${isFeatured ? 'text-slate-400' : 'text-slate-500'}`}>
+                {capability}
+              </span>
+            </div>
+          </div>
+
+          <p className={`text-xs sm:text-sm leading-relaxed ${isFeatured ? 'text-slate-300' : 'text-slate-600'}`}>
+            {description}
+          </p>
+
+          {businessValue && (
+            <div className="pt-3 border-t border-slate-100/70">
+              <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 mb-1">Business Value</span>
+              <p className={`text-xs leading-relaxed font-semibold ${isFeatured ? 'text-emerald-300' : 'text-emerald-700'}`}>
+                {businessValue}
+              </p>
+            </div>
+          )}
         </div>
 
-        <p className={`text-xs sm:text-sm leading-relaxed ${isFeatured ? 'text-slate-300' : 'text-slate-600'}`}>
-          {description}
-        </p>
-
-        {businessValue && (
-          <div className="pt-3 border-t border-slate-100/70">
-            <span className="block text-[8px] font-mono uppercase tracking-wider text-slate-400 mb-1">Business Value</span>
-            <p className={`text-xs leading-relaxed font-semibold ${isFeatured ? 'text-emerald-300' : 'text-emerald-700'}`}>
-              {businessValue}
-            </p>
-          </div>
-        )}
-      </div>
-
-      <div className="pt-6">
-        <span className={`text-xs font-semibold inline-flex items-center space-x-1.5 hover:underline ${
-          isFeatured ? 'text-white' : highlightTextColor
-        }`}>
-          <span>{href ? `Visit ${name} Website` : `Learn more about ${name}`}</span>
-          <span className="font-mono">{href ? '↗' : '→'}</span>
-        </span>
-      </div>
-    </Component>
+        <div style={{ transform: 'translateZ(20px)' }} className="pt-6 relative z-10">
+          <span className={`text-xs font-semibold inline-flex items-center space-x-1.5 hover:underline ${
+            isFeatured ? 'text-white' : highlightTextColor
+          }`}>
+            <span>{href ? `Visit ${name} Website` : `Learn more about ${name}`}</span>
+            <span className="font-mono transition-transform duration-200 group-hover:translate-x-1">{href ? '↗' : '→'}</span>
+          </span>
+        </div>
+      </Component>
+    </div>
   );
 }
 

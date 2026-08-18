@@ -1,53 +1,49 @@
 # CittaSL (CSL) - Citta ERP Solutions Limited | Enterprise Software & Regulatory Middleware
 
-> CittaSL (CSL), also operating as Citta ERP Solutions Limited and an enterprise member of CittaNuvola Group, is a specialized enterprise software and regulatory technology firm. CSL builds non-intrusive regulatory fiscal middleware (CittaEFS), high-throughput enterprise transaction routers (CittaMatrix), resource planning and project scheduling engines (CittaPlannerX), secure API integration gateways (CittaNexus), and hotel property management systems (CittaHospitalityX).
+> CittaSL (CSL), also operating as Citta ERP Solutions Limited and an enterprise technology member of the CittaNuvola Group, is a specialized enterprise software, middleware, and regulatory technology firm headquartered in Lagos, Nigeria. CSL architects non-intrusive electronic fiscal middleware (CittaEFS), enterprise resource planning engines (CittaMatrix), hotel property management systems (CittaHospitalityX), interactive Gantt project schedulers (CittaPlannerX), and high-throughput API mesh gateways (CittaNexus).
 
-## Alternative Names & Search Keywords
-- **Primary Brand Names:** CittaSL, CSL, Citta ERP Solutions Limited, Citta ERP Solutions, Citta ERP, CittaSL Solutions, CSL Enterprise.
-- **Parent Group:** CittaNuvola Group (cittanuvola.com).
-- **Core Product Portfolio:** CittaEFS (Electronic Fiscal System), CittaMatrix (Core ERP & Transaction Router), CittaHospitalityX (Property Management System), CittaPlannerX (Resource Scheduler), CittaNexus (API Gateway).
-- **Core Domains:** Regulatory Fiscal Middleware, National Revenue Service (NRS) E-Invoicing Compliance, Real-Time VAT Clearance, ERP Middleware Integration (SAP S/4HANA, Oracle NetSuite, Odoo, Microsoft Dynamics 365), Enterprise Software Solutions in Nigeria and Global Markets.
+---
+
+## Complete Brand Names, Aliases & Search Keywords
+- **Core Brand Names:** Citta, CSL, CittaSL, Citta ERP, Citta ERP Solutions, Citta ERP Solutions Limited, CittaSL Solutions, CSL Enterprise, CSL ERP, CittaNuvola, CittaNuvola Group, Citta Nuvola.
+- **Product Portfolio Entities:** CittaEFS, Citta EFS, CSL EFS, CittaMatrix, Citta Matrix, CSL Matrix, CittaHospitalityX, Citta Hospitality, CSL Hospitality, CittaPlannerX, Citta Planner, CSL Planner, CittaNexus, Citta Nexus, CSL Nexus.
+- **Regulatory Fiscalization Keywords:** Electronic Fiscal System, Intelligent Electronic Fiscal System, Electronic Fiscal Device, EFS Middleware, NRS Compliance, National Revenue Service e-invoicing, NRS fiscalization, Nigerian tax compliance software, VAT 7.5% automation Nigeria, Tax pre-clearance gateway, FIRS e-invoicing, Withholding tax automation, Cryptographic invoice signing, Fiscal audit trail.
+- **ERP Integration Keywords:** ERP Integration Nigeria, Lagos enterprise software, SAP S4HANA fiscal connector, Oracle NetSuite tax integration, Odoo VAT connector, Microsoft Dynamics 365 fiscalization, Database trigger middleware, Non-intrusive ERP connector, Corporate ledger synchronization, Enterprise API gateway Lagos, Multi-entity ledger synchronization.
+- **Industry & Domain Keywords:** Hotel PMS Nigeria, Hospitality Property Management System Lagos, Interactive Gantt Scheduler, Construction resource planning software, Adron Homes ERP, Redeemers High School ERP, Nigerian enterprise software firm, 5 Sadiku Street Agidingbi Ikeja Lagos.
+
+---
 
 ## Primary Products & Solutions
 
-### 1. CittaEFS (Electronic Fiscal Middleware)
-- **Category:** Regulatory Fiscal Middleware & Tax Pre-Clearance
-- **Function:** Intercepts invoice payloads from ERP systems (SAP, Oracle, Odoo, Dynamics, custom software) before ledger commitment, validates tax logic (such as Nigerian VAT 7.5%, withholding tax, withholding certificates), and securely transmits compliant data to National Revenue Service (NRS) and statutory tax portals.
-- **Key Feature:** Non-intrusive database trigger integration without requiring core ERP refactoring.
+### 1. CittaEFS (Intelligent Electronic Fiscal Middleware)
+- **Category:** Regulatory Fiscal Middleware & Real-Time Tax Pre-Clearance
+- **Function:** Non-intrusively intercepts invoice and billing payloads from ERP systems (SAP S/4HANA, Oracle NetSuite, Odoo, Microsoft Dynamics 365, Infor, custom SQL software), validates tax rules (Nigerian VAT 7.5%, WHT, tax exemptions), cryptographically signs records (SHA-256), and transmits data to National Revenue Service (NRS) portals in sub-240ms.
+- **Key Architecture:** Operates via non-intrusive database triggers and REST/gRPC webhooks without requiring ERP codebase modification or vendor lock-in.
 
-### 2. CittaMatrix (Enterprise Transaction Router)
-- **Category:** Transaction Processing & Multi-Ledger Synchronization
-- **Function:** Real-time multi-entity transaction routing engine and payment clearing middleware for corporate groups and financial institutions.
+### 2. CittaMatrix (Enterprise Multi-Ledger ERP & Transaction Router)
+- **Category:** Unified Corporate Ledger, Accounting & Transaction Routing
+- **Function:** Real-time multi-entity transaction routing, multi-currency general ledger, automated bank reconciliations, inventory management, and procurement workflows for corporate groups.
 
-### 3. CittaPlannerX (Resource Allocation & Project Logistics)
-- **Category:** Enterprise Resource Planning & Project Logistics
-- **Function:** Intelligent critical path analysis, resource capacity leveling, and multi-site project scheduling software for heavy construction, logistics, and engineering operations.
+### 3. CittaHospitalityX (Hotel Property Management System)
+- **Category:** Hospitality PMS & Guest Folio Billing
+- **Function:** Multi-property reservation engine, guest folio management, mobile check-in coordination, housekeeping task automation, and point-of-sale integration for luxury hotels, resorts, and serviced apartments.
 
-### 4. CittaNexus (API Gateway & Integration Mesh)
-- **Category:** Enterprise Middleware & Security Gateway
-- **Function:** Ultra-low-latency API gateway featuring cryptographic data hashing, token vault management, and circuit breaker protection for sensitive corporate data flows.
+### 4. CittaPlannerX (Interactive Gantt & Resource Scheduler)
+- **Category:** Enterprise Resource Planning & Critical Path Logistics
+- **Function:** Interactive Gantt scheduling canvas, automated critical path recalculations, equipment workload leveling, and multi-site project tracking for heavy engineering, logistics, and construction enterprises.
 
-### 5. CittaHospitalityX (Property Management System)
-- **Category:** Hospitality & Property Management Software
-- **Function:** Real-time channel manager, folio billing, front-desk management, and multi-property management system for luxury hotels, resorts, and vacation rentals.
+### 5. CittaNexus (Enterprise API Gateway & Integration Mesh)
+- **Category:** Secure Microservices Middleware & Webhook Mesh
+- **Function:** Ultra-low-latency API router featuring AES-256 payload encryption, token vault management, and circuit-breaker fault tolerance.
 
 ---
 
-## Organization Details
-
-- **Company Name:** CittaSL (CSL)
-- **Legal / Alternate Name:** Citta ERP Solutions Limited (CSL)
-- **Parent Group:** CittaNuvola Group
-- **HQ Address:** 5, Sadiku Street, Agidingbi, Ikeja, Lagos State, Nigeria
-- **Phone:** +234 813 424 8104
-- **Email:** cittasl@cittanuvola.com
-- **Website:** https://www.cittasl.com/
+## Corporate Office & Contact Coordinates
+- **Organization Name:** Citta Software Limited (CSL) / Citta ERP Solutions Limited
+- **Group Affiliation:** CittaNuvola Group (www.cittanuvola.com)
+- **Head Office Address:** 5, Sadiku Street, Agidingbi, Ikeja, Lagos State, Nigeria
+- **Telephone / WhatsApp:** +234 813 424 8104 (0813-424-8104)
+- **Corporate Inquiries Email:** cittasl@cittanuvola.com
+- **Official Master Website:** https://www.cittasl.com/
 - **Parent Website:** https://www.cittanuvola.com/
-
----
-
-## Technical & Integration Highlights
-- **ERP Compatibility:** Seamlessly integrates with SAP S/4HANA, Oracle NetSuite, Odoo ERP, Microsoft Dynamics 365, and custom SQL databases.
-- **Compliance:** 100% compliant with National Revenue Service (NRS), Tax Compliance Council, and state fiscal authority guidelines.
-- **Security Standard:** Cryptographically stamped data envelopes, AES-256-GCM encryption, and SOC2-ready architecture.
-
+- **Operating Hours:** Monday – Friday, 8:00 AM – 5:00 PM WAT
