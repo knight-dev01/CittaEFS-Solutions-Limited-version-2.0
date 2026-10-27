@@ -2,6 +2,7 @@
 # CittaNuvola Group Enterprise Software Site
 User-agent: *
 Allow: /
+Disallow: /api/
 
 # Google Search & Google AI Overview Crawlers
 User-agent: Googlebot

@@ -1,6 +1,12 @@
 # CittaSL (CSL) - Citta ERP Solutions Limited | Enterprise Software & Regulatory Middleware
 
-> CittaSL (CSL), also operating as Citta ERP Solutions Limited and an enterprise technology member of the CittaNuvola Group, is a specialized enterprise software, middleware, and regulatory technology firm headquartered in Lagos, Nigeria. CSL architects non-intrusive electronic fiscal middleware (CittaEFS), enterprise resource planning engines (CittaMatrix), hotel property management systems (CittaHospitalityX), interactive Gantt project schedulers (CittaPlannerX), and high-throughput API mesh gateways (CittaNexus).
+> CittaSL (CSL), also operating as Citta ERP Solutions Limited and an enterprise technology member of the CittaNuvola Group, is an enterprise software and integration firm headquartered in Lagos, Nigeria. CSL builds CittaEFS fiscal compliance middleware, CittaMatrix ERP, CittaHospitalityX property management, CittaPlannerX project scheduling, and CittaNexus API integration software.
+
+---
+
+## Primary Pages
+- **Home:** https://www.cittasl.com/
+- **CittaEFS:** https://www.cittasl.com/cittaefs
 
 ---
 
@@ -13,12 +19,34 @@
 
 ---
 
+## Related Search Categories
+- Enterprise software companies in Nigeria
+- Enterprise software companies in Lagos
+- ERP software Nigeria and ERP software Lagos
+- ERP implementation partner Nigeria
+- Fiscal software and fiscal compliance software
+- Tax compliance software Nigeria
+- NRS e-invoicing and NRS fiscalization
+- Electronic invoicing software Nigeria
+- Accounting software integration Nigeria
+- SAP, Oracle NetSuite, Microsoft Dynamics, and Odoo integration
+- Business process automation Nigeria
+- Multi-entity accounting software Nigeria
+- Inventory and procurement software Nigeria
+- Hotel management software Nigeria and hotel PMS Lagos
+- Construction project management software Nigeria
+- API integration company Lagos
+- RegTech Nigeria
+
+---
+
 ## Primary Products & Solutions
 
-### 1. CittaEFS (Intelligent Electronic Fiscal Middleware)
-- **Category:** Regulatory Fiscal Middleware & Real-Time Tax Pre-Clearance
-- **Function:** Non-intrusively intercepts invoice and billing payloads from ERP systems (SAP S/4HANA, Oracle NetSuite, Odoo, Microsoft Dynamics 365, Infor, custom SQL software), validates tax rules (Nigerian VAT 7.5%, WHT, tax exemptions), cryptographically signs records (SHA-256), and transmits data to National Revenue Service (NRS) portals in sub-240ms.
-- **Key Architecture:** Operates via non-intrusive database triggers and REST/gRPC webhooks without requiring ERP codebase modification or vendor lock-in.
+### 1. CittaEFS (Fiscal Compliance Middleware)
+- **Page:** https://www.cittasl.com/cittaefs
+- **Category:** Fiscal validation and NRS pre-clearance
+- **Function:** Connects to ERP systems (SAP, Oracle NetSuite, Odoo, Microsoft Dynamics 365, and custom ledgers), checks customer TIN and VAT calculations, signs approved invoices, submits them to the National Revenue Service gateway, and keeps a read-only audit record.
+- **Deployment:** Read-only database triggers, webhooks, or API calls, with no replacement of the existing ERP. Includes an offline retry queue and bulk Excel/CSV upload.
 
 ### 2. CittaMatrix (Enterprise Multi-Ledger ERP & Transaction Router)
 - **Category:** Unified Corporate Ledger, Accounting & Transaction Routing
@@ -39,11 +67,12 @@
 ---
 
 ## Corporate Office & Contact Coordinates
-- **Organization Name:** Citta Software Limited (CSL) / Citta ERP Solutions Limited
+- **Organization Name:** Citta ERP Solutions Limited (CittaSL / CSL)
 - **Group Affiliation:** CittaNuvola Group (www.cittanuvola.com)
 - **Head Office Address:** 5, Sadiku Street, Agidingbi, Ikeja, Lagos State, Nigeria
 - **Telephone / WhatsApp:** +234 813 424 8104 (0813-424-8104)
 - **Corporate Inquiries Email:** cittasl@cittanuvola.com
-- **Official Master Website:** https://www.cittasl.com/
+- **Official Website:** https://www.cittasl.com/
+- **CittaEFS Page:** https://www.cittasl.com/cittaefs
 - **Parent Website:** https://www.cittanuvola.com/
 - **Operating Hours:** Monday – Friday, 8:00 AM – 5:00 PM WAT

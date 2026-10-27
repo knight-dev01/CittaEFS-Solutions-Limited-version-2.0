@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Search } from 'lucide-react';
 import { PageId } from '../types';
+import { goTo, goToSection } from '../navigation';
 import GlobalSearchInline from './GlobalSearchInline';
 import cslLogo from '../logo.png';
 
@@ -17,13 +18,7 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -32,7 +27,7 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
     { id: 'home', label: 'Home', target: 'home' },
     { id: 'why-we-exist', label: 'Why We Exist', target: 'why-we-exist' },
     { id: 'challenges', label: 'Challenges', target: 'challenges' },
-    { id: 'solutions', label: 'Solutions', target: 'solutions' },
+    { id: 'cittaefs', label: 'CittaEFS', target: 'cittaefs' },
     { id: 'services', label: 'Services', target: 'services' },
     { id: 'contact', label: 'Contact', target: 'contact' },
   ] as const;
@@ -40,42 +35,37 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
   const handleNavClick = (targetId: string) => {
     setIsOpen(false);
     setIsSearchOpen(false);
-    if (targetId === 'home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const el = document.getElementById(targetId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (targetId === 'cittaefs') {
+      goTo('/cittaefs');
+      return;
     }
+    goToSection(targetId);
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-slate-200/80 text-slate-800 shadow-sm ${
-      isScrolled ? 'py-0 shadow-md' : 'py-1.5'
+    <nav className={`fixed top-0 left-0 z-50 w-full border-b border-slate-200 bg-white text-slate-800 transition-shadow ${
+      isScrolled ? 'shadow-sm' : ''
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          
-          {/* Logo Section */}
-          <div className="flex items-center cursor-pointer group space-x-3 shrink-0" onClick={() => handleNavClick('home')}>
-            <img 
-              src={cslLogo} 
-              alt="CittaSL Logo" 
-              className="h-10 w-auto object-contain bg-white p-1 rounded-lg border border-slate-200 transition-transform duration-300 group-hover:scale-105 shadow-xs"
+        <div className="flex h-20 items-center justify-between">
+
+          <div className="flex items-center cursor-pointer space-x-3 shrink-0" onClick={() => handleNavClick('home')}>
+            <img
+              src={cslLogo}
+              alt="CittaSL logo"
+              className="h-9 w-auto object-contain"
             />
             <div className="flex flex-col text-left">
-              <span className="block text-base font-display font-black leading-none text-slate-900 tracking-tight">
+              <span className="block font-display text-base font-bold leading-none tracking-tight text-slate-900">
                 CittaSL
               </span>
-              <span className="block text-[8px] font-mono text-[#2582ff] uppercase tracking-widest font-extrabold mt-0.5">
-                CITTANUVOLA
+              <span className="mt-1 block text-[10px] font-medium uppercase tracking-widest text-slate-500">
+                CittaNuvola
               </span>
             </div>
           </div>
 
-          {/* Desktop Nav Items */}
-          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3">
+          <div className="hidden lg:flex items-center space-x-7">
             {navItems.map((item) => {
               const isActive = currentPage === item.id;
               return (
@@ -83,10 +73,10 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
                   key={item.id}
                   id={`nav-item-${item.id}`}
                   onClick={() => handleNavClick(item.target)}
-                  className={`text-[10px] xl:text-[11px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer py-1 px-0.5 border-b-2 ${
-                    isActive 
-                      ? 'text-[#2582ff] font-extrabold border-[#2582ff]/80' 
-                      : 'text-slate-600 border-transparent hover:text-[#2582ff] hover:border-slate-200'
+                  className={`border-b-2 py-1 text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'border-[#2582ff] text-slate-900'
+                      : 'border-transparent text-slate-600 hover:text-slate-900'
                   }`}
                 >
                   {item.label}
@@ -95,36 +85,33 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
             })}
           </div>
 
-          {/* Search Bar & Request Staging CTA */}
-          <div className="hidden md:flex items-center space-x-3">
-            
-            {/* Simple Inline Search Input with Dropdown */}
+          <div className="hidden md:flex items-center space-x-4">
+
             <div id="navbar-search-container" className="relative">
-              <div className="flex items-center bg-slate-100/90 hover:bg-slate-100 focus-within:bg-white focus-within:ring-2 focus-within:ring-[#2582ff]/30 focus-within:border-[#2582ff]/40 border border-slate-200/80 rounded-full px-3.5 py-2 transition-all w-48 xl:w-60">
-                <Search className="w-3.5 h-3.5 text-slate-400 shrink-0 mr-2" />
+              <div className="flex w-48 items-center rounded-lg border border-slate-300 bg-white px-3 py-2 transition-colors focus-within:border-slate-400 xl:w-56">
+                <Search className="mr-2 h-4 w-4 shrink-0 text-slate-400" />
                 <input
                   type="text"
-                  placeholder="Search site..."
+                  placeholder="Search"
                   value={searchQuery}
                   onFocus={() => setIsSearchOpen(true)}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
                     if (!isSearchOpen) setIsSearchOpen(true);
                   }}
-                  className="bg-transparent text-xs font-semibold text-slate-800 placeholder-slate-400 focus:outline-none w-full"
+                  className="w-full bg-transparent text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="text-slate-400 hover:text-slate-600 p-0.5 rounded-full cursor-pointer ml-1"
+                    className="ml-1 rounded p-0.5 text-slate-400 hover:text-slate-600"
                     title="Clear search"
                   >
-                    <X className="w-3.5 h-3.5" />
+                    <X className="h-3.5 w-3.5" />
                   </button>
                 )}
               </div>
 
-              {/* Floating Dropdown Component (No Fullscreen Overlay) */}
               <GlobalSearchInline
                 isOpen={isSearchOpen}
                 onClose={() => setIsSearchOpen(false)}
@@ -138,57 +125,53 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
             <button
               id="cta-nav-demo"
               onClick={onRequestDemo}
-              className="px-5 py-2.5 rounded-full text-xs font-bold tracking-wide text-white bg-slate-900 hover:bg-[#1a73e8] hover:scale-105 transition-all duration-300 cursor-pointer shadow-md shrink-0"
+              className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
             >
-              Request Staging
+              Request staging
             </button>
           </div>
 
-          {/* Mobile menu & search triggers */}
           <div className="flex md:hidden items-center space-x-2">
             <button
               id="mobile-search-trigger"
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className={`p-2 rounded-full transition-all cursor-pointer ${
-                isSearchOpen ? 'text-[#2582ff] bg-blue-50' : 'text-slate-500 hover:text-[#2582ff] hover:bg-slate-50'
-              }`}
+              className="p-2 text-slate-600"
               title="Search CSL site"
             >
-              <Search className="w-5 h-5" />
+              <Search className="h-5 w-5" />
             </button>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 text-slate-700"
+              aria-label="Toggle menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* Mobile Search Bar Expansion */}
       {isSearchOpen && (
-        <div className="md:hidden bg-slate-50 border-b border-slate-200 px-4 py-3 relative">
-          <div className="flex items-center bg-white border border-slate-200 rounded-xl px-3 py-2 shadow-sm">
-            <Search className="w-4 h-4 text-slate-400 mr-2 shrink-0" />
+        <div className="relative border-b border-slate-200 bg-white px-4 py-3 md:hidden">
+          <div className="flex items-center rounded-lg border border-slate-300 px-3 py-2">
+            <Search className="mr-2 h-4 w-4 shrink-0 text-slate-400" />
             <input
               type="text"
-              placeholder="Search products, SAP, FAQs..."
+              placeholder="Search products, SAP, FAQs"
               value={searchQuery}
               autoFocus
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-transparent text-xs font-semibold text-slate-800 placeholder-slate-400 focus:outline-none"
+              className="w-full bg-transparent text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
             />
             {searchQuery && (
               <button onClick={() => setSearchQuery('')} className="p-1 text-slate-400">
-                <X className="w-4 h-4" />
+                <X className="h-4 w-4" />
               </button>
             )}
           </div>
 
-          {/* Mobile Floating Dropdown Panel */}
           <GlobalSearchInline
             isOpen={isSearchOpen}
             onClose={() => setIsSearchOpen(false)}
@@ -200,19 +183,18 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
         </div>
       )}
 
-      {/* Mobile Nav Drawer */}
       {isOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1.5 shadow-lg max-h-[85vh] overflow-y-auto">
+        <div className="max-h-[85vh] overflow-y-auto border-b border-slate-200 bg-white px-4 pb-6 pt-2 lg:hidden">
           {navItems.map((item) => {
             const isActive = currentPage === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.target)}
-                className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-semibold transition-all cursor-pointer block ${
-                  isActive 
-                    ? 'text-[#2582ff] bg-[#2582ff]/5 font-bold' 
-                    : 'text-slate-600 hover:text-[#2582ff] hover:bg-slate-50'
+                className={`block w-full rounded-lg px-4 py-3 text-left text-sm font-medium ${
+                  isActive
+                    ? 'bg-slate-100 text-slate-900'
+                    : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                 }`}
               >
                 {item.label}
@@ -220,15 +202,15 @@ export default function Navbar({ currentPage, setCurrentPage, onRequestDemo }: N
             );
           })}
 
-          <div className="pt-4 px-4">
+          <div className="px-4 pt-4">
             <button
               onClick={() => {
                 setIsOpen(false);
                 onRequestDemo();
               }}
-              className="w-full text-center px-6 py-3 rounded-xl text-sm font-bold text-white bg-slate-900 hover:bg-[#1a73e8] transition-all cursor-pointer shadow-md"
+              className="w-full rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white"
             >
-              Request Staging
+              Request staging
             </button>
           </div>
         </div>

@@ -1,14 +1,100 @@
 import express from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { readFileSync } from 'fs';
 import nodemailer from 'nodemailer';
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
+import { buildStructuredData, pageSeo } from './src/seoData';
 
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function replaceMeta(html: string, attribute: string, key: string, content: string) {
+  const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = new RegExp(`(<meta\\s+${attribute}="${escapedKey}"\\s+content=")[^"]*(")`, 'i');
+
+  if (pattern.test(html)) {
+    return html.replace(pattern, (_match, prefix, suffix) => `${prefix}${escapeHtml(content)}${suffix}`);
+  }
+
+  return html.replace(
+    '</head>',
+    `<meta ${attribute}="${key}" content="${escapeHtml(content)}" />\n</head>`,
+  );
+}
+
+function replaceLink(html: string, rel: string, href: string) {
+  const escapedRel = rel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = new RegExp(`(<link\\s+rel="${escapedRel}"\\s+href=")[^"]*(")`, 'i');
+
+  if (pattern.test(html)) {
+    return html.replace(pattern, (_match, prefix, suffix) => `${prefix}${escapeHtml(href)}${suffix}`);
+  }
+
+  return html.replace('</head>', `<link rel="${rel}" href="${escapeHtml(href)}" />\n</head>`);
+}
+
+function injectCittaEfsSeo(html: string) {
+  const page = pageSeo.cittaefs;
+  let output = html;
+
+  output = output.replace(
+    /<title>[\s\S]*?<\/title>/i,
+    `<title>${escapeHtml(page.title)}</title>`,
+  );
+
+  output = replaceMeta(output, 'name', 'description', page.description);
+  output = replaceMeta(output, 'name', 'summary', page.description);
+  output = replaceMeta(output, 'name', 'subject', 'CittaEFS fiscal compliance software and NRS e-invoicing');
+  output = replaceMeta(
+    output,
+    'name',
+    'keywords',
+    'CittaEFS, fiscal software Nigeria, fiscal compliance software, tax compliance software Nigeria, NRS e-invoicing, NRS fiscalization, electronic invoicing Nigeria, e-invoicing software Nigeria, tax pre-clearance middleware, VAT compliance software Nigeria, SAP fiscal connector, Oracle NetSuite tax integration, Odoo VAT connector, Microsoft Dynamics 365 fiscalization, ERP compliance middleware, invoice validation software, RegTech Nigeria',
+  );
+  output = replaceMeta(
+    output,
+    'name',
+    'topic',
+    'Fiscal software, NRS e-invoicing, tax pre-clearance, ERP compliance middleware, VAT automation',
+  );
+  output = replaceMeta(output, 'property', 'og:title', page.title);
+  output = replaceMeta(output, 'property', 'og:description', page.description);
+  output = replaceMeta(output, 'property', 'og:url', page.url);
+  output = replaceMeta(output, 'property', 'og:type', 'website');
+  output = replaceMeta(output, 'property', 'og:image', page.image);
+  output = replaceMeta(output, 'property', 'og:image:secure_url', page.image);
+  output = replaceMeta(output, 'property', 'og:image:type', 'image/png');
+  output = replaceMeta(output, 'property', 'og:image:width', '1200');
+  output = replaceMeta(output, 'property', 'og:image:height', '630');
+  output = replaceMeta(output, 'property', 'og:image:alt', page.imageAlt);
+  output = replaceMeta(output, 'name', 'twitter:card', 'summary_large_image');
+  output = replaceMeta(output, 'name', 'twitter:title', page.title);
+  output = replaceMeta(output, 'name', 'twitter:description', page.description);
+  output = replaceMeta(output, 'name', 'twitter:image', page.image);
+  output = replaceMeta(output, 'name', 'twitter:image:alt', page.imageAlt);
+  output = replaceMeta(output, 'itemprop', 'name', page.title);
+  output = replaceMeta(output, 'itemprop', 'description', page.description);
+  output = replaceMeta(output, 'itemprop', 'image', page.image);
+
+  output = replaceLink(output, 'canonical', page.url);
+  output = replaceLink(output, 'image_src', page.image);
+
+  const structuredData = JSON.stringify(buildStructuredData('cittaefs')).replace(/</g, '\\u003c');
+  output = output.replace(
+    /<script type="application\/ld\+json">[\s\S]*?<\/script>/i,
+    `<script type="application/ld+json">${structuredData}</script>`,
+  );
+
+  return output;
+}
 
 async function startServer() {
   const app = express();
@@ -218,18 +304,50 @@ Timestamp: ${new Date().toISOString()}
     }
   });
 
+  // Keep one canonical URL for the CittaEFS page
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && req.path === '/cittaefs/') {
+      return res.redirect(301, '/cittaefs');
+    }
+    next();
+  });
+
+  // Unknown API routes should not fall through to the HTML app
+  app.use('/api', (_req, res) => {
+    res.status(404).json({ success: false, error: 'API route not found.' });
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
+
+    app.get('/cittaefs', async (req, res, next) => {
+      try {
+        const template = readFileSync(path.join(process.cwd(), 'index.html'), 'utf-8');
+        const html = await vite.transformIndexHtml(req.originalUrl, template);
+        res.status(200).set('Content-Type', 'text/html').send(injectCittaEfsSeo(html));
+      } catch (error) {
+        vite.ssrFixStacktrace(error as Error);
+        next(error);
+      }
+    });
+
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
+    const indexHtmlPath = path.join(distPath, 'index.html');
+
+    app.get('/cittaefs', (_req, res) => {
+      const html = readFileSync(indexHtmlPath, 'utf-8');
+      res.status(200).set('Content-Type', 'text/html').send(injectCittaEfsSeo(html));
+    });
+
     app.use(express.static(distPath));
     app.get('*', (_req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
+      res.status(404).sendFile(path.join(distPath, '404.html'));
     });
   }
 

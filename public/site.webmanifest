@@ -1,0 +1,26 @@
+{
+  "name": "CittaSL - Enterprise Software & Compliance Middleware",
+  "short_name": "CittaSL",
+  "description": "CittaSL builds CittaEFS fiscal compliance middleware, ERP integrations, and the Citta enterprise software suite.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#07152b",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

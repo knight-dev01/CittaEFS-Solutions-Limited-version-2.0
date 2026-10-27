@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUp } from 'lucide-react';
 import srcLogo from './logo.png';
 import { PageId } from './types';
+import { currentPath, goToSection } from './navigation';
 
 // Component Imports
 import Navbar from './components/Navbar';
-import ScrollProgressBar from './components/ScrollProgressBar';
 import SEOStructuredData from './components/SEOStructuredData';
 import CSLHero from './components/CSLHero';
 import WhyWeExist from './components/WhyWeExist';
@@ -23,9 +22,11 @@ import CallToAction from './components/CallToAction';
 import FAQSection from './components/FAQSection';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import CittaEFSPage from './components/CittaEFSPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
+  const [path, setPath] = useState(currentPath);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Ensure tab favicon actively displays the logo from the src directory
@@ -50,33 +51,42 @@ export default function App() {
     }
   }, []);
 
+  // Keep the rendered page in sync with the URL
+  useEffect(() => {
+    const syncRoute = () => {
+      const nextPath = currentPath();
+      setPath(nextPath);
+
+      if (nextPath === '/') {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+          window.setTimeout(() => {
+            document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+          }, 80);
+        }
+      } else {
+        window.scrollTo({ top: 0 });
+      }
+    };
+
+    window.addEventListener('popstate', syncRoute);
+    window.addEventListener('app:navigate', syncRoute);
+    return () => {
+      window.removeEventListener('popstate', syncRoute);
+      window.removeEventListener('app:navigate', syncRoute);
+    };
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 500) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
+      setShowScrollTop(window.scrollY > 500);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Initial hash scroll handling (e.g., #why-we-exist, #solutions, #contact)
-  useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
-    if (hash) {
-      setTimeout(() => {
-        const el = document.getElementById(hash) || (hash === 'solutions' ? document.getElementById('products') : null);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 200);
-    }
-  }, []);
-
-  // Scroll spy to highlight active menu section in the navbar
+  // Scroll spy to highlight the active section in the navbar
   useEffect(() => {
     const handleScrollSpy = () => {
       const sections: { id: string; pageId: PageId }[] = [
@@ -89,14 +99,10 @@ export default function App() {
       ];
 
       let currentActive: PageId = 'home';
-      // Find the last section that has scrolled past the top offset
       for (const section of sections) {
         const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120) {
-            currentActive = section.pageId;
-          }
+        if (el && el.getBoundingClientRect().top <= 120) {
+          currentActive = section.pageId;
         }
       }
       setCurrentPage(currentActive);
@@ -111,131 +117,100 @@ export default function App() {
   };
 
   const handleRequestDemo = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    goToSection('contact');
   };
 
+  const isEfsPage = path === '/cittaefs';
+  const activePage: PageId = isEfsPage ? 'cittaefs' : currentPage;
+
   return (
-    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-[#ff8e1a] selection:text-white overflow-x-hidden max-w-full">
-      
-      {/* Dynamic Scroll Progress Bar */}
-      <ScrollProgressBar />
+    <div className="min-h-screen bg-white text-slate-800 flex flex-col font-sans selection:bg-[#2582ff] selection:text-white overflow-x-hidden max-w-full">
 
-      {/* SEO JSON-LD Structured Data Injection */}
-      <SEOStructuredData currentPage={currentPage} />
+      <SEOStructuredData currentPage={activePage} />
 
-      {/* Premium Top Navigation Header */}
-      <Navbar 
-        currentPage={currentPage} 
-        setCurrentPage={setCurrentPage} 
-        onRequestDemo={handleRequestDemo} 
+      <Navbar
+        currentPage={activePage}
+        setCurrentPage={setCurrentPage}
+        onRequestDemo={handleRequestDemo}
       />
 
-      {/* Main Storytelling Layout with 13 Interconnected Sections */}
-      <main className="flex-grow w-full overflow-x-hidden pt-20">
-        
-        {/* 1. Hero Section */}
-        <div id="home">
-          <CSLHero 
-            onExploreEcosystem={() => { 
-              const el = document.getElementById('products'); 
-              if (el) el.scrollIntoView({ behavior: 'smooth' }); 
-            }} 
-            onExploreEFS={() => { 
-              const el = document.getElementById('products'); 
-              if (el) el.scrollIntoView({ behavior: 'smooth' }); 
-            }}
-            onRequestDemo={handleRequestDemo}
-          />
-        </div>
+      {isEfsPage ? (
+        <CittaEFSPage />
+      ) : (
+        <main className="flex-grow w-full overflow-x-hidden pt-20">
 
-        {/* 2. Why We Exist Section */}
-        <div id="why-we-exist">
-          <WhyWeExist />
-        </div>
+          <div id="home">
+            <CSLHero
+              onExploreEcosystem={() => goToSection('products')}
+              onExploreEFS={() => goToSection('products')}
+              onRequestDemo={handleRequestDemo}
+            />
+          </div>
 
-        {/* 3. Who We Are (About CSL) */}
-        <div id="about">
-          <CSLAbout isTopPage={false} isSummary={false} />
-        </div>
+          <div id="why-we-exist">
+            <WhyWeExist />
+          </div>
 
-        {/* 4. Challenges We Solve */}
-        <div id="challenges">
-          <ChallengesSection />
-        </div>
+          <div id="about">
+            <CSLAbout isTopPage={false} isSummary={false} />
+          </div>
 
-        {/* 5. Enterprise Software Portfolio & Solutions */}
-        <div id="products">
-          <div id="solutions" />
-          <ProductEcosystem setCurrentPage={setCurrentPage} />
-        </div>
+          <div id="challenges">
+            <ChallengesSection />
+          </div>
 
-        {/* 6. Professional Services */}
-        <div id="services">
-          <ProfessionalServices />
-        </div>
+          <div id="products">
+            <div id="solutions" />
+            <ProductEcosystem setCurrentPage={setCurrentPage} />
+          </div>
 
-        {/* 7. Industries We Serve */}
-        <div id="industries">
-          <IndustriesSection />
-        </div>
+          <div id="services">
+            <ProfessionalServices />
+          </div>
 
-        {/* 8. Why Organisations Choose CSL */}
-        <div id="why-choose-csl">
-          <WhyChooseCSL />
-        </div>
+          <div id="industries">
+            <IndustriesSection />
+          </div>
 
-        {/* 9. Our Clients (Logos & Testimonials) */}
-        <div id="clients">
-          <PartnerLogos />
-          <TestimonialsCarousel />
-        </div>
+          <div id="why-choose-csl">
+            <WhyChooseCSL />
+          </div>
 
-        {/* 10. Our Approach */}
-        <div id="approach">
-          <ApproachSection />
-        </div>
+          <div id="clients">
+            <PartnerLogos />
+            <TestimonialsCarousel />
+          </div>
 
-        {/* 11. High-Impact Call to Action */}
-        <div id="cta">
-          <CallToAction />
-        </div>
+          <div id="approach">
+            <ApproachSection />
+          </div>
 
-        {/* 11.5 Frequently Asked Questions */}
-        <FAQSection />
+          <div id="cta">
+            <CallToAction />
+          </div>
 
-        {/* 12. Contact Form */}
-        <div id="contact">
-          <ContactForm />
-        </div>
+          <FAQSection />
 
-      </main>
+          <div id="contact">
+            <ContactForm />
+          </div>
 
-      {/* 13. Corporate Sitemap Footer */}
+        </main>
+      )}
+
       <Footer setCurrentPage={setCurrentPage} />
 
-      {/* Back to Top Floating Button */}
-      <AnimatePresence>
-        {showScrollTop && (
-          <motion.button
-            id="back-to-top-button"
-            onClick={scrollToTop}
-            initial={{ opacity: 0, y: 20, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.8 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-6 right-6 z-50 p-3.5 bg-slate-950 hover:bg-[#2582ff] text-white rounded-full shadow-2xl border border-white/10 cursor-pointer flex items-center justify-center transition-colors"
-            aria-label="Back to top"
-            title="Back to Top"
-          >
-            <ArrowUp className="w-5 h-5" />
-          </motion.button>
-        )}
-      </AnimatePresence>
+      {showScrollTop && (
+        <button
+          id="back-to-top-button"
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-white shadow-lg transition-colors hover:bg-slate-700"
+          aria-label="Back to top"
+          title="Back to top"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </button>
+      )}
 
     </div>
   );

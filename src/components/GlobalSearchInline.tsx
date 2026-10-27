@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Search, X, CornerDownLeft, FileText, Cpu, Landmark, Shield, PhoneCall, Sparkles, Building2, HelpCircle, Briefcase, CheckCircle2 } from 'lucide-react';
 import { PageId } from '../types';
+import { goTo } from '../navigation';
 
 interface GlobalSearchInlineProps {
   isOpen: boolean;
@@ -20,6 +21,7 @@ export interface SearchItem {
   pageId: PageId;
   scrollId?: string;
   url?: string;
+  path?: string;
 }
 
 export const SEARCH_INDEX: SearchItem[] = [
@@ -39,40 +41,40 @@ export const SEARCH_INDEX: SearchItem[] = [
     category: "Product",
     description: "Flagship electronic fiscal system middleware bridging ERP systems to NRS compliance with real-time tax stamping.",
     keywords: ["cittaefs", "citta efs", "csl efs", "middleware", "engine", "compliance", "nrs", "electronic fiscal", "tax stamp", "firs", "clearing", "automated", "cittasl", "csl"],
-    pageId: "products",
-    scrollId: "products"
+    pageId: "cittaefs",
+    path: "/cittaefs"
   },
   {
     title: "Validation Shield Gateway",
     category: "Product",
     description: "Secures transactions by validating TIN numbers, tax calculations, and currency formats prior to NRS transmission.",
     keywords: ["validation shield", "gateway", "tin check", "tax check", "security", "cryptography", "tin verification", "pre-clearance", "cittaefs", "csl"],
-    pageId: "products",
-    scrollId: "products"
+    pageId: "cittaefs",
+    path: "/cittaefs"
   },
   {
     title: "Excel Bulk Uploader Gateway",
     category: "Product",
     description: "Drag-and-drop gateway for SMEs to bulk upload Excel spreadsheets or CSV billing files for batch fiscal clearing.",
     keywords: ["excel", "bulk", "uploader", "csv", "spreadsheet", "drag", "drop", "sme", "excel uploader", "batch", "cittaefs", "csl"],
-    pageId: "products",
-    scrollId: "products"
+    pageId: "cittaefs",
+    path: "/cittaefs"
   },
   {
     title: "Audit Ledger Vault (AES-256)",
     category: "Product",
     description: "Secures cleared compliance transaction history with AES-256 encryption and immutable non-repudiation logs.",
     keywords: ["audit ledger", "vault", "history", "aes-256", "ledger list", "tls", "security", "non-repudiation", "secure log", "cittaefs", "csl"],
-    pageId: "products",
-    scrollId: "products"
+    pageId: "cittaefs",
+    path: "/cittaefs"
   },
   {
     title: "Clearance Speed & Latency Metrics",
     category: "Product",
     description: "Examine sub-240ms system validation latency, packet clearance logs, and high-concurrency throughput rates.",
     keywords: ["clearing speed", "validation latency", "packet clearance", "routing speed", "high load", "clearing rate", "sub-240ms", "cittaefs", "csl"],
-    pageId: "products",
-    scrollId: "products"
+    pageId: "cittaefs",
+    path: "/cittaefs"
   },
   
   // Other CSL Ecosystem Products
@@ -422,6 +424,12 @@ export default function GlobalSearchInline({
   }, [isOpen, results, selectedIndex]);
 
   const handleItemSelect = (item: SearchItem) => {
+    if (item.path) {
+      goTo(item.path);
+      onClose();
+      return;
+    }
+
     if (item.url) {
       window.open(item.url, '_blank', 'noopener,noreferrer');
       onClose();
